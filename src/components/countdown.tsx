@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 
+type timeLeft = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 export const CountdownTimer = () => {
   const targetDate = new Date("2025-02-01T00:00:00");
-  const [timeLeft, setTimeLeft] = useState({});
+  const [timeLeft, setTimeLeft] = useState<timeLeft | object>({});
 
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -38,25 +46,7 @@ export const CountdownTimer = () => {
 
   return (
     <div className="">
-      <div className="flex">
-        <div className="rounded-full border-4 h-40 w-40  flex justify-center items-center border-amber-100">
-          {timeLeft.days !== undefined && <span>{timeLeft.days} Days </span>}
-        </div>
-        <div className="rounded-full border-4 h-40 w-40  flex justify-center items-center border-amber-100">
-          {timeLeft.hours !== undefined && <span>{timeLeft.hours} Hours </span>}
-        </div>
-        <div className="rounded-full border-4 h-40 w-40  flex justify-center items-center border-amber-100">
-          {timeLeft.minutes !== undefined && (
-            <span>{timeLeft.minutes} Minutes </span>
-          )}
-        </div>
-        <div className="rounded-full border-4 h-40 w-40  flex justify-center items-center border-amber-100">
-          {timeLeft.seconds !== undefined && (
-            <span>{timeLeft.seconds} Seconds</span>
-          )}
-        </div>
-        <CanvasRevealEffectDemo />
-      </div>
+      <CanvasRevealEffectTimer timeLeft={timeLeft} />
       {timeLeft.days === 0 &&
         timeLeft.hours === 0 &&
         timeLeft.minutes === 0 &&
@@ -67,36 +57,39 @@ export const CountdownTimer = () => {
 
 export default CountdownTimer;
 
-import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-
-export function CanvasRevealEffectDemo() {
+export function CanvasRevealEffectTimer({ timeLeft }: { timeLeft: timeLeft }) {
   return (
     <>
       <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-black dark:bg-black w-full gap-4 mx-auto px-8">
-        <Card title="Sheetal is Nisha" icon={<AceternityIcon />}>
+        <Card title={timeLeft.days} icon={<AceternityIcon />} time="Days">
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
           />
         </Card>
-        <Card title="Nisha is Munni" icon={<AceternityIcon />}>
+        <Card title={timeLeft.hours} icon={<AceternityIcon />} time="Hours">
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-black"
+            containerClassName="bg-rose-600"
             colors={[
               [236, 72, 153],
               [232, 121, 249],
             ]}
             dotSize={2}
           />
-          {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </Card>
-        <Card title="Munni is Aditi" icon={<AceternityIcon />}>
+        <Card title={timeLeft.minutes} icon={<AceternityIcon />} time="Minutes">
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-sky-600"
+            colors={[[125, 211, 252]]}
+          />
+        </Card>
+        <Card title={timeLeft.seconds} icon={<AceternityIcon />} time="Seconds">
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-amber-600"
             colors={[[125, 211, 252]]}
           />
         </Card>
@@ -108,10 +101,12 @@ export function CanvasRevealEffectDemo() {
 const Card = ({
   title,
   icon,
+  time,
   children,
 }: {
-  title: string;
+  title: number;
   icon: React.ReactNode;
+  time: string;
   children?: React.ReactNode;
 }) => {
   const [hovered, setHovered] = useState(false);
@@ -119,13 +114,15 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
+      className="border border-white/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] mx-auto p-4 relative sm:h-6 sm:w-6 md:h-[20rem] md:w-[20rem]"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
-
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white dark:text-white" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white dark:text-white" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white dark:text-white" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white dark:text-white" />
+      <span className="absolute top-8 left-8 text-white dark:text-white">
+        {time}
+      </span>
       <AnimatePresence>
         {hovered && (
           <motion.div
@@ -137,12 +134,11 @@ const Card = ({
           </motion.div>
         )}
       </AnimatePresence>
-
       <div className="relative z-20">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
           {icon}
         </div>
-        <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-white mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h2>
       </div>
@@ -158,7 +154,7 @@ const AceternityIcon = () => {
       viewBox="0 0 66 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-black dark:text-white group-hover/canvas-card:text-white "
+      className="h-10 w-10 text-white dark:text-white group-hover/canvas-card:text-white "
     >
       <path
         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
