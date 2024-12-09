@@ -13,10 +13,16 @@ import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 import html2canvas from "html2canvas";
 
-const useDomToCanvas = (domEl) => {
-  const [texture, setTexture] = useState();
+// Define the type for the texture state
+type TextureState = THREE.CanvasTexture | undefined;
+
+// Custom hook to convert DOM element to canvas texture
+const useDomToCanvas = (domEl: HTMLElement | null): TextureState => {
+  const [texture, setTexture] = useState<TextureState>(undefined);
+
   useEffect(() => {
     if (!domEl) return;
+
     const convertDomToCanvas = async () => {
       const canvas = await html2canvas(domEl, { backgroundColor: null });
       setTexture(new THREE.CanvasTexture(canvas));
@@ -38,7 +44,7 @@ const useDomToCanvas = (domEl) => {
 };
 
 function Lights() {
-  const pointLightRef = useRef();
+  const pointLightRef = useRef(null);
 
   useHelper(pointLightRef, PointLightHelper, 0.7, "cyan");
 
@@ -49,17 +55,23 @@ function Lights() {
     decay: { value: 1, min: 0, max: 5, step: 0.1 },
     position: { value: [2, 4, 6] },
   });
+
   return <pointLight ref={pointLightRef} {...config} />;
 }
 
 function Scene() {
   const state = useThree();
   const { width, height } = state.viewport;
-  const [domEl, setDomEl] = useState(null);
 
-  const materialRef = useRef();
+  // Use a ref for the DOM element
+  const [domEl, setDomEl] = useState<HTMLDivElement | null>(null);
+
+  const materialRef = useRef(null);
+
+  // Get the texture created from the DOM element
   const textureDOM = useDomToCanvas(domEl);
 
+  // Define uniforms with proper types
   const uniforms = useMemo(
     () => ({
       uTexture: { value: textureDOM },
@@ -68,10 +80,12 @@ function Scene() {
     [textureDOM],
   );
 
-  const mouseLerped = useRef({ x: 0, y: 0 });
+  const mouseLerped = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
-  useFrame((state, delta) => {
+  // Update mouse position in the frame loop
+  useFrame((state) => {
     const mouse = state.mouse;
+
     mouseLerped.current.x = THREE.MathUtils.lerp(
       mouseLerped.current.x,
       mouse.x,
@@ -82,8 +96,11 @@ function Scene() {
       mouse.y,
       0.1,
     );
-    materialRef.current.uniforms.uMouse.value.x = mouseLerped.current.x;
-    materialRef.current.uniforms.uMouse.value.y = mouseLerped.current.y;
+
+    if (materialRef.current) {
+      materialRef.current.uniforms.uMouse.value.x = mouseLerped.current.x;
+      materialRef.current.uniforms.uMouse.value.y = mouseLerped.current.y;
+    }
   });
 
   return (

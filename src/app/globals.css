@@ -76,3 +76,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  background-image: url("/bg.png");
+  background-size: cover;
+}

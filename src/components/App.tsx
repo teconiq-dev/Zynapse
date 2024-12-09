@@ -4,6 +4,7 @@ import Scene from "./Scene";
 import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 import { CountdownTimer } from "./countdown";
+import Image from "next/image";
 
 function Title3D() {
   return (
@@ -29,9 +30,7 @@ function Title3D() {
 function HeaderComponent() {
   return (
     <header className="relative z-50 mx-7 flex max-lg:flex-col justify-between py-6 border-b border-white/60 pointer-events-auto">
-      <div className="whitespace-nowrap">
-        <h1 className="font-bold inline align-middle mr-2">Zynapse</h1>
-      </div>
+      <Image src="/logo.png" alt="logo" width={100} height={200} />
     </header>
   );
 }
