@@ -58,7 +58,8 @@ const config: Config = {
   		},
   		animation: {
   			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
-  			shine: 'shine var(--duration) infinite linear'
+  			shine: 'shine var(--duration) infinite linear',
+  			gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
   			'background-position-spin': {
@@ -78,6 +79,11 @@ const config: Config = {
   				},
   				to: {
   					'background-position': '0% 0%'
+  				}
+  			},
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size) 0'
   				}
   			}
   		}

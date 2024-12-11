@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-import { NeonGradientCardDemo } from "./neon";
+import { NeonGradientCardTimer } from "./neon";
 import ShineBorder from "./ui/shine-border";
 
 type timeLeft = {
@@ -54,10 +52,10 @@ export const CountdownTimer = () => {
       borderRadius={10}
     >
       <div className="flex gap-8">
-        <NeonGradientCardDemo time={timeLeft.days} />
-        <NeonGradientCardDemo time={timeLeft.hours} />
-        <NeonGradientCardDemo time={timeLeft.minutes} />
-        <NeonGradientCardDemo time={timeLeft.seconds} />
+        <NeonGradientCardTimer time={timeLeft.days} />
+        <NeonGradientCardTimer time={timeLeft.hours} />
+        <NeonGradientCardTimer time={timeLeft.minutes} />
+        <NeonGradientCardTimer time={timeLeft.seconds} />
       </div>
     </ShineBorder>
   );
