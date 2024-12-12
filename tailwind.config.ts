@@ -1,4 +1,5 @@
 import type {Config} from "tailwindcss";
+import {default as flattenColorPalette} from 'tailwindcss/lib/util/flattenColorPalette';
 
 const config: Config = {
   darkMode: ["class"],
@@ -13,6 +14,11 @@ const config: Config = {
         'screen-5': 'calc(100vw - 5%)',
         'screen-10': 'calc(100vw - 10%)',
         'screen-20': 'calc(100vw - 20%)',
+      },
+      height: {
+        'screen-5': 'calc(100vh - 5%)',
+        'screen-10': 'calc(100vh - 10%)',
+        'screen-20': 'calc(100vh - 20%)',
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -94,6 +100,19 @@ const config: Config = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors,
+  ],
 };
+
 export default config;
+
+function addVariablesForColors({addBase, theme}: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

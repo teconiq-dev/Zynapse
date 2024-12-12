@@ -46,8 +46,8 @@ export const CountdownTimer = () => {
   }, []);
 
   return (
-    <ShineBorder
-      className="relative flex h-auto w-auto flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg border bg-transparent md:shadow-xl"
+    <div
+      className="relative flex h-auto w-auto flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
       color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
       borderWidth={2}
       borderRadius={10}
@@ -58,7 +58,7 @@ export const CountdownTimer = () => {
         <NeonGradientCardTimer time={timeLeft.minutes} type="Minutes" />
         <NeonGradientCardTimer time={timeLeft.seconds} type="Seconds" />
       </div>
-    </ShineBorder>
+    </div>
   );
 };
 
