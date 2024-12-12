@@ -5,7 +5,7 @@ import {About} from "@/components/about";
 export default function Home() {
   return (
     <div className="px-5">
-      <div className="flex flex-col items-center h-full w-full gap-10">
+      <div className="flex flex-col items-center h-full w-full">
         <Heading/>
         <CountdownTimer/>
         <About/>
