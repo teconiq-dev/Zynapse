@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { NeonGradientCardTimer } from "./neon";
 import ShineBorder from "./ui/shine-border";
@@ -46,16 +47,16 @@ export const CountdownTimer = () => {
 
   return (
     <ShineBorder
-      className="relative flex h-auto w-auto flex-col sm:p-6 md:p-14 items-center justify-center overflow-hidden rounded-lg border bg-transparent md:shadow-xl"
+      className="relative flex h-auto w-auto flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg border bg-transparent md:shadow-xl"
       color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-      borderWidth={3}
+      borderWidth={2}
       borderRadius={10}
     >
-      <div className="flex gap-8">
-        <NeonGradientCardTimer time={timeLeft.days} />
-        <NeonGradientCardTimer time={timeLeft.hours} />
-        <NeonGradientCardTimer time={timeLeft.minutes} />
-        <NeonGradientCardTimer time={timeLeft.seconds} />
+      <div className="flex gap-4">
+        <NeonGradientCardTimer time={timeLeft.days} type="Days" />
+        <NeonGradientCardTimer time={timeLeft.hours} type="Hours" />
+        <NeonGradientCardTimer time={timeLeft.minutes} type="Minutes" />
+        <NeonGradientCardTimer time={timeLeft.seconds} type="Seconds" />
       </div>
     </ShineBorder>
   );
