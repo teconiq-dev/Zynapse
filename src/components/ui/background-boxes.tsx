@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import {motion} from "framer-motion";
+import {cn} from "@/lib/utils";
 
-export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+export const BoxesCore = ({className, ...rest}: { className?: string }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   let colors = [
@@ -24,10 +24,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   return (
     <div
       style={{
-        transform: `translate(-40%,-60%) z-100 skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
+        transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
       }}
       className={cn(
-        "absolute left-1/4 p-4 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-screen z-0 ",
+        "absolute left-1/4 p-4 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 ",
         className
       )}
       {...rest}
@@ -35,16 +35,29 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8 border-l  border-slate-700 relative"
+          className="w-16 h-8  border-l  border-slate-700 relative"
         >
           {cols.map((_, j) => (
             <motion.div
               whileHover={{
                 backgroundColor: `var(${getRandomColor()})`,
-                transition: { duration: 0 },
+                transition: {duration: 0},
+              }}
+              whileDrag={
+                {
+                  backgroundColor: `var(${getRandomColor()})`,
+                  transition: {duration: 0},
+                }}
+              whileFocus={{
+                backgroundColor: `var(${getRandomColor()})`,
+                transition: {duration: 0},
+              }}
+              whileTap={{
+                backgroundColor: `var(${getRandomColor()})`,
+                transition: {duration: 0},
               }}
               animate={{
-                transition: { duration: 2 },
+                transition: {duration: 2},
               }}
               key={`col` + j}
               className="w-16 h-8  border-r border-t border-slate-700 relative"
@@ -74,3 +87,4 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 };
 
 export const Boxes = React.memo(BoxesCore);
+

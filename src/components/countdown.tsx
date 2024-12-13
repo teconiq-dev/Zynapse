@@ -47,10 +47,7 @@ export const CountdownTimer = () => {
 
   return (
     <div
-      className="relative flex h-auto w-auto flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
-      color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-      borderWidth={2}
-      borderRadius={10}
+      className="relative flex h-auto w-auto max-w-screen-10 flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
     >
       <div className="flex gap-4">
         <NeonGradientCardTimer time={timeLeft.days} type="Days" />
