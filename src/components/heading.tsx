@@ -4,11 +4,11 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 export function Heading() {
   return (
-    <div className="h-auto w-screen-10 bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-        <Cover>Zynapse</Cover>
+    <div className="h-auto flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="md:text-7xl p-4 bg-violet-950/20 rounded-3xl text-4xl lg:text-9xl font-bold text-center text-white relative z-20">
+        <Cover>ZYNAPSE</Cover>
       </h1>
-      <div className="w-full h-40 relative bottom-32">
+      <div className="w-full h-40 relative bottom-44">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -20,7 +20,7 @@ export function Heading() {
           background="transparent"
           minSize={0.1}
           maxSize={1}
-          particleDensity={300}
+          particleDensity={200}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />

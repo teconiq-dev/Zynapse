@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
-import { Boxes } from "@/components/ui/background-boxes";
+import { Audiowide, Exo_2, Gugi, Monoton } from "next/font/google";
+import UserProvider from "@/components/context/userContext";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const audioWide = Audiowide({
+  variable: "--font-audiowide",
+  weight: "400",
+  subsets: ["latin"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const exo2 = Exo_2({ variable: "--font-exo-2", subsets: ["latin"] });
+const gugi = Gugi({
+  variable: "--font-gugi",
+  weight: "400",
+  subsets: ["latin"],
+});
+const monoton = Monoton({
+  variable: "--font-monoton",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -28,13 +34,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth`}
+        className={`${audioWide.variable} ${exo2.variable} ${gugi.variable} ${monoton.variable} font-gugi antialiased scroll-smooth`}
       >
-        <Navbar />
-        <div className="h-auto min-h-screen relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-          <div className="absolute inset-0 w-full h-full bg-slate-900 z-0 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-          {children}
-          <Boxes />
+        <div className="h-auto min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-start rounded-lg">
+          <div className="absolute inset-0 w-full h-screen bg-slate-900 z-0 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+          <UserProvider>
+            <Navbar>{children}</Navbar>
+          </UserProvider>
         </div>
       </body>
     </html>
