@@ -47,14 +47,6 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                 backgroundColor: `var(${getRandomColor()})`,
                 transition: { duration: 0 },
               }}
-              whileFocus={{
-                backgroundColor: `var(${getRandomColor()})`,
-                transition: { duration: 0 },
-              }}
-              whileTap={{
-                backgroundColor: `var(${getRandomColor()})`,
-                transition: { duration: 0 },
-              }}
               animate={{
                 transition: { duration: 2 },
               }}

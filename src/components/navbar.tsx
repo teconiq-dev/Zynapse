@@ -8,7 +8,7 @@ export const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-300 w-full z-10">
+        <div className="navbar bg-base-100 w-full z-10">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -38,6 +38,11 @@ export const Navbar = ({ children }) => {
           <div className="hidden flex-none lg:block">
             <ul className="menu menu-horizontal space-x-2">
               {/* Navbar menu content here */}
+              <li>
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+                  <Link href="/">Home</Link>
+                </button>
+              </li>
               <li>
                 <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
                   <Link href="/events">Events</Link>

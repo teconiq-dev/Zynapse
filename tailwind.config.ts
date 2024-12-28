@@ -78,6 +78,7 @@ const config: Config = {
           "background-position-spin 3000ms infinite alternate",
         shine: "shine var(--duration) infinite linear",
         gradient: "gradient 8s linear infinite",
+        "shiny-text": "shiny-text 8s infinite",
       },
       keyframes: {
         "background-position-spin": {

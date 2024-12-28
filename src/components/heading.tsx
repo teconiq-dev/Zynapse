@@ -5,7 +5,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 export function Heading() {
   return (
     <div className="h-auto flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-7xl p-4 bg-violet-950/20 rounded-3xl text-4xl lg:text-9xl font-bold text-center text-white relative z-20">
+      <h1 className="md:text-7xl p-4 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-950 from-0% via-purple-950 via-10% to-transparent to-100% rounded-3xl font-gugi text-4xl lg:text-9xl font-bold text-center text-white relative z-20">
         <Cover>ZYNAPSE</Cover>
       </h1>
       <div className="w-full h-40 relative bottom-44">

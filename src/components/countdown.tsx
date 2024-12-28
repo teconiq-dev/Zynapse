@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { NeonGradientCardTimer } from "./neon";
+import AnimatedGradientText from "./ui/animated-gradient-text";
+import { cn } from "@/lib/utils";
 
 type timeLeft = {
   days: number;
@@ -46,6 +48,18 @@ export const CountdownTimer = () => {
 
   return (
     <div className="flex h-auto w-auto max-w-screen-10 flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl">
+      <div className="z-10 flex mb-10 items-center justify-center">
+        <AnimatedGradientText>
+          🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
+          <span
+            className={cn(
+              `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+            )}
+          >
+            Headsup! The event starts in!
+          </span>
+        </AnimatedGradientText>
+      </div>
       <div className="flex gap-1 md:gap-4">
         <NeonGradientCardTimer time={timeLeft.days} type="Days" />
         <NeonGradientCardTimer time={timeLeft.hours} type="Hours" />
