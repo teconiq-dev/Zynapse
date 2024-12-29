@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-start justify-start w-full gap-6 p-3 md:p-14 bg-[url('/mesh-gradient.png')] bg-cover">
       <Heading />
+      <Boxes />
       <div className="flex justify-between items-center flex-wrap-reverse w-full gap-14 mb-20">
         <MorphingText texts={texts} />
         <CountdownTimer />
