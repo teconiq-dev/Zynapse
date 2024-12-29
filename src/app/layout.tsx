@@ -37,7 +37,6 @@ export default function RootLayout({
         className={`${audioWide.variable} ${exo2.variable} ${gugi.variable} ${monoton.variable} font-gugi antialiased scroll-smooth`}
       >
         <div className="h-auto min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-start rounded-lg">
-          <div className="absolute inset-0 w-full h-screen bg-slate-900 z-0 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
           <UserProvider>
             <Navbar>{children}</Navbar>
           </UserProvider>

@@ -47,7 +47,7 @@ export const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex h-auto w-auto max-w-screen-10 flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl">
+    <div className="flex h-auto w-auto max-w-screen-10 flex-col sm:p-6 md:px-14 items-center justify-center overflow-hidden rounded-xl bg-transparent md:shadow-xl">
       <div className="z-10 flex mb-10 items-center justify-center">
         <AnimatedGradientText>
           🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />

@@ -2,7 +2,7 @@ import { NeonGradientCard } from "./ui/neon-gradient-card";
 import "../css/neon.css";
 
 export function NeonGradientCardTimer({
-  time,
+  time = 0o0,
   type,
 }: {
   time: number;
@@ -15,7 +15,7 @@ export function NeonGradientCardTimer({
           <span style={{ "--value": time }}>{time}</span>
         </span>
       </NeonGradientCard>
-      <p className="text-sm md:text-xl">{type}</p>
+      <p className="text-sm md:text-xl font-audioWide">{type}</p>
     </div>
   );
 }
