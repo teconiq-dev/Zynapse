@@ -26,7 +26,7 @@ export function Heading() {
           onSlowDown: () => {},
           distortion: "turbulentDistortion",
           length: 400,
-          roadWidth: 6,
+          roadWidth: 8,
           islandWidth: 2,
           lanesPerRoad: 2,
           fov: 50,
@@ -51,20 +51,20 @@ export function Heading() {
             roadColor: 0x080808,
             islandColor: 0x0a0a0a,
             background: 0x000000,
-            shoulderLines: 0xffffff,
-            brokenLines: 0xffffff,
-            leftCars: [0xd856bf, 0x6750a2, 0xc247ac],
-            rightCars: [0x03b3c3, 0x0e5ea5, 0x324555],
-            sticks: 0x03b3c3,
+            shoulderLines: 0x131318,
+            brokenLines: 0x131318,
+            leftCars: [0xff102a, 0xeb383e, 0xff102a],
+            rightCars: [0xdadafa, 0xbebae3, 0x8f97e4],
+            sticks: 0xdadafa,
           },
         }}
       />
-      <div className="flex flex-col items-center justify-evenly w-full h-svh gap-6 pt-5 md:pt-14">
+      <div className="flex flex-col items-center justify-evenly w-full min-h-screen gap-6 pt-5 md:pt-14">
         <h1 className="md:text-7xl p-4 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-950 from-0% via-purple-950/40 via-10% to-transparent to-100% rounded-3xl font-audioWide text-4xl lg:text-8xl font-bold text-center text-white relative z-20">
           <Cover>ZYNAPSE</Cover>
         </h1>
         <div className="flex justify-between items-center flex-wrap w-full gap-48 mb-20">
-          <MorphingText texts={texts} />
+          <MorphingText className="hidden md:block" texts={texts} />
           <CountdownTimer />
         </div>
         <div className="flex items-center justify-center w-full">
