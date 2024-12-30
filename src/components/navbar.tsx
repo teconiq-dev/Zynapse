@@ -42,12 +42,12 @@ export const Navbar = ({ children }) => {
                 <ThemeSwitcher />
               </li>
               <li>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+                <button className="btn btn-xs sm:btn-sm md:btn-md">
                   <Link href="/">Home</Link>
                 </button>
               </li>
               <li>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+                <button className="btn btn-xs sm:btn-sm md:btn-md">
                   <Link href="/events">Events</Link>
                 </button>
               </li>

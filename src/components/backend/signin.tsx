@@ -74,7 +74,7 @@ export default function SigninButton() {
       ) : (
         <button
           onClick={signInGoogle}
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          className="btn btn-xs sm:btn-sm md:btn-md"
         >
           Signin
         </button>

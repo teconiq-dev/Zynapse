@@ -60,7 +60,7 @@ export const CountdownTimer = () => {
           </span>
         </AnimatedGradientText>
       </div>
-      <div className="flex gap-1 md:gap-4">
+      <div className="flex gap-1 md:gap-2 lg:gap-3">
         <NeonGradientCardTimer time={timeLeft.days} type="Days" />
         <NeonGradientCardTimer time={timeLeft.hours} type="Hours" />
         <NeonGradientCardTimer time={timeLeft.minutes} type="Minutes" />
