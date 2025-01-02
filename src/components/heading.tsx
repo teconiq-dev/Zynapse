@@ -3,6 +3,7 @@ import MorphingText from "@/components/ui/morphing-text";
 import CountdownTimer from "@/components/countdown";
 import { Cover } from "@/components/ui/cover";
 import { Hyperspeed } from "@/components/hyperspeed";
+import Link from "next/link";
 
 export function Heading() {
   const texts = [
@@ -68,7 +69,9 @@ export function Heading() {
           <CountdownTimer />
         </div>
         <div className="flex items-center justify-center w-full">
-          <button className="btn btn-outline btn-primary">Register Now</button>
+          <button className="btn btn-outline btn-primary btn-lg z-20">
+            <Link href="/events">Register Now</Link>
+          </button>
         </div>
       </div>
     </div>

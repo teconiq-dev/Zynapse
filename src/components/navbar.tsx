@@ -8,7 +8,7 @@ export const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-100 w-full z-10">
+        <div className="navbar bg-base-300 w-full z-20">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -96,7 +96,7 @@ const ThemeSwitcher = () => {
 
       {/* sun icon */}
       <svg
-        className="swap-off h-9 w-9 fill-current"
+        className="swap-off h-8 w-8 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >

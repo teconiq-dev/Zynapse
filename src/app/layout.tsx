@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" data-theme="sunset">
       <body
         className={`${audioWide.variable} ${exo2.variable} ${gugi.variable} ${monoton.variable} font-gugi antialiased scroll-smooth`}
       >

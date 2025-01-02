@@ -15,7 +15,9 @@ export function NeonGradientCardTimer({
           <span style={{ "--value": time }}>{time}</span>
         </span>
       </NeonGradientCard>
-      <p className="text-xs md:text-xl font-audioWide">{type}</p>
+      <p id="time" className="text-xs md:text-xl font-audioWide">
+        {type}
+      </p>
     </div>
   );
 }
