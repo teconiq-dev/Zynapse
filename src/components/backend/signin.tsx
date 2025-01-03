@@ -43,14 +43,14 @@ export default function SigninButton() {
   return (
     <>
       {user ? (
-        <div className="dropdown dropdown-end">
+        <div className="dropdown dropdown-bottom dropdown-end">
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost btn-circle avatar"
+            className="btn btn-ghost btn-circle avatar online placeholder"
           >
-            <div className="w-10 rounded-full">
-              <img alt="user" src={user?.photoURL} />
+            <div className="bg-neutral text-neutral-content w-10 rounded-full">
+              <span className="text-lg">{user.displayName.charAt(0)}</span>
             </div>
           </div>
           <ul
@@ -62,9 +62,6 @@ export default function SigninButton() {
                 Profile
                 <span className="badge">New</span>
               </a>
-            </li>
-            <li>
-              <a>Settings</a>
             </li>
             <li>
               <a onClick={signOutGoogle}>Logout</a>

@@ -8,7 +8,7 @@ export const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-100 w-full z-10">
+        <div className="navbar bg-base-300 w-full z-20">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -30,17 +30,18 @@ export const Navbar = ({ children }) => {
               </svg>
             </label>
           </div>
-          <div className="mx-2 flex-1 px-2">
+          <div className="mx-2 flex-1 justify-between px-2">
             <Link href="/">
               <Image src="/logo.png" alt="logo" width={150} height={350} />
             </Link>
+            <div className="inline-block lg:hidden">
+              <SigninButton />
+            </div>
           </div>
           <div className="hidden flex-none lg:block">
             <ul className="menu menu-horizontal space-x-2">
               {/* Navbar menu content here */}
-              <li>
-                <ThemeSwitcher />
-              </li>
+              <ThemeSwitcher />
               <li>
                 <button className="btn btn-xs sm:btn-sm md:btn-md">
                   <Link href="/">Home</Link>
@@ -52,8 +53,11 @@ export const Navbar = ({ children }) => {
                 </button>
               </li>
               <li>
-                <SigninButton />
+                <button className="btn btn-xs sm:btn-sm md:btn-md">
+                  <Link href="/register">Register</Link>
+                </button>
               </li>
+              <SigninButton />
             </ul>
           </div>
         </div>
@@ -67,19 +71,21 @@ export const Navbar = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="bg-base-200 min-h-full w-64 p-4">
-          <ul className="menu w-fit">
+        <div className="bg-base-200 min-h-full w-64 p-4 flex items-start justify-center">
+          <ul className="menu w-fit space-y-2">
             {/* Sidebar content here */}
             <li>
               <ThemeSwitcher />
             </li>
             <li>
-              <SigninButton />
+              <button className="btn btn-outline sm:btn-md lg:btn-lg">
+                <Link href="/events">Events</Link>
+              </button>
             </li>
             <li>
-              <Link href="/events">
-                <button className="btn sm:btn-md lg:btn-lg">Events</button>
-              </Link>
+              <button className="btn btn-outline sm:btn-md lg:btn-lg">
+                <Link href="/register">Register</Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -92,11 +98,15 @@ const ThemeSwitcher = () => {
   return (
     <label className="swap swap-rotate">
       {/* this hidden checkbox controls the state */}
-      <input type="checkbox" className="theme-controller" value="fantasy" />
+      <input
+        type="checkbox"
+        className="theme-controller rounded-full"
+        value="fantasy"
+      />
 
       {/* sun icon */}
       <svg
-        className="swap-off h-9 w-9 fill-current"
+        className="swap-off h-8 w-8 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
