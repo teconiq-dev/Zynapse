@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Audiowide, Exo_2, Gugi, Monoton } from "next/font/google";
 import UserProvider from "@/components/context/userContext";
+import Footer from "@/components/footer";
 
 const audioWide = Audiowide({
   variable: "--font-audiowide",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <div className="h-auto min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-start rounded-lg">
           <UserProvider>
             <Navbar>{children}</Navbar>
+            <Footer />
           </UserProvider>
         </div>
       </body>
