@@ -9,10 +9,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: dkershner6/vercel-set-env-action@v1
+        with:
+          token: ${{ secrets.VERCEL_TOKEN }}
+          projectName: zynapse
+          envVariableKeys: NEXT_PUBLIC_API_KEY,NEXT_PUBLIC_AUTH_DOMAIN,NEXT_PUBLIC_PROJECT_ID,NEXT_PUBLIC_STORAGE_BUCKET,NEXT_PUBLIC_MESSAGING_SENDER_ID,NEXT_PUBLIC_APP_ID
+        env:
+          NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
+          TARGET_NEXT_PUBLIC_API_KEY: preview,development,production
+          TYPE_NEXT_PUBLIC_API_KEY: encrypted
+
+          NEXT_PUBLIC_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_AUTH_DOMAIN }}
+          TARGET_NEXT_PUBLIC_AUTH_DOMAIN: preview,development,production
+          TYPE_NEXT_PUBLIC_AUTH_DOMAIN: encrypted
+
+          NEXT_PUBLIC_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_PROJECT_ID }}
+          TARGET_NEXT_PUBLIC_PROJECT_ID: preview,development,production
+          TYPE_NEXT_PUBLIC_PROJECT_ID: encrypted
+
+          NEXT_PUBLIC_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_STORAGE_BUCKET }}
+          TARGET_NEXT_PUBLIC_STORAGE_BUCKET: preview,development,production
+          TYPE_NEXT_PUBLIC_STORAGE_BUCKET: encrypted
+
+          NEXT_PUBLIC_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_MESSAGING_SENDER_ID }}
+          TARGET_NEXT_PUBLIC_MESSAGING_SENDER_ID: preview,development,production
+          TYPE_NEXT_PUBLIC_MESSAGING_SENDER_ID: encrypted 
+
+          NEXT_PUBLIC_APP_ID: ${{ secrets.NEXT_PUBLIC_APP_ID }}
+          TARGET_NEXT_PUBLIC_APP_ID: preview,development,production
+          TYPE_NEXT_PUBLIC_APP_ID: encrypted
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-args: "--prod"
-          vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
