@@ -1,13 +1,13 @@
 "use client";
 import { createContext, useContext, useState } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { User } from "firebase/auth";
+import { auth } from "../backend/firebase";
 
 const UserContext = createContext(null);
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState<null | User>(null);
-  const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
