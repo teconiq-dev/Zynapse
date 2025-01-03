@@ -1,4 +1,5 @@
 import { Boxes } from "@/components/ui/background-boxes";
+import Link from "next/link";
 
 export default function EventsPage() {
   return (
@@ -50,7 +51,9 @@ function EventCard({ title, description }) {
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-sm btn-primary">Register</button>
+          <button className="btn btn-sm btn-primary">
+            <Link href="/register">Register</Link>
+          </button>
         </div>
       </div>
     </div>
