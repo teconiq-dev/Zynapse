@@ -1,23 +1,74 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { User } from "firebase/auth";
 import { auth } from "../backend/firebase";
+import { getDetails } from "@/components/backend/firebase";
 
-const UserContext = createContext(null);
+interface UserContextType {
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  registrationDetails: any;
+  setRegistrationDetails: React.Dispatch<React.SetStateAction<any>>;
+}
+type RegistrationDetails = {
+  fullName: string;
+  phoneNo: string;
+  event: string[];
+  collegeName: string;
+  course: string;
+  yearOfStudy: string;
+};
+
+const UserContext = createContext<UserContextType | null>(null);
 
 export default function UserProvider({ children }) {
-  const [user, setUser] = useState<null | User>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [registrationDetails, setRegistrationDetails] =
+    useState<RegistrationDetails>({
+      fullName: "",
+      phoneNo: "",
+      event: [""],
+      collegeName: "",
+      course: "",
+      yearOfStudy: "",
+    });
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUser(user);
-    } else {
-      setUser(null);
-    }
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUser(user);
+        try {
+          const details = await getDetails(user.email!);
+          setRegistrationDetails({
+            fullName: details?.fullName || "",
+            phoneNo: details?.phoneNo || "",
+            event: details?.event || [""],
+            collegeName: details?.collegeName || "",
+            course: details?.course || "",
+            yearOfStudy: details?.yearOfStudy || "",
+          });
+        } catch (error) {
+          console.error("Error fetching details: ", error);
+        }
+      } else {
+        setUser(null);
+        setRegistrationDetails({
+          fullName: "",
+          phoneNo: "",
+          event: [""],
+          collegeName: "",
+          course: "",
+          yearOfStudy: "",
+        });
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, registrationDetails }}>
       {children}
     </UserContext.Provider>
   );
