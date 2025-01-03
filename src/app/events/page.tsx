@@ -10,6 +10,14 @@ export default function EventsPage() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <EventCard
+          title="Hackathon"
+          description="48 hours brain storming with exciting price"
+        />
+        <EventCard
+          title="AR Treasure Hunt"
+          description="Find hidden treasures using AR technology."
+        />
+        <EventCard
           title="Debugging"
           description="Test your debugging skills in this intense competition."
         />
@@ -24,10 +32,6 @@ export default function EventsPage() {
         <EventCard
           title="Tech Quiz"
           description="Prove your tech knowledge in this quiz."
-        />
-        <EventCard
-          title="AR Treasure Hunt"
-          description="Find hidden treasures using AR technology."
         />
         <EventCard
           title="PPT Presentation"
