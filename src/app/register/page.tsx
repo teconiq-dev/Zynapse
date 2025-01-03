@@ -4,6 +4,7 @@ import React, { useState } from "react";
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
     fullName: "",
+    phoneNo: "",
     event: "",
     collegeName: "",
     course: "",
@@ -29,9 +30,10 @@ export default function RegisterPage() {
   return (
     <div className="container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
       <h1 className="text-2xl font-bold mb-4">Registration</h1>
+      <div className="divider divider-primary">Zynapse</div>
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 max-w-4xl p-4 md:p-6 border border-primary rounded-lg"
+        className="space-y-4 max-w-4xl p-4 md:p-6 shadow-md shadow-primary rounded-lg"
       >
         <div className="form-control">
           <label className="label">
@@ -41,6 +43,19 @@ export default function RegisterPage() {
             type="text"
             name="fullName"
             value={formData.fullName}
+            onChange={handleChange}
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Phone Number</span>
+          </label>
+          <input
+            type="text"
+            name="phoneNo"
+            value={formData.phoneNo}
             onChange={handleChange}
             className="input input-bordered"
             required
