@@ -1,7 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "@/components/backend/firebase";
+import { UserDetails } from "@/components/context/userContext";
 
 export default function RegisterPage() {
+  const { user } = UserDetails();
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNo: "",
@@ -21,10 +25,18 @@ export default function RegisterPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    if (!user) {
+      console.error("User is not authenticated");
+      return;
+    }
+    try {
+      await setDoc(doc(db, "registrations", user?.email), formData);
+      console.log("Document successfully written!");
+    } catch (error) {
+      console.error("Error writing document: ", error);
+    }
   };
 
   return (
