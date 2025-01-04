@@ -1,28 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/components/backend/firebase";
+import { useRouter } from "next/navigation";
 import { UserDetails } from "@/components/context/userContext";
-import { eventsList } from "@/lib/events";
-import SigninButton from "@/components/backend/signin";
 
 export default function RegisterPage() {
   const { user, registrationDetails } = UserDetails();
+  const router = useRouter();
 
   const [submitted, setSubmitted] = useState(false);
-  const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
-  const [events, setEvents] = useState(eventsList);
   const [formData, setFormData] = useState(registrationDetails || {});
-
-  useEffect(
-    () =>
-      setEvents(
-        eventsList.filter(
-          (event) => !registrationDetails?.event.includes(event),
-        ),
-      ),
-    [registrationDetails],
-  );
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -35,15 +23,6 @@ export default function RegisterPage() {
     // console.log(formData);
   };
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = event.target;
-    setSelectedEvents((prevSelectedEvents) =>
-      checked
-        ? [...prevSelectedEvents, value]
-        : prevSelectedEvents.filter((event) => event !== value),
-    );
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
@@ -53,10 +32,10 @@ export default function RegisterPage() {
     try {
       await setDoc(doc(db, "registrations", user?.email), {
         ...formData,
-        event: selectedEvents.concat(registrationDetails?.event),
       });
       console.log("Document successfully written!");
       setSubmitted(true);
+      router.push("/events");
     } catch (error) {
       console.error("Error writing document: ", error);
     }
@@ -75,8 +54,8 @@ export default function RegisterPage() {
           <h1 className="text-2xl md:text-6xl font-monoton mb-14">
             Registration
           </h1>
-          <div className="divider divider-primary m-0">
-            Hello {user?.displayName}
+          <div className="divider divider-primary">
+            Participant Registration
           </div>
           <form
             onSubmit={handleSubmit}
@@ -107,43 +86,6 @@ export default function RegisterPage() {
                 className="input input-bordered"
                 required
               />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Event Selection</span>
-              </label>
-              <div className="flex flex-col items-start justify-center px-4">
-                {events.map((event) => (
-                  <div key={event}>
-                    <label className="label cursor-pointer">
-                      <input
-                        className="checkbox mr-2"
-                        type="checkbox"
-                        value={event}
-                        checked={selectedEvents.includes(event)}
-                        onChange={handleCheckboxChange}
-                      />
-                      {event}
-                    </label>
-                  </div>
-                ))}
-                <label className="label">
-                  <span className="label-text">Registered</span>
-                </label>
-                {registrationDetails?.event?.map((event) => (
-                  <div key={event}>
-                    <label className="label">
-                      <input
-                        type="checkbox"
-                        className="checkbox mr-2"
-                        disabled
-                        defaultChecked
-                      />
-                      {event}
-                    </label>
-                  </div>
-                ))}
-              </div>
             </div>
             <div className="form-control">
               <label className="label">
@@ -202,6 +144,9 @@ export default function RegisterPage() {
             <div className="toast toast-end">
               <div className="alert alert-success">
                 <span>Registered Successfully</span>
+              </div>{" "}
+              <div className="alert alert-info">
+                <span>Now you can register for events</span>
               </div>
             </div>
           )}
