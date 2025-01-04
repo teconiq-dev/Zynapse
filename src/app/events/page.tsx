@@ -8,7 +8,9 @@ export default function EventsPage() {
   return (
     <div className="flex z-10 flex-col items-center justify-start w-full h-full gap-10 p-8 lg:p-14">
       <Boxes className="hidden lg:flex" />
-      <h1 className="text-6xl mb-10 font-monoton">Tech Fest Events</h1>
+      <h1 className="text-5xl md:text-6xl text-center mb-10 font-monoton">
+        Tech Fest Events
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <EventCard
           title="Hackathon"
@@ -64,11 +66,11 @@ function EventCard({ title, description, registered = false }) {
         <p>{description}</p>
         <div className="card-actions justify-end">
           {registered ? (
+            <div className="badge badge-secondary">Registered</div>
+          ) : (
             <button className="btn btn-sm btn-primary">
               <Link href="/register">Register</Link>
             </button>
-          ) : (
-            <button className="btn btn-sm btn-ghost">Registered</button>
           )}
         </div>
       </div>

@@ -72,10 +72,15 @@ export const Navbar = ({ children }) => {
           className="drawer-overlay"
         ></label>
         <div className="bg-base-200 min-h-full w-64 p-4 flex items-start justify-center">
-          <ul className="menu w-fit space-y-2">
+          <ul className="menu w-full space-y-2">
             {/* Sidebar content here */}
             <li>
               <ThemeSwitcher />
+            </li>
+            <li>
+              <button className="btn btn-outline sm:btn-md lg:btn-lg">
+                <Link href="/">Home</Link>
+              </button>
             </li>
             <li>
               <button className="btn btn-outline sm:btn-md lg:btn-lg">
