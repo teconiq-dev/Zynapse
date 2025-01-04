@@ -1,5 +1,6 @@
 import { Boxes } from "@/components/ui/background-boxes";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function EventsPage() {
   return (
@@ -12,44 +13,53 @@ export default function EventsPage() {
         <EventCard
           title="Hackathon"
           description="48 hours brain storming with exciting price"
+          imageSrc="/Hackathon.jpeg"
         />
         <EventCard
           title="AR Treasure Hunt"
           description="Find hidden treasures using AR technology."
+          imageSrc="/AR_treasure_hunt.jpeg"
         />
         <EventCard
           title="Debugging"
           description="Test your debugging skills in this intense competition."
+          imageSrc="/debugging.jpeg"
         />
         <EventCard
           title="Web Development"
           description="Showcase your web development prowess."
+          imageSrc="/web-design.jpeg"
         />
         <EventCard
           title="Relay Coding"
           description="Team up and code in a relay format."
+          imageSrc="/relay_coding.jpeg"
         />
         <EventCard
           title="Tech Quiz"
           description="Prove your tech knowledge in this quiz."
+          imageSrc="/Tech_quiz.jpeg"
         />
         <EventCard
           title="PPT Presentation"
           description="Present your ideas and innovations."
+          imageSrc="/PPT_present.jpeg"
         />
       </div>
     </div>
   );
 }
 
-function EventCard({ title, description }) {
+function EventCard({ title, description, imageSrc }) {
   return (
     <div className="card bg-base-100 image-full w-full shadow-xl">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+          <Image
+              src={imageSrc}
+              alt={title}
+              layout="fill"
+              objectFit="cover"
+          />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
