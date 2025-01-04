@@ -1,16 +1,18 @@
 import { Boxes } from "@/components/ui/background-boxes";
 import Link from "next/link";
 import Image from "next/image";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
+
 
 export default function EventsPage() {
   return (
     <div className="flex z-10 flex-col items-center justify-start w-full h-full gap-10 p-8 lg:p-14">
       <Boxes className="hidden lg:flex" />
-      <h1 className="text-4xl font-bold mb-10 font-monoton">
-        Tech Fest Events
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <EventCard
+        <VelocityScroll className="font-monoton first-letter:0.5em ">
+             Tech Fest Events
+        </VelocityScroll>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <EventCard
           title="Hackathon"
           description="48 hours brain storming with exciting price"
           imageSrc="/Hackathon.jpeg"
@@ -52,8 +54,8 @@ export default function EventsPage() {
 
 function EventCard({ title, description, imageSrc }) {
   return (
-    <div className="card bg-base-100 image-full w-full shadow-xl">
-      <figure>
+    <div className="card bg-base-100 image-full w-full shadow-xl rounded-lg">
+      <figure className="rounded-lg overflow-hidden">
           <Image
               src={imageSrc}
               alt={title}
