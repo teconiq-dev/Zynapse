@@ -1,77 +1,75 @@
-"use client";
-import { UserDetails } from "@/components/context/userContext";
 import { Boxes } from "@/components/ui/background-boxes";
 import Link from "next/link";
+import Image from "next/image";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
+
 
 export default function EventsPage() {
-  const { registrationDetails } = UserDetails();
   return (
     <div className="flex z-10 flex-col items-center justify-start w-full h-full gap-10 p-8 lg:p-14">
       <Boxes className="hidden lg:flex" />
-      <h1 className="text-5xl md:text-6xl text-center mb-10 font-monoton">
-        Tech Fest Events
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <EventCard
+        <VelocityScroll className="font-monoton first-letter:0.5em ">
+             Tech Fest Events
+        </VelocityScroll>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <EventCard
           title="Hackathon"
           description="48 hours brain storming with exciting price"
-          registered={registrationDetails?.event?.includes("Hackathon")}
+          imageSrc="/Hackathon.jpeg"
         />
         <EventCard
           title="AR Treasure Hunt"
           description="Find hidden treasures using AR technology."
-          registered={registrationDetails?.event?.includes("AR Treasure Hunt")}
+          imageSrc="/AR_treasure_hunt.jpeg"
         />
         <EventCard
           title="Debugging"
           description="Test your debugging skills in this intense competition."
-          registered={registrationDetails?.event?.includes("Debugging")}
+          imageSrc="/debugging.jpeg"
         />
         <EventCard
           title="Web Development"
           description="Showcase your web development prowess."
-          registered={registrationDetails?.event?.includes("Web Development")}
+          imageSrc="/web-design.jpeg"
         />
         <EventCard
           title="Relay Coding"
           description="Team up and code in a relay format."
-          registered={registrationDetails?.event?.includes("Relay Coding")}
+          imageSrc="/relay_coding.jpeg"
         />
         <EventCard
           title="Tech Quiz"
           description="Prove your tech knowledge in this quiz."
-          registered={registrationDetails?.event?.includes("Tech Quiz")}
+          imageSrc="/Tech_quiz.jpeg"
         />
         <EventCard
           title="PPT Presentation"
           description="Present your ideas and innovations."
-          registered={registrationDetails?.event?.includes("PPT Presentation")}
+          imageSrc="/PPT_present.jpeg"
         />
       </div>
     </div>
   );
 }
 
-function EventCard({ title, description, registered = false }) {
+function EventCard({ title, description, imageSrc }) {
   return (
-    <div className="card bg-base-100 image-full w-full shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+    <div className="card bg-base-100 image-full w-full shadow-xl rounded-lg">
+      <figure className="rounded-lg overflow-hidden">
+          <Image
+              src={imageSrc}
+              alt={title}
+              layout="fill"
+              objectFit="cover"
+          />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          {registered ? (
-            <div className="badge badge-secondary">Registered</div>
-          ) : (
-            <button className="btn btn-sm btn-primary">
-              <Link href="/register">Register</Link>
-            </button>
-          )}
+          <button className="btn btn-sm btn-primary">
+            <Link href="/register">Register</Link>
+          </button>
         </div>
       </div>
     </div>
