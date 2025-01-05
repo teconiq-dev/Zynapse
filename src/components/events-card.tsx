@@ -18,20 +18,12 @@ export function EventCard({ title, description, imageSrc, url = null }) {
   const handleUpdateEvent = async () => {
     setLoading(true);
     const newEvent = {
-      ...registrationDetails,
       event: [...registrationDetails.event, title],
     };
     try {
       await updateDetails(user.email, newEvent);
       const details = await getDetails(user.email!);
-      setRegistrationDetails({
-        fullName: details?.fullName || "",
-        phoneNo: details?.phoneNo || "",
-        event: details?.event || [""],
-        collegeName: details?.collegeName || "",
-        course: details?.course || "",
-        yearOfStudy: details?.yearOfStudy || "",
-      });
+      setRegistrationDetails(details);
     } catch (error) {
       console.error("Error updating details: ", error);
     } finally {
