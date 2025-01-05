@@ -9,12 +9,14 @@ type EventCardProps = {
   description: string;
   imageSrc: string;
   url?: string | null;
+  rules: { do: string[]; dont: string[] };
 };
 export function EventCard({
   title,
   description,
   imageSrc,
   url = null,
+  rules,
 }: EventCardProps) {
   const {
     user,
@@ -47,102 +49,108 @@ export function EventCard({
       {loading ? (
         <div className="skeleton h-56 w-full"></div>
       ) : (
-        <div className="card bg-base-100 image-full w-full shadow-xl rounded-lg">
+        <div className="card bg-transparent image-full w-full shadow-xl rounded-lg">
           <figure className="rounded-lg overflow-hidden">
             <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{title}</h2>
             <p>{description}</p>
-            <div className="card-actions justify-end mt-8">
+            <div className="card-actions justify-end items-center mt-8">
               <div className="z-20">
-                <button className="btn" onClick={() => document.getElementById('my_modal_5').showModal()}>Rules</button>
-                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                <button
+                  className="btn btn-sm"
+                  onClick={() => document.getElementById(title).showModal()}
+                >
+                  Rules
+                </button>
+                <dialog
+                  id={title}
+                  className="modal modal-bottom sm:modal-middle"
+                >
                   <div className="modal-box">
-                    <div className="mockup-code">
-                      <pre data-prefix="$" className="bg-warning text-warning-content"><code>Rules and Regulations</code></pre>
-                      <pre data-prefix=">" className="text-warning"><code>Do's...</code></pre>
-                      <pre data-prefix=">" className="text-success"><code>Dont's!</code></pre>
-                    </div>
+                    <EventRules rules={rules} />
                     <div className="modal-action">
-                      <button className="btn">Close</button>
+                      <form method="dialog">
+                        <button className="btn">Close</button>
+                      </form>
                     </div>
                   </div>
                 </dialog>
               </div>
               {registered ? (
-                  <button className="badge badge-secondary">Registered</button>
+                <button className="badge badge-secondary">Registered</button>
               ) : (
-                  <>
-                    {/* Open the modal using document.getElementById('ID').showModal() method */}
-                    <button
-                        className="btn btn-primary btn-sm"
-                        onClick={() => document.getElementById(title).showModal()}
-                    >
-                      Register
-                    </button>
-                    <dialog
-                        id={title}
-                        className="modal modal-bottom sm:modal-middle"
-                    >
-                      <div className="modal-box">
-                        <h3 className="font-bold text-lg font-audioWide">
-                          Hello{" "}
-                          <span className="ml-2">
+                <>
+                  {/* Open the modal using document.getElementById('ID').showModal() method */}
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => document.getElementById(title).showModal()}
+                  >
+                    Register
+                  </button>
+                  <dialog
+                    id={title}
+                    className="modal modal-bottom sm:modal-middle"
+                  >
+                    <div className="modal-box">
+                      <h3 className="font-bold text-lg font-audioWide">
+                        Hello{" "}
+                        <span className="ml-2">
                           {registrationDetails?.fullName}
                         </span>
-                          !
-                        </h3>
-                        {dataFilled ? (
-                            <>
-                              <p className="py-4">
-                                Are you sure you want to register for{" "}
-                                <span className="text-secondary-foreground">
+                        !
+                      </h3>
+                      {dataFilled ? (
+                        <>
+                          <p className="py-4">
+                            Are you sure you want to register for{" "}
+                            <span className="text-secondary-foreground">
                               {title}
                             </span>
-                                ?
-                              </p>
-                              <div className="modal-action">
-                                <form method="dialog">
-                                  {/* if there is a button in form, it will close the modal */}
-                                  <button className="btn btn-outline btn-warning mr-2">
-                                    cancel
-                                  </button>
-                                  {url ? (
-                                      <Link href={url}>
-                                        <button className="btn btn-accent">
-                                          Team registration
-                                        </button>
-                                      </Link>
-                                  ) : (
-                                      <button
-                                          onClick={handleUpdateEvent}
-                                          className="btn btn-secondary"
-                                      >
-                                        Register
-                                      </button>
-                                  )}
-                                </form>
-                              </div>
-                            </>
-                        ) : (
-                            <>
-                              <p className="py-4">
-                                Please fill in your personal details to register for
-                                this event.
-                              </p>
-                              <div className="modal-action">
-                                <Link href="/register">
-                                  <button className="btn">
-                                    Participant registration
+                            ?
+                          </p>
+                          <div className="modal-action">
+                            <form method="dialog">
+                              {/* if there is a button in form, it will close the modal */}
+                              <button className="btn btn-outline btn-warning mr-2">
+                                cancel
+                              </button>
+                              {url ? (
+                                <Link href={url}>
+                                  <button className="btn btn-accent">
+                                    Team registration
                                   </button>
                                 </Link>
-                              </div>
-                            </>
-                        )}
-                      </div>
-                    </dialog>
-                  </>
+                              ) : (
+                                <button
+                                  onClick={handleUpdateEvent}
+                                  className="btn btn-secondary"
+                                >
+                                  Register
+                                </button>
+                              )}
+                            </form>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <p className="py-4">
+                            Please fill in your personal details to register for
+                            this event.
+                          </p>
+                          <div className="modal-action">
+                            <Link href="/register">
+                              <button className="btn">
+                                Participant registration
+                              </button>
+                            </Link>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </dialog>
+                </>
               )}
             </div>
           </div>
@@ -152,10 +160,22 @@ export function EventCard({
   );
 }
 
-function Modal({children}) {
+function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
   return (
-      <dialog className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">{children}</div>
-      </dialog>
+    <div className="mockup-code">
+      <pre data-prefix="$" className="bg-warning text-warning-content">
+        <code>Rules and Regulations</code>
+      </pre>
+      {rules?.do.map((rule, index) => (
+        <pre key={index} data-prefix=">" className="text-success">
+          <code>{rule}</code>
+        </pre>
+      ))}
+      {rules?.dont.map((rule, index) => (
+        <pre key={index} data-prefix=">" className="text-success">
+          <code>{rule}</code>
+        </pre>
+      ))}
+    </div>
   );
 }

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
-    "@react-three/drei": "^9.120.4",
+    "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
@@ -24,7 +24,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^11.15.0",
     "next": "14.2.20",
-    "postprocessing": "^6.36.5",
+    "postprocessing": "^6.36.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
@@ -34,7 +34,7 @@
     "three-custom-shader-material": "^5.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.10",
+    "@types/node": "^20.17.11",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/three": "^0.170.0",

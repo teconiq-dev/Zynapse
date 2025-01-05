@@ -11,6 +11,7 @@ export default function TeamEvents() {
           description={event.description}
           imageSrc={event.imageSrc}
           url={event.url}
+          rules={event.rules}
         />
       ))}
     </div>
