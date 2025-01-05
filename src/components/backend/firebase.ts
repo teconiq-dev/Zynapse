@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -29,4 +28,17 @@ export const getDetails = async (email: string) => {
     console.log("No such document!");
     return null;
   }
+};
+
+export const updateDetails = async (email: string, data: any) => {
+  // Create a reference to the specific document
+  const docRef = doc(db, "registrations", email);
+
+  updateDoc(docRef, data)
+    .then(() => {
+      console.log("Document field updated successfully");
+    })
+    .catch((error) => {
+      console.log("Error updating document:", error);
+    });
 };

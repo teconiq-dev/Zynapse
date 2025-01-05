@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="footer footer-center bg-secondary text-white p-10">
+    <footer className="footer footer-center bg-secondary text-white p-10 z-20">
       <aside>
         <Image
           src="/logo.png"
