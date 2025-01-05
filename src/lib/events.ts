@@ -25,8 +25,8 @@ export const individualEvents = [
     description: "Test your debugging skills in this intense competition.",
     imageSrc: "/debugging.jpeg",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Pay close attention to the questions in the preliminary quiz.", "Writing materials for the quiz and systems for debugging will be provided","Judges and organizers decision will be final"],
+      dont: ["No external reference or usage of internet from any device is allowed","Do not end debugging without identifying and correcting all errors","No extra time would be allocated to anyone"],
     },
   },
   {
@@ -35,8 +35,8 @@ export const individualEvents = [
     description: "Showcase your web development prowess.",
     imageSrc: "/web-design.jpeg",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Ensure you have a good understanding of HTML, CSS, and JavaScript","System will be provided" ,"Pay close attention to the specific task provided at the start ","The result will be based on equal points for design, functionality and interactivity"],
+      dont: ["Avoid using external libraries or frameworks unless specified", "Do not bring any external reference materials or notes","Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
   {
@@ -45,8 +45,8 @@ export const individualEvents = [
     description: "Present your ideas and innovations.",
     imageSrc: "/PPT_present.jpeg",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Participants may select any topic related to COmputer Science and Technology","Suggested topics include but are not limited to: \n\t\tTechnology and Innovation \n\t\tScience and Society \n\t\tSocial issues and Ethics \n\t\tFuture-Oriented topics \n\t\tArtificial Intelligence and Beyond \n\t\tSustainability and Technology","The presentation should be between 5-7 minutes and maximum of 15 slides"],
+      dont: ["The presentation should be in English","All content must be original. Plagiarism will result in immediate disqualification", "Each team can have a maximum of 2 members"],
     },
   },
 ];
@@ -72,8 +72,8 @@ export const teamEvents = [
     team: true,
     url: "/register/relay-coding",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Team will consist of maximum 3 members","Only the team lead needs to register but is required to add members details", "Utilize the 5 minutes before the relay begins to discuss your strategy with your team","Each team member should pick up where the previous member left off based solely on the code]"],
+      dont: ["Strictly no verbal, written, or non-verbal communication is allowed during the event", "Any form of communication between team members during the coding phase will result in immediate disqualification","Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
   {
