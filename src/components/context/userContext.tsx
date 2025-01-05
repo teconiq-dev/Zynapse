@@ -10,6 +10,8 @@ interface UserContextType {
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
   registrationDetails: any;
   setRegistrationDetails: React.Dispatch<React.SetStateAction<any>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 type RegistrationDetails = {
   fullName: string;
@@ -24,6 +26,7 @@ const UserContext = createContext<UserContextType | null>(null);
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const [registrationDetails, setRegistrationDetails] =
     useState<RegistrationDetails>({
       fullName: "",
@@ -48,6 +51,7 @@ export default function UserProvider({ children }) {
             course: details?.course || "",
             yearOfStudy: details?.yearOfStudy || "",
           });
+          setLoading(false);
         } catch (error) {
           console.error("Error fetching details: ", error);
         }
@@ -61,6 +65,7 @@ export default function UserProvider({ children }) {
           course: "",
           yearOfStudy: "",
         });
+        setLoading(false);
       }
     });
 
@@ -68,7 +73,16 @@ export default function UserProvider({ children }) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, registrationDetails }}>
+    <UserContext.Provider
+      value={{
+        user,
+        setUser,
+        registrationDetails,
+        setRegistrationDetails,
+        loading,
+        setLoading,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
