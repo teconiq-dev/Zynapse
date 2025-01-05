@@ -4,6 +4,12 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { UserDetails } from "@/components/context/userContext";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { CircleAlert } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+
 
 export default function RegisterPage() {
   const { user, registrationDetails } = UserDetails();
@@ -43,6 +49,16 @@ export default function RegisterPage() {
 
   return (
     <div className="container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
+      <div className="absolute inset-0 opacity-50">
+        <Image
+            src="/register_bg.svg"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            quality="100"
+        />
+      </div>
+      <div className="relative z-10 bg-opacity-75">
       {!user ? (
         <>
           <h2 className="text-2xl md:text-6xl font-exo2 my-20">
@@ -54,12 +70,36 @@ export default function RegisterPage() {
           <h1 className="text-2xl md:text-6xl font-monoton mb-14">
             Registration
           </h1>
+          <AnimatedGradientText>
+            😌 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+            <span
+                className={cn(
+                    `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                )}
+            >
+          You can select events after registration.
+        </span>
+            <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
+
+          <AnimatedGradientText>
+            🙂 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+            <span
+                className={cn(
+                    `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                )}
+            >
+          For team-based events, members registration will be on events page.
+        </span>
+            <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
+
           <div className="divider divider-primary">
             Participant Registration
           </div>
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 max-w-4xl p-4 md:p-8 lg:p-14 shadow-md shadow-primary rounded-lg bg-gradient-to-r from-fuchsia-700/10 to-purple-600/20"
+            className="space-y-4 max-w-4xl p-4 md:p-8 lg:p-14 shadow-md shadow-primary rounded-lg backdrop-blur-sm bg-gradient-to-r from-fuchsia-700/10 to-purple-600/20"
           >
             <div className="form-control">
               <label className="label">
@@ -152,6 +192,7 @@ export default function RegisterPage() {
           )}
         </>
       )}
+      </div>
     </div>
   );
 }
