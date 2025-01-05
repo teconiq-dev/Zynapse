@@ -4,7 +4,18 @@ import Image from "next/image";
 import { UserDetails } from "@/components/context/userContext";
 import { getDetails, updateDetails } from "./backend/firebase";
 
-export function EventCard({ title, description, imageSrc, url = null }) {
+type EventCardProps = {
+  title: string;
+  description: string;
+  imageSrc: string;
+  url?: string | null;
+};
+export function EventCard({
+  title,
+  description,
+  imageSrc,
+  url = null,
+}: EventCardProps) {
   const {
     user,
     registrationDetails,

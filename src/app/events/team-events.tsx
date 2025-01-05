@@ -1,4 +1,3 @@
-"use client";
 import { EventCard } from "@/components/events-card";
 import { teamEvents } from "@/lib/events";
 
