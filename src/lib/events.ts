@@ -14,6 +14,7 @@ export const individualEvents = [
     title: "AR Treasure Hunt",
     description: "Find hidden treasures using AR technology.",
     imageSrc: "/AR_treasure_hunt.jpeg",
+
   },
   {
     id: 2,
