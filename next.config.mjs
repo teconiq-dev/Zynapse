@@ -13,6 +13,9 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ['images.unsplash.com','assets.aceternity.com'],
+  },
 };
 
 export default nextConfig;
