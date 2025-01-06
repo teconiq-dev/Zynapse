@@ -12,14 +12,16 @@ type EventCardProps = {
   imageSrc: string;
   url?: string | null;
   rules: { do: string[]; dont: string[] };
+  team?: boolean;
 };
- export function EventCard({
+export function EventCard({
   id,
   title,
   description,
   imageSrc,
   url = null,
   rules,
+  team = false,
 }: EventCardProps) {
   const {
     user,
@@ -53,8 +55,7 @@ type EventCardProps = {
         <div className="skeleton h-64 w-full"></div>
       ) : (
         <CardContainer className="z-10">
-          <CardBody
-            className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-black/10 backdrop-blur dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
+          <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-black/10 backdrop-blur dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -71,8 +72,8 @@ type EventCardProps = {
             <CardItem translateZ="100" className="w-full mt-4">
               <Image
                 src={imageSrc}
-                height={url? 576 : 416}
-                width={url? 448 : 608}
+                height={url ? 576 : 416}
+                width={url ? 448 : 608}
                 className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
                 alt="thumbnail"
               />
@@ -109,7 +110,7 @@ type EventCardProps = {
                 translateZ={20}
                 className="px-4 py-2 rounded-xl text-xs font-bold"
               >
-                {registered ? (
+                {registered || team ? (
                   <button className="badge badge-secondary">Registered</button>
                 ) : (
                   <>
@@ -128,8 +129,8 @@ type EventCardProps = {
                         <h3 className="font-bold text-lg font-audioWide">
                           Hello{" "}
                           <span className="ml-2">
-                          {registrationDetails?.fullName}
-                        </span>
+                            {registrationDetails?.fullName}
+                          </span>
                           !
                         </h3>
                         {dataFilled ? (
@@ -137,8 +138,8 @@ type EventCardProps = {
                             <p className="py-4">
                               Are you sure you want to register for{" "}
                               <span className="text-secondary-foreground">
-                              {title}
-                            </span>
+                                {title}
+                              </span>
                               ?
                             </p>
                             <div className="modal-action">
@@ -167,8 +168,8 @@ type EventCardProps = {
                         ) : (
                           <>
                             <p className="py-4">
-                              Please fill in your personal details to register for
-                              this event.
+                              Please fill in your personal details to register
+                              for this event.
                             </p>
                             <div className="modal-action">
                               <Link href="/register">
@@ -187,7 +188,7 @@ type EventCardProps = {
             </div>
           </CardBody>
         </CardContainer>
-        )}
+      )}
     </>
   );
 }
@@ -199,15 +200,24 @@ function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
         <code>Rules and Regulations</code>
       </pre>
       {rules?.do.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-success font-monoton text-lg ">
+        <pre
+          key={index}
+          data-prefix=">"
+          className="text-success font-monoton text-lg "
+        >
           <code>{rule}</code>
         </pre>
       ))}
       {rules?.dont.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-warning font-monoton text-lg">
+        <pre
+          key={index}
+          data-prefix=">"
+          className="text-warning font-monoton text-lg"
+        >
           <code>{rule}</code>
         </pre>
       ))}
     </div>
   );
 }
+
