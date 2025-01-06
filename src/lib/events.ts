@@ -22,7 +22,7 @@ export const individualEvents = [
   {
     id: 2,
     title: "Debugging",
-    description: "Test your debugging skills in this intense competition.",
+    description: "Fix bugs, compete, and enhance skills.",
     imageSrc: "/debugging.jpeg",
     rules: {
       do: ["Pay close attention to the questions in the preliminary quiz.", "Writing materials for the quiz and systems for debugging will be provided","Judges and organizers decision will be final"],
@@ -56,7 +56,7 @@ export const teamEvents = [
     id: 5,
     title: "Hackathon",
     description: "36 hours brain storming with exciting price",
-    imageSrc: "/Hackathon.jpeg",
+    imageSrc: "/Hackathon.jpg",
     team: true,
     url: "/register/hackathon",
     rules: {
