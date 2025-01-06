@@ -199,12 +199,12 @@ function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
         <code>Rules and Regulations</code>
       </pre>
       {rules?.do.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-success font-monoton text-xl ">
+        <pre key={index} data-prefix=">" className="text-success font-monoton text-lg ">
           <code>{rule}</code>
         </pre>
       ))}
       {rules?.dont.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-warning font-monoton text-xl">
+        <pre key={index} data-prefix=">" className="text-warning font-monoton text-lg">
           <code>{rule}</code>
         </pre>
       ))}
