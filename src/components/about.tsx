@@ -9,8 +9,9 @@ export const About = () => {
             description:
                 "It’s the first step towards building a vibrant hub for technological excellence at Bharata Mata College. This pioneering platform is dedicated to highlighting fresh ideas, fostering creativity, and providing students the chance to showcase their skills and innovative thinking.",
             content: (
-                <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-                    <Image src="/logo.png" alt="Image" layout="fill" objectFit="contain"/>
+                <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-400),var(--blue-900))] flex items-center justify-center text-white">
+                    <Image src="/logo.png" alt="Image" width={300} height={300}
+                    objectFit="contain"/>
                 </div>
             ),
         },
