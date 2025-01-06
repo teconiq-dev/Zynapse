@@ -7,6 +7,7 @@ export default function IndividualEvents() {
       {individualEvents.map((event) => (
         <EventCard
           key={event.id}
+          id={event.id.toString()}
           title={event.title}
           description={event.description}
           imageSrc={event.imageSrc}

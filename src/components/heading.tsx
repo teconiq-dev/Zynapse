@@ -7,16 +7,9 @@ import Link from "next/link";
 
 export function Heading() {
   const texts = [
-    "Hello",
-    "Welcome",
-    "Engaging",
-    "Challenge",
-    "Solution",
-    "Innovate",
-    "Explore",
-    "Think",
-    "Tech",
-    "Fest",
+  "Ignite",
+    "Inspire",
+    "Innovate"
   ];
 
   return (
@@ -60,19 +53,16 @@ export function Heading() {
           },
         }}
       />
-      <div className="flex flex-col items-center justify-evenly w-full min-h-screen gap-6 pt-5 md:pt-14">
-        <h1 className="md:text-7xl p-4 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-950 from-0% via-purple-950/40 via-10% to-transparent to-100% rounded-3xl font-audioWide text-4xl lg:text-8xl font-bold text-center text-white relative z-20">
+      <div className="flex flex-col items-center justify-around w-full min-h-screen p-4 pt-5 md:pt-10">
+        <h1
+          className="md:text-7xl p-4 rounded-3xl font-audioWide text-4xl lg:text-8xl font-bold text-center text-white relative z-20">
           <Cover>ZYNAPSE</Cover>
+          <MorphingText className="mt-6" texts={texts}/>
         </h1>
-        <div className="flex justify-between items-center flex-wrap w-full gap-48 mb-20">
-          <MorphingText className="hidden md:block" texts={texts} />
-          <CountdownTimer />
-        </div>
-        <div className="flex items-center justify-center w-full">
+          <CountdownTimer/>
           <button className="btn btn-outline btn-primary btn-lg z-20">
             <Link href="/events">Register Now</Link>
           </button>
-        </div>
       </div>
     </div>
   );
