@@ -15,8 +15,13 @@ export const individualEvents = [
     description: "Showcase your web development prowess.",
     imageSrc: "/web-design.jpeg",
     rules: {
-      do: ["Ensure you have a good understanding of HTML, CSS, and JavaScript","System will be provided" ,"Pay close attention to the specific task provided at the start ","The result will be based on equal points for design, functionality and interactivity"],
-      dont: ["Avoid using external libraries or frameworks unless specified", "Do not bring any external reference materials or notes","Follow all instructions and decisions provided by the organizers and judges"],
+      do: ["Ensure you have a good understanding of HTML, CSS, and JavaScript\n\t\t",
+        "System will be provided\n\t\t" ,
+        "Pay close attention to the specific task provided at the start \n\t\t",
+        "The result will be based on equal points for design, functionality and interactivity\n\t\t"],
+      dont: ["Avoid using external libraries or frameworks unless specified\n\t\t", 
+        "Do not bring any external reference materials or notes\n\t\t",
+        "Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
   {
@@ -25,8 +30,8 @@ export const individualEvents = [
     description: "Fix bugs, compete, and enhance skills.",
     imageSrc: "/debugging.jpeg",
     rules: {
-      do: ["Pay close attention to the questions in the preliminary quiz.", "Writing materials for the quiz and systems for debugging will be provided","Judges and organizers decision will be final"],
-      dont: ["No external reference or usage of internet from any device is allowed","Do not end debugging without identifying and correcting all errors(Syntax, Logical, or Semantic)","No extra time would be allocated to anyone"],
+      do: ["Pay close attention to the questions in the preliminary quiz.\n\t\t", "Writing materials for the quiz and systems for debugging will be provided\n\t\t","Judges and organizers decision will be final\n\t\t"],
+      dont: ["No external reference or usage of internet from any device is allowed\n\t\t","Do not end debugging without identifying and correcting all errors(Syntax, Logical, or Semantic)\n\t\t","No extra time would be allocated to anyone"],
     },
   },
   {
@@ -35,8 +40,11 @@ export const individualEvents = [
     description: "Dive into action! Join the PES competition",
     imageSrc: "/Pes-tour.jpeg",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Total number of rounds will be decided on terms of total entry in the tournament.\n\t\t",
+        "Only 3 iconic cards, 2 legend cards, 2 featured cards are allowed.\n\t\t",
+        "Once an opponent complaints that you are a long baller or a lag cheater(with video proof), you will be disqualified."
+      ],
+      dont: [],
     },
   },
   {
@@ -60,16 +68,16 @@ export const teamEvents = [
     team: true,
     url: "/register/hackathon",
     rules: {
-      do: ["Each team consist of 2-4 members",
-        "Only the team lead needs to register but is required to add members details",
-        "The team lead will be the main point of contact between the team and organizers",
-        "Caution deposit of per head 100 will be taken which will be refunded after the event",
-        "Participants are required to bring their own laptops and other necessary equipment",
-        "Abstract and roadmap should be submitted with 2 hours",],
-      dont: ["Judges will evaluate progress in every 4 hours",
-        "Wifi and accommodation with meals and refreshment will be provided",
-        "Results will be based on functionality and working of the submitted project",
-        "Follow all instructions and decisions provided by the organizers and judges"],
+      do: ["Each team consist of 2-4 members\n\t\t",
+        "Only the team lead needs to register but is required to add members details\n\t\t",
+        "The team lead will be the main point of contact between the team and organizers\n\t\t",
+        "Caution deposit of per head 100 will be taken which will be refunded after the event\n\t\t",
+        "Participants are required to bring their own laptops and other necessary equipment\n\t\t",
+        "Abstract and roadmap should be submitted with 2 hours\n\t\t",],
+      dont: ["Judges will evaluate progress in every 4 hours\n\t\t",
+        "Wifi and accommodation with meals and refreshment will be provided\n\t\t",
+        "Results will be based on functionality and working of the submitted project\n\t\t",
+        "Follow all instructions and decisions provided by the organizers and judges\n\t\t"],
     },
   },
   {

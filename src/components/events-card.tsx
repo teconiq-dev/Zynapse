@@ -195,16 +195,16 @@ type EventCardProps = {
 function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
   return (
     <div className="mockup-code md:mockup-window">
-      <pre data-prefix="$" className="bg-warning text-warning-content">
+      <pre data-prefix="$" className="bg-warning text-warning-content text-2xl">
         <code>Rules and Regulations</code>
       </pre>
       {rules?.do.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-success">
+        <pre key={index} data-prefix=">" className="text-success font-monoton text-xl ">
           <code>{rule}</code>
         </pre>
       ))}
       {rules?.dont.map((rule, index) => (
-        <pre key={index} data-prefix=">" className="text-warning">
+        <pre key={index} data-prefix=">" className="text-warning font-monoton text-xl">
           <code>{rule}</code>
         </pre>
       ))}
