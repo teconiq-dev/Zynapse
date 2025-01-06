@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
-import { updateDetails } from "@/components/backend/firebase";
+import { getDetails, updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
 import Image from "next/image";
 
 export default function HackathonRegistration() {
-  const { user, registrationDetails } = UserDetails();
+  const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const router = useRouter();
 
   const [showFourthMember, setShowFourthMember] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [paymentNumber, setPaymentNumber] = useState<string>("");
+  const [usedRegisteredPhone, setUsedRegisteredPhone] = useState(true);
   const [teamData, setTeamData] = useState<TeamDetails[]>([
     {
       member: 2,
@@ -54,11 +56,17 @@ export default function HackathonRegistration() {
     try {
       const newEvent = {
         hackathon: teamData,
+        paymentNumber: usedRegisteredPhone
+          ? registrationDetails.phoneNo
+          : paymentNumber,
       };
       console.log(newEvent);
       await updateDetails(user.email, newEvent)
         .then(() => {
-          console.log("Document successfully written!");
+          const details = await getDetails(user.email!);
+          setRegistrationDetails(details);
+        })
+        .then(() => {
           setSubmitted(true);
           router.push("/competitions");
         })
@@ -151,6 +159,39 @@ export default function HackathonRegistration() {
                   </span>
                 </label>
               </div>
+              <div className="form-control">
+                <label className="label cursor-pointer">
+                  <span className="label-text">
+                    Used registered phone number for payment?
+                  </span>
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    checked={usedRegisteredPhone}
+                    onChange={() =>
+                      setUsedRegisteredPhone(!usedRegisteredPhone)
+                    }
+                  />
+                </label>
+              </div>
+
+              {!usedRegisteredPhone && (
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">
+                      Phone number used for payment
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    name="paymentNumber"
+                    value={paymentNumber}
+                    onChange={(e) => setPaymentNumber(e.target.value)}
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+              )}
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
                   Register

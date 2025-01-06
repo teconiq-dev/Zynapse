@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { doc, setDoc } from "firebase/firestore";
-import { db, getDetails } from "@/components/backend/firebase";
+import { createDetails, getDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { UserDetails } from "@/components/context/userContext";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
@@ -33,7 +32,7 @@ export default function RegisterPage() {
       return;
     }
     try {
-      await setDoc(doc(db, "registrations", user?.email), {
+      await createDetails(user?.email, {
         ...formData,
       });
       console.log("Document successfully written!");

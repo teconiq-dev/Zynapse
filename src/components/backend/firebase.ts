@@ -1,6 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { doc, getDoc, updateDoc, getFirestore } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  getDoc,
+  updateDoc,
+  getFirestore,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -40,5 +46,19 @@ export const updateDetails = async (email: string, data: any) => {
     })
     .catch((error) => {
       console.log("Error updating document:", error);
+    });
+};
+
+export const createDetails = async (email: string, data: any) => {
+  // Create a reference to the specific document
+  const docRef = doc(db, "registrations", email);
+
+  // Set the data in the document
+  await setDoc(docRef, data)
+    .then(() => {
+      console.log("Document successfully written!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
     });
 };

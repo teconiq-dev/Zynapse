@@ -19,6 +19,7 @@ type UserRegistration = {
   collegeName: string;
   course: string;
   yearOfStudy: string;
+  paymentNo?: string;
 };
 export type TeamDetails = UserRegistration & {
   email: string;
