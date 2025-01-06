@@ -11,12 +11,12 @@ export const eventsList = [
 export const individualEvents = [
   {
     id: 1,
-    title: "AR Treasure Hunt",
-    description: "Find hidden treasures using AR technology.",
-    imageSrc: "/AR_treasure_hunt.jpeg",
+    title: "Web Development",
+    description: "Showcase your web development prowess.",
+    imageSrc: "/web-design.jpeg",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["Ensure you have a good understanding of HTML, CSS, and JavaScript","System will be provided" ,"Pay close attention to the specific task provided at the start ","The result will be based on equal points for design, functionality and interactivity"],
+      dont: ["Avoid using external libraries or frameworks unless specified", "Do not bring any external reference materials or notes","Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
   {
@@ -31,12 +31,12 @@ export const individualEvents = [
   },
   {
     id: 3,
-    title: "Web Development",
-    description: "Showcase your web development prowess.",
-    imageSrc: "/web-design.jpeg",
+    title: "E-football",
+    description: "Dive into action! Join the PES competition",
+    imageSrc: "/Pes-tour.jpeg",
     rules: {
-      do: ["Ensure you have a good understanding of HTML, CSS, and JavaScript","System will be provided" ,"Pay close attention to the specific task provided at the start ","The result will be based on equal points for design, functionality and interactivity"],
-      dont: ["Avoid using external libraries or frameworks unless specified", "Do not bring any external reference materials or notes","Follow all instructions and decisions provided by the organizers and judges"],
+      do: ["Do this", "Do that"],
+      dont: ["Don't do this", "Don't do that"],
     },
   },
   {

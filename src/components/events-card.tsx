@@ -5,13 +5,15 @@ import { UserDetails } from "@/components/context/userContext";
 import { getDetails, updateDetails } from "./backend/firebase";
 
 type EventCardProps = {
+  id: string;
   title: string;
   description: string;
   imageSrc: string;
   url?: string | null;
   rules: { do: string[]; dont: string[] };
 };
-export function EventCard({
+ export function EventCard({
+  id,
   title,
   description,
   imageSrc,
@@ -85,12 +87,12 @@ export function EventCard({
                   {/* Open the modal using document.getElementById('ID').showModal() method */}
                   <button
                     className="btn btn-primary btn-sm"
-                    onClick={() => document.getElementById(title).showModal()}
+                    onClick={() => document.getElementById(id).showModal()}
                   >
                     Register
                   </button>
                   <dialog
-                    id={title}
+                    id={id}
                     className="modal modal-bottom sm:modal-middle"
                   >
                     <div className="modal-box">
