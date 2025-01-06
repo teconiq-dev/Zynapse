@@ -1,62 +1,56 @@
-import WordFadeIn from "@/components/ui/word-fade-in";
+
 import Image from "next/image";
 import BlobCursor from "@/components/ui/blob";
-import SpotlightCard from "@/components/ui/spotlight-card";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import BoxReveal from "@/components/ui/box-reveal";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export const About = () => {
+    const content = [
+        {
+            title: "ZYNAPSE 2025",
+            description:
+                "It’s the first step towards building a vibrant hub for technological excellence at Bharata Mata College. This pioneering platform is dedicated to highlighting fresh ideas, fostering creativity, and providing students the chance to showcase their skills and innovative thinking.",
+            content: (
+                <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+                    <Image src="/logo.png" alt="Image" layout="fill" objectFit="contain"/>
+                </div>
+            ),
+        },
+        {
+            title: "Bharata Mata College",
+            description:
+                "Zynapse 2025 marks the beginning of an exciting new chapter at Bharata Mata College – our first-ever tech fest, designed to ignite passion, spark innovation, and inspire the next generation of tech pioneers.",
+            content: (
+                <div className="h-full w-full  flex items-center justify-center text-white">
+                    <Image
+                        src="/bmclogo.png"
+                        layout="fill"
+                        objectFit="contain"
+                        className="h-full w-full object-cover"
+                        alt="linear board demo"
+                    />
+                </div>
+            ),
+        },
+        {
+            title: "Teconiq",
+            description:
+                "Teconiq is the driving force behind Zynapse – a newly-formed computer science association with a vision to cultivate innovation, sharpen skills, and promote hands-on learning.",
+            content: (
+                <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+                    <Image
+                        src="/teconiq.png"
+                        alt="teconiq"
+                        layout="fill"
+                        objectFit="contain"/>
+                </div>
+            ),
+        },
+    ];
   return (
-    <div className="flex flex-col justify-center items-center w-full mt-20 gap-10">
-      <BlobCursor>
-        <h1 className="font-monoton text-2xl text-center md:text-6xl mb-4">
-          About us
-        </h1>
-      </BlobCursor>
-      <SpotlightCard
-        className="custom-spotlight-card mt-20"
-        spotlightColor="rgba(0, 229, 255, 0.2)"
-      >
-        <div className="flex justify-center items-center w-full gap-14 flex-wrap">
-          <WordFadeIn
-            className="text-base md:text-lg lg:text-xl max-w-xl font-exo2"
-            words="Zynapse Tech Fest is an annual flagship technological extravaganza designed to showcase cutting-edge innovations, foster technical creativity, and provide a platform for students to demonstrate their technological prowess. The event brings together the brightest minds in computer science and technology to explore, learn, and innovate."
-          />
-          <Image src="/logo.png" width={200} height={200} alt="college logo" />
-        </div>
-      </SpotlightCard>
-      <SpotlightCard
-        className="custom-spotlight-card mt-20"
-        spotlightColor="rgba(0, 229, 255, 0.2)"
-      >
-        <div className="flex justify-center items-center w-full gap-14 flex-wrap">
-          <Image
-            src="/bmclogo.png"
-            width={200}
-            height={200}
-            alt="college logo"
-          />
-          <WordFadeIn
-            className="text-base md:text-lg lg:text-xl max-w-xl font-exo2"
-            words="The Department of Computer Science at Bharata Mata College is thrilled to present Zynapse 2025, an exciting tech fest aimed at fostering innovation, creativity, and collaboration among students and tech enthusiasts. This year's event promises to be an enriching experience filled with hackathons, competitions and workshops."
-          />
-        </div>
-      </SpotlightCard>
-      <SpotlightCard
-        className="custom-spotlight-card mt-20"
-        spotlightColor="rgba(0, 229, 255, 0.2)"
-      >
-        <div className="flex justify-center items-center w-full gap-14 flex-wrap">
-          <WordFadeIn
-            className="text-base md:text-lg lg:text-xl max-w-xl font-exo2"
-            words="Teconiq is the dedicated computer science association committed to fostering technological innovation, skill development, and collaborative learning among students. Our mission is to bridge academic knowledge with practical technological experiences, empowering students to excel in the dynamic world of computer science."
-          />
-          <Image
-            src="/teconiq.png"
-            width={200}
-            height={200}
-            alt="college logo"
-          />
-        </div>
-      </SpotlightCard>
-    </div>
+      <div className="w-screen">
+          <StickyScroll content={content}/>
+      </div>
   );
 };

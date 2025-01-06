@@ -12,6 +12,7 @@
     "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
+    "@tabler/icons-react": "^3.26.0",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
