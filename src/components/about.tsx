@@ -1,8 +1,5 @@
-
 import Image from "next/image";
-import BlobCursor from "@/components/ui/blob";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import BoxReveal from "@/components/ui/box-reveal";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export const About = () => {
@@ -50,7 +47,7 @@ export const About = () => {
     ];
   return (
       <div className="w-screen">
-          <StickyScroll content={content}/>
+              <StickyScroll content={content}/>
       </div>
   );
 };
