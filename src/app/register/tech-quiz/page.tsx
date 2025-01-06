@@ -50,7 +50,7 @@ export default function TechQuizRegistration() {
         .then(() => {
           console.log("Document successfully written!");
           setSubmitted(true);
-          router.push("/events");
+          router.push("/competitions");
         })
         .catch((error) => {
           console.error("Error writing document: ", error);

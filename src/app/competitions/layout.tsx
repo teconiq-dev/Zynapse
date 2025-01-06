@@ -1,4 +1,4 @@
-export default function EventsLayout({
+export default function CompetitionsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

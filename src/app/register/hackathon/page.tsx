@@ -4,6 +4,7 @@ import { updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
+import Image from "next/image";
 
 export default function HackathonRegistration() {
   const { user, registrationDetails } = UserDetails();
@@ -59,7 +60,7 @@ export default function HackathonRegistration() {
         .then(() => {
           console.log("Document successfully written!");
           setSubmitted(true);
-          router.push("/events");
+          router.push("/competitions");
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -136,6 +137,20 @@ export default function HackathonRegistration() {
                   Add Member
                 </button>
               )}
+              <div className="form-control mt-14 w-full flex items-center justify-center gap-4 border-t border-secondary py-5">
+                <h2 className="text-xl">Payment - UPI</h2>
+                <Image
+                  src="/payment.png"
+                  width={350}
+                  height={350}
+                  alt="payment"
+                />
+                <label className="label">
+                  <span className="label-text">
+                    Note we will refund caution deposit after the event
+                  </span>
+                </label>
+              </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
                   Register

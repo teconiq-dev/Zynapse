@@ -6,14 +6,10 @@ import { Hyperspeed } from "@/components/hyperspeed";
 import Link from "next/link";
 
 export function Heading() {
-  const texts = [
-  "Ignite",
-    "Inspire",
-    "Innovate"
-  ];
+  const texts = ["Ignite", "Inspire", "Innovate"];
 
   return (
-    <div className="w-full flex flex-col justify-center items-center relative min-h-[800px] cursor-pointer">
+    <div className="w-full flex flex-col justify-center items-center relative min-h-screen cursor-pointer">
       <Hyperspeed
         effectOptions={{
           onSpeedUp: () => {},
@@ -54,15 +50,14 @@ export function Heading() {
         }}
       />
       <div className="flex flex-col items-center justify-around w-full min-h-screen p-4 pt-5 md:pt-10">
-        <h1
-          className="md:text-7xl p-4 rounded-3xl font-audioWide text-4xl lg:text-8xl font-bold text-center text-white relative z-20">
+        <h1 className="md:text-7xl p-4 rounded-3xl font-audioWide text-4xl lg:text-8xl font-bold text-center text-white relative z-20">
           <Cover>ZYNAPSE</Cover>
-          <MorphingText className="mt-6" texts={texts}/>
+          <MorphingText className="mt-6" texts={texts} />
         </h1>
-          <CountdownTimer/>
-          <button className="btn btn-outline btn-primary btn-lg z-20">
-            <Link href="/events">Register Now</Link>
-          </button>
+        <CountdownTimer />
+        <button className="btn btn-outline btn-primary btn-lg z-20">
+          <Link href="/competitions">Register Now</Link>
+        </button>
       </div>
     </div>
   );

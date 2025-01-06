@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-import {db, getDetails} from "@/components/backend/firebase";
+import { db, getDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { UserDetails } from "@/components/context/userContext";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
@@ -40,7 +40,7 @@ export default function RegisterPage() {
       setSubmitted(true);
       const details = await getDetails(user.email!);
       setRegistrationDetails(details);
-      setTimeout(() => router.push("/events"), 3000);
+      setTimeout(() => router.push("/competitions"), 3000);
     } catch (error) {
       console.error("Error writing document: ", error);
     }
