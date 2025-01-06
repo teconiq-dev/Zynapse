@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/components/backend/firebase";
+import {db, getDetails} from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { UserDetails } from "@/components/context/userContext";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function RegisterPage() {
-  const { user, registrationDetails } = UserDetails();
+  const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const router = useRouter();
 
   const [submitted, setSubmitted] = useState(false);
@@ -38,7 +38,9 @@ export default function RegisterPage() {
       });
       console.log("Document successfully written!");
       setSubmitted(true);
-      setTimeout(() => router.push("/events"), 5000);
+      const details = await getDetails(user.email!);
+      setRegistrationDetails(details);
+      setTimeout(() => router.push("/events"), 3000);
     } catch (error) {
       console.error("Error writing document: ", error);
     }
