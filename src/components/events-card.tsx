@@ -162,7 +162,7 @@ export function EventCard({
 
 function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
   return (
-    <div className="mockup-code">
+    <div className="mockup-code md:mockup-window">
       <pre data-prefix="$" className="bg-warning text-warning-content">
         <code>Rules and Regulations</code>
       </pre>
