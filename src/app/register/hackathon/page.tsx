@@ -62,7 +62,7 @@ export default function HackathonRegistration() {
       };
       console.log(newEvent);
       await updateDetails(user.email, newEvent)
-        .then(() => {
+        .then(async () => {
           const details = await getDetails(user.email!);
           setRegistrationDetails(details);
         })
