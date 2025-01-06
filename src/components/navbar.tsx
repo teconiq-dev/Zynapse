@@ -58,6 +58,13 @@ export const Navbar = ({ children }) => {
                     </button>
                   </Link>
                 </li>
+                 <li>
+                  <Link href="/workshops" className="p-0">
+                    <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
+                      Workshops
+                    </button>
+                  </Link>
+                </li>
                 <li>
                   <Link href="/register" className="p-0">
                     <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
@@ -96,6 +103,13 @@ export const Navbar = ({ children }) => {
                 <Link href="/events">
                   <button className="btn btn-outline sm:btn-md lg:btn-lg w-40">
                     Events
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/workshops">
+                  <button className="btn btn-outline sm:btn-md lg:btn-lg w-40">
+                    Workshops
                   </button>
                 </Link>
               </li>
