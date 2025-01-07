@@ -61,14 +61,14 @@ export default function UserProvider({ children }) {
           setRegistrationDetails({
             fullName: details?.fullName || "",
             phoneNo: details?.phoneNo || "",
-            event: details?.event || [""],
+            event: details?.event || [],
             collegeName: details?.collegeName || "",
             course: details?.course || "",
             yearOfStudy: details?.yearOfStudy || "",
             hackathon: details?.hackathon || [],
             relayCoding: details?.relayCoding || [],
             techQuiz: details?.techQuiz || [],
-            workshops: details?.workshops || [""],
+            workshops: details?.workshops || [],
           });
           setLoading(false);
         } catch (error) {

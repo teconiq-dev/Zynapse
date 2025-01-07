@@ -344,9 +344,9 @@ const SkeletonThree = ({ id }) => {
     <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
       <div className="w-full  mx-auto bg-transparent group/image dark:bg-transparent group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
-          {/* TODO add buttons for registration and more info?*/}
+          {/* TODO: add buttons for registration and more info?*/}
           <ChartNetwork
-            className="h-28 bg-[url('/WhatliesBeyond.jpeg')] w-28 absolute z-10 inset-0 text-red-500 m-auto"
+            className="h-28 w-28 absolute z-10 inset-0 text-red-500 m-auto"
             strokeWidth={2}
           />
           <Image

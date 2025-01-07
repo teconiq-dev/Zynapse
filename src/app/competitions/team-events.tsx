@@ -14,6 +14,7 @@ export default function TeamEvents() {
           description={event.description}
           imageSrc={event.imageSrc}
           rules={event.rules}
+          url={event.url}
           team={registrationDetails?.[event.team].length > 0 ? true : false}
         />
       ))}
