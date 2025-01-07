@@ -30,6 +30,7 @@ export type RegistrationDetails = UserRegistration & {
   hackathon: TeamDetails[];
   relayCoding: TeamDetails[];
   techQuiz: TeamDetails[];
+  workshops: string[];
 };
 
 const UserContext = createContext<UserContextType | null>(null);
@@ -48,6 +49,7 @@ export default function UserProvider({ children }) {
       hackathon: [],
       relayCoding: [],
       techQuiz: [],
+      workshops: [],
     });
 
   useEffect(() => {
@@ -66,6 +68,7 @@ export default function UserProvider({ children }) {
             hackathon: details?.hackathon || [],
             relayCoding: details?.relayCoding || [],
             techQuiz: details?.techQuiz || [],
+            workshops: details?.workshops || [""],
           });
           setLoading(false);
         } catch (error) {
