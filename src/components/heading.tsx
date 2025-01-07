@@ -56,7 +56,7 @@ export function Heading() {
         </h1>
         <CountdownTimer />
         <button className="btn btn-outline btn-primary btn-lg z-20">
-          <Link href="/competitions">Register Now</Link>
+          <Link href="/competitions">Get started</Link>
         </button>
       </div>
     </div>
