@@ -1,15 +1,14 @@
 "use client";
 import { useState } from "react";
-import { updateDetails } from "@/components/backend/firebase";
+import { getDetails, updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
 
 export default function TechQuizRegistration() {
-  const { user, registrationDetails } = UserDetails();
+  const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const router = useRouter();
 
-  const [showFourthMember, setShowFourthMember] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [teamData, setTeamData] = useState<TeamDetails[]>([
     {
@@ -47,8 +46,9 @@ export default function TechQuizRegistration() {
       };
       console.log(newEvent);
       await updateDetails(user.email, newEvent)
-        .then(() => {
-          console.log("Document successfully written!");
+        .then(async () => {
+          const details = await getDetails(user.email!);
+          setRegistrationDetails(details);
           setSubmitted(true);
           router.push("/competitions");
         })
