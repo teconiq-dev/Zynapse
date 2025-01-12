@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
-    "@react-three/drei": "^9.120.5",
-    "@react-three/fiber": "^8.17.10",
-    "@tabler/icons-react": "^3.26.0",
+    "@react-three/drei": "^9.120.8",
+    "@react-three/fiber": "^8.17.12",
+    "@tabler/icons-react": "^3.28.1",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
@@ -21,10 +21,10 @@
     "cobe": "^0.6.3",
     "dotenv": "^16.4.7",
     "firebase": "^11.1.0",
-    "framer-motion": "^11.15.0",
+    "framer-motion": "^11.17.0",
     "lucide-react": "^0.468.0",
     "mini-svg-data-uri": "^1.4.4",
-    "motion": "^11.15.0",
+    "motion": "^11.17.0",
     "next": "14.2.20",
     "postprocessing": "^6.36.6",
     "react": "^18.3.1",
@@ -37,7 +37,7 @@
     "three-custom-shader-material": "^5.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.11",
+    "@types/node": "^20.17.12",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/three": "^0.170.0",
@@ -46,6 +46,6 @@
     "eslint-config-next": "14.2.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
