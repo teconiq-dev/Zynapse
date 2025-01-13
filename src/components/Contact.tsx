@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export const Contact = () => {
   return (
-    <div className="flex flex-wrap gap-16 justify-evenly w-full py-24 px-2 md:px-6 lg:px-10">
+    <div
+      id="contact"
+      className="flex flex-wrap gap-16 justify-evenly w-full py-24 px-2 md:px-6 lg:px-10"
+    >
       <div className="flex flex-col items-start justify-between">
         <h2 className="text-3xl font-monoton font-bold">Contact</h2>
         <div className="space-y-8">

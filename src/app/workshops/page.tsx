@@ -10,6 +10,8 @@ import { Globe } from "@/components/globe";
 import { Feature } from "@/components/feature-card";
 import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import Link from "next/link";
+import BlurText from "@/components/ui/BlurText";
+import { LineShadowText } from "@/components/ui/line-shadow-text";
 
 export default function Workshop() {
   const features = [
@@ -44,15 +46,19 @@ export default function Workshop() {
   return (
     <div className="relative z-20 py-10 lg:py-40 px-2 max-w-7xl mx-auto">
       <div className="flex flex-col justify-center items-center">
-        <h4 className="text-2xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Packed with Knowledge
-        </h4>
-
-        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          From UI/UX to Blockchain and Game development to Business Intelligence
-          we got it all. Our workshops cover everything you need to know for
-          your adventure in industry.
-        </p>
+        <h1 className="text-balance text-2xl lg:text-5xl font-semibold leading-none tracking-tighter">
+          Packed with
+          <LineShadowText className="italic ml-2" shadowColor="white">
+            Knowledge
+          </LineShadowText>
+        </h1>
+        <BlurText
+          text="From UI/UX to Blockchain and Game development to Business Intelligence we got it all. Our workshops cover everything you need to know for your adventure in industry."
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-2xl my-8"
+        />
         <HyperText
           className="text-3xl md:text-5xl mt-8"
           text="Our Workshops:"
@@ -89,7 +95,7 @@ const SkeletonOne = ({ id }) => {
   return (
     <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
       <div className="relative flex py-8 px-2 gap-10 h-full">
-        <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
+        <div className="w-full p-5 mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
           <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
             <Image
               src="/UnityWorkshop.jpeg"
@@ -429,9 +435,12 @@ const SkeletonFour = ({ id }) => {
     }
   };
   return (
-    <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
+    <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-zinc-900">
       <div>
-        <p>PowerBi consist of analysing business with computer.</p>
+        <p className="text-slate-300">
+          Data is the new oil. It's the new currency —
+          <span className="text-neutral-400 ml-2">Clive Humby</span>
+        </p>
       </div>
       <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
         <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" />

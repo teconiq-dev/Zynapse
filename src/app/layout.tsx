@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" data-theme="sunset">
       <body
-        className={`${audioWide.variable} ${exo2.variable} ${gugi.variable} ${monoton.variable} font-gugi antialiased scroll-smooth`}
+        className={`${audioWide.variable} ${exo2.variable} ${gugi.variable} ${monoton.variable} font-gugi antialiased !scroll-smooth`}
       >
         <div className="h-auto min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-start rounded-lg">
           <UserProvider>

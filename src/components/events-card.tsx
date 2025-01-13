@@ -54,7 +54,7 @@ export function EventCard({
       {loading ? (
         <div className="skeleton h-96 w-full"></div>
       ) : (
-        <CardContainer className="z-10">
+        <CardContainer className="z-10 animate-fade">
           <CardBody className="relative group/card w-auto h-auto rounded-xl p-6 border shadow-xl shadow-secondary hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-base-300/60 backdrop-blur-xl border-white/[0.3]">
             <CardItem
               translateZ="50"

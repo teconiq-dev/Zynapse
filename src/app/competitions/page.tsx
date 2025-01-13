@@ -15,7 +15,7 @@ export default function CompetitionsPage() {
         maxOpacity={0.7}
         flickerChance={0.5}
       />
-      <div className="flex items-center flex-col justify-center py-28 w-full h-full gap-20">
+      <div className="flex items-center flex-col justify-center py-16 md:py-28 w-full h-full gap-20">
         <h1 className="text-3xl md:text-6xl font-monoton">Competitions</h1>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">

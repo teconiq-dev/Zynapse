@@ -79,6 +79,7 @@ const config: Config = {
         shine: "shine var(--duration) infinite linear",
         gradient: "gradient 8s linear infinite",
         "shiny-text": "shiny-text 8s infinite",
+        fade: "fade linear forwards",
       },
       keyframes: {
         "background-position-spin": {
@@ -104,6 +105,10 @@ const config: Config = {
           to: {
             backgroundPosition: "var(--bg-size) 0",
           },
+        },
+        fade: {
+          from: { scale: "0.6", opacity: "0.6" },
+          to: { scale: "1", opacity: "1" },
         },
       },
     },
