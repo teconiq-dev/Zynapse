@@ -1,10 +1,15 @@
 "use client";
 import { UserDetails } from "@/components/context/userContext";
-import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ChevronRight, User } from "lucide-react";
 import Image from "next/image";
 
 export default function Profile() {
   const { user, registrationDetails } = UserDetails() || {};
+  const router = useRouter();
+  if (registrationDetails.fullName.length === 0) {
+    router.push("/register");
+  }
 
   return (
     <div className="w-full h-full px-4">
@@ -87,7 +92,7 @@ export default function Profile() {
                           {registrationDetails.hackathon.map(
                             (member, key: number) => (
                               <li key={key} className="text-lg font-exo2">
-                                <ChevronRight className="inline" />
+                                <User className="inline" />
                                 {member.fullName}
                               </li>
                             ),
@@ -102,7 +107,7 @@ export default function Profile() {
                           {registrationDetails.relayCoding.map(
                             (member, key: number) => (
                               <li key={key} className="text-lg font-exo2">
-                                <ChevronRight className="inline" />
+                                <User className="inline" />
                                 {member.fullName}
                               </li>
                             ),
@@ -113,10 +118,11 @@ export default function Profile() {
                     {registrationDetails.techQuiz.length > 0 && (
                       <div className="mb-4">
                         <h4 className="text-xl font-semibold">Tech Quiz</h4>
-                        <ul className="list-disc list-inside mt-2">
+                        <ul className="mt-2">
                           {registrationDetails.techQuiz.map(
                             (member, key: number) => (
                               <li key={key} className="text-lg font-exo2">
+                                <User className="inline" />
                                 {member.fullName}
                               </li>
                             ),
