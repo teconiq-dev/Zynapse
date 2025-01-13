@@ -66,7 +66,7 @@ export default function RegisterPage() {
         ) : registrationDetails.fullName ? (
           <div className="backdrop-blur-md bg-base-100/10 p-5 border border-primary rounded-md">
             <h2 className="text-2xl md:text-6xl font-exo2 my-20">
-              Already Registered! Heads up to events page.
+              Already Registered! Start registering for events.
             </h2>
           </div>
         ) : (

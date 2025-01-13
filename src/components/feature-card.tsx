@@ -1,6 +1,4 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 
 const FeatureCard = ({
   children,
@@ -38,8 +36,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-export const Feature = ({ feature, registrationDetails }) => {
-  const dataFilled = registrationDetails?.fullName.length > 0;
+export const Feature = ({ feature }) => {
   return (
     <FeatureCard key={feature.title} className={feature.className}>
       <FeatureTitle>{feature.title}</FeatureTitle>

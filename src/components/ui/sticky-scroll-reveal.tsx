@@ -67,7 +67,7 @@ export const StickyScroll = ({
       style={{
         background: "linear-gradient(to bottom, #0f172a 15%, transparent)",
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-5 md:space-x-10 rounded-md p-4 md:p-10 py-20"
+      className="h-[34rem] overflow-y-auto flex justify-center relative space-x-5 md:space-x-10 rounded-md p-4 md:p-10 py-20"
       ref={ref}
     >
       <div className="div relative flex flex-wrap items-start px-1 md:px-4">

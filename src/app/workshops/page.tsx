@@ -64,11 +64,7 @@ export default function Workshop() {
       <div className="relative ">
         <div className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
           {features.map((feature) => (
-            <Feature
-              key={feature.title}
-              feature={feature}
-              registrationDetails={registrationDetails}
-            />
+            <Feature key={feature.title} feature={feature} />
           ))}
         </div>
       </div>
@@ -210,7 +206,6 @@ const SkeletonTwo = ({ id }) => {
   return (
     <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
       <div className="relative flex flex-col items-start p-8 pb-16 gap-10 h-full overflow-hidden">
-        {/* TODO */}
         <div className="flex flex-row -ml-20">
           {images.map((image, idx) => (
             <motion.div

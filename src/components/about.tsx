@@ -3,8 +3,8 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export const About = () => {
   return (
-    <div className="w-screen bg-slate-900">
-      <h2 className="font-monoton text-5xl text-center py-20">ABOUT</h2>
+    <div className="w-screen bg-slate-900 pt-10">
+      <h2 className="font-monoton text-5xl text-center py-14">ABOUT</h2>
       <StickyScroll content={content} />
     </div>
   );

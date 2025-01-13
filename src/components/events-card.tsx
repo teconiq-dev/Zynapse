@@ -52,10 +52,10 @@ export function EventCard({
   return (
     <>
       {loading ? (
-        <div className="skeleton h-64 w-full"></div>
+        <div className="skeleton h-96 w-full"></div>
       ) : (
         <CardContainer className="z-10">
-          <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-black/10 backdrop-blur dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border">
+          <CardBody className="relative group/card w-auto h-auto rounded-xl p-6 border shadow-xl shadow-secondary hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-base-300/60 backdrop-blur-xl border-white/[0.3]">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -114,7 +114,6 @@ export function EventCard({
                   <button className="badge badge-secondary">Registered</button>
                 ) : (
                   <>
-                    {/* Open the modal using document.getElementById('ID').showModal() method */}
                     <button
                       className="btn btn-primary btn-sm"
                       onClick={() => document.getElementById(id).showModal()}
@@ -195,15 +194,18 @@ export function EventCard({
 
 function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
   return (
-    <div className="mockup-code md:mockup-window">
-      <pre data-prefix="$" className="bg-warning text-warning-content text-2xl">
+    <div className="mockup-code md:mockup-window p-2">
+      <pre
+        data-prefix="$"
+        className="bg-warning text-warning-content text-lg md:text-2xl"
+      >
         <code>Rules and Regulations</code>
       </pre>
       {rules?.do.map((rule, index) => (
         <pre
           key={index}
           data-prefix=">"
-          className="text-success font-monoton text-lg "
+          className="text-success font-monoton text-sm md:text-lg text-wrap"
         >
           <code>{rule}</code>
         </pre>
@@ -212,7 +214,7 @@ function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
         <pre
           key={index}
           data-prefix=">"
-          className="text-warning font-monoton text-lg"
+          className="text-warning font-monoton text-sm md:text-lg text-wrap"
         >
           <code>{rule}</code>
         </pre>
