@@ -39,7 +39,8 @@ export default function RootLayout({
       >
         <div className="h-auto min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-start rounded-lg">
           <UserProvider>
-            <Navbar>{children}</Navbar>
+            <Navbar />
+            {children}
             <Footer />
           </UserProvider>
         </div>

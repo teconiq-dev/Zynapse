@@ -44,9 +44,9 @@ export default function Workshop() {
     },
   ];
   return (
-    <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
+    <div className="relative z-20 py-10 lg:py-40 px-2 max-w-7xl mx-auto">
       <div className="flex flex-col justify-center items-center">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
+        <h4 className="text-2xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
           Packed with Knowledge
         </h4>
 
@@ -56,7 +56,7 @@ export default function Workshop() {
           your adventure in industry.
         </p>
         <HyperText
-          className="text-3xl md:text-5xl py-10"
+          className="text-3xl md:text-5xl mt-8"
           text="Our Workshops:"
         />
       </div>

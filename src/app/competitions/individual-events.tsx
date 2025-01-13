@@ -3,7 +3,7 @@ import { individualEvents } from "@/lib/events";
 
 export default function IndividualEvents() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10 w-full">
       {individualEvents.map((event) => (
         <EventCard
           key={event.id}
@@ -17,4 +17,3 @@ export default function IndividualEvents() {
     </div>
   );
 }
-

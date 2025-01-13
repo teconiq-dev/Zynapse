@@ -7,20 +7,20 @@ import Image from "next/image";
 export default function Profile() {
   const { user, registrationDetails } = UserDetails() || {};
   const router = useRouter();
-  if (registrationDetails.fullName.length === 0) {
+  if (registrationDetails?.fullName.length === 0) {
     router.push("/register");
   }
 
   return (
     <div className="w-full h-full px-4">
-      {registrationDetails.fullName.length === 0 ? (
+      {registrationDetails?.fullName.length === 0 ? (
         <div className="text-center text-xl text-red-500">Register first</div>
       ) : (
-        <div className="flex flex-col gap-8 max-w-5xl mx-auto bg-background p-8 rounded-xl shadow-lg shadow-primary">
+        <div className="flex flex-col gap-8 max-w-5xl mx-auto bg-background p-4 md:p-8 rounded-xl shadow-lg shadow-primary">
           <h1 className="text-3xl md:text-5xl text-center font-bold font-monoton">
             Profile
           </h1>
-          <div className="flex flex-col items-start gap-3 mb-5 pl-5">
+          <div className="flex flex-col items-start gap-3 mb-5 md:pl-5">
             <div>
               <div className="avatar online">
                 <div className="w-24 rounded-full ring-primary ring-offset-base-100 ring ring-offset-2">
@@ -34,14 +34,15 @@ export default function Profile() {
               </div>
             </div>
             <div>
-              <span className="badge">Name: </span>{" "}
+              <span className="badge">Name: </span>
               {registrationDetails.fullName}
             </div>
             <div>
-              <span className="badge">Email: </span> {user.email}
+              <span className="badge">Email: </span>
+              {user?.email}
             </div>
             <div>
-              <span className="badge">Phone No: </span>{" "}
+              <span className="badge">Phone No: </span>
               {registrationDetails.phoneNo}
             </div>
           </div>

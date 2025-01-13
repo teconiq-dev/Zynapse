@@ -53,8 +53,8 @@ export const individualEvents = [
     imageSrc: "/Pes-tour.jpeg",
     rules: {
       do: [
-        "Total number of rounds will be decided on terms of total entry in the tournament.\n\t\t",
-        "Only 3 iconic cards, 2 legend cards, 2 featured cards are allowed.\n\t\t",
+        "Total number of rounds will be decided on terms of total entry in the tournament.",
+        "Only 3 iconic cards, 2 legend cards, 2 featured cards are allowed.",
         "Once an opponent complaints that you are a long baller or a lag cheater(with video proof), you will be disqualified.",
       ],
       dont: [],

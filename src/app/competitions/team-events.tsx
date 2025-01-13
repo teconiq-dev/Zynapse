@@ -5,7 +5,7 @@ import { teamEvents } from "@/lib/events";
 export default function TeamEvents() {
   const { registrationDetails } = UserDetails();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10 w-full">
       {teamEvents.map((event) => (
         <EventCard
           key={event.id}

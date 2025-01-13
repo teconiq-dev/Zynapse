@@ -55,7 +55,7 @@ export function EventCard({
         <div className="skeleton h-64 w-full"></div>
       ) : (
         <CardContainer className="z-10">
-          <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-black/10 backdrop-blur dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
+          <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-black/10 backdrop-blur dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -95,7 +95,7 @@ export function EventCard({
                     id={title}
                     className="modal modal-bottom sm:modal-middle"
                   >
-                    <div className="modal-box">
+                    <div className="modal-box md:min-w-fit">
                       <EventRules rules={rules} />
                       <div className="modal-action">
                         <form method="dialog">
@@ -220,4 +220,3 @@ function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
     </div>
   );
 }
-
