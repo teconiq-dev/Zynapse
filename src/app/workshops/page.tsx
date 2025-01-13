@@ -12,8 +12,6 @@ import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import Link from "next/link";
 
 export default function Workshop() {
-  const { registrationDetails } = UserDetails();
-
   const features = [
     {
       title: "Unity",
