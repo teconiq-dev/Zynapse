@@ -3,6 +3,7 @@ import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import IndividualEvents from "./individual-events";
 import TeamEvents from "./team-events";
 import FlickeringGrid from "@/components/ui/flickering-grid";
+import { TextAnimation } from "@/components/TextAnimation";
 
 export default function CompetitionsPage() {
   return (
@@ -16,10 +17,14 @@ export default function CompetitionsPage() {
         flickerChance={0.5}
       />
       <div className="flex items-center flex-col justify-center py-16 md:py-28 w-full h-full gap-20">
-        <h1 className="text-3xl md:text-6xl font-monoton">Competitions</h1>
+        <TextAnimation>
+          <h1 className="text-3xl md:text-6xl font-monoton">Competitions</h1>
+        </TextAnimation>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
-            <h2 className="text-3xl font-gugi">Individual</h2>
+            <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
+              Individual
+            </h2>
           </div>
           <IndividualEvents />
         </div>
@@ -28,7 +33,9 @@ export default function CompetitionsPage() {
         </VelocityScroll>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
-            <h2 className="text-3xl font-gugi">Team</h2>
+            <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
+              Team
+            </h2>
           </div>
           <TeamEvents />
         </div>
