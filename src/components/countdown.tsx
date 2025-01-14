@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { NeonGradientCardTimer } from "./neon";
 import AnimatedGradientText from "./ui/animated-gradient-text";
 import { cn } from "@/lib/utils";
+import { AnimationContainer } from "./AnimationContainer";
 
 type timeLeft = {
   days: number;
@@ -61,10 +62,18 @@ export const CountdownTimer = () => {
         </AnimatedGradientText>
       </div>
       <div className="flex gap-1 md:gap-2 lg:gap-3">
-        <NeonGradientCardTimer time={timeLeft.days} type="Days" />
-        <NeonGradientCardTimer time={timeLeft.hours} type="Hours" />
-        <NeonGradientCardTimer time={timeLeft.minutes} type="Minutes" />
-        <NeonGradientCardTimer time={timeLeft.seconds} type="Seconds" />
+        <AnimationContainer mode="reveal" index={1}>
+          <NeonGradientCardTimer time={timeLeft.days} type="Days" />
+        </AnimationContainer>
+        <AnimationContainer mode="reveal" index={2}>
+          <NeonGradientCardTimer time={timeLeft.hours} type="Hours" />
+        </AnimationContainer>
+        <AnimationContainer mode="reveal" index={3}>
+          <NeonGradientCardTimer time={timeLeft.minutes} type="Minutes" />
+        </AnimationContainer>
+        <AnimationContainer mode="reveal" index={4}>
+          <NeonGradientCardTimer time={timeLeft.seconds} type="Seconds" />
+        </AnimationContainer>
       </div>
     </div>
   );
