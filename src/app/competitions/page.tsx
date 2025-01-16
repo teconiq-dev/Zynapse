@@ -4,10 +4,12 @@ import IndividualEvents from "./individual-events";
 import TeamEvents from "./team-events";
 import FlickeringGrid from "@/components/ui/flickering-grid";
 import { TextAnimation } from "@/components/TextAnimation";
+import { Hackathon } from "@/components/Hackathon";
+import Link from "next/link";
 
 export default function CompetitionsPage() {
   return (
-    <div className="flex h-full mb-6 w-full mx-auto rounded-md overflow-hidden">
+    <div className="flex h-full w-full mx-auto rounded-md overflow-hidden">
       <FlickeringGrid
         className="-z-10 bg-background [mask-image:radial-gradient(720px_circle_at_center,white,transparent)] flex items-center justify-center fixed w-full h-full inset-0"
         squareSize={14}
@@ -16,10 +18,23 @@ export default function CompetitionsPage() {
         maxOpacity={0.7}
         flickerChance={0.5}
       />
-      <div className="flex items-center flex-col justify-center py-16 md:py-28 w-full h-full gap-20">
-        <TextAnimation>
-          <h1 className="text-3xl md:text-6xl font-monoton">Competitions</h1>
-        </TextAnimation>
+      <div className="flex items-center flex-col justify-center py-5 md:py-10 w-full h-full gap-20">
+        <div className="w-full h-fit bg-background flex flex-col gap-20 items-center justify-center py-32">
+          <TextAnimation>
+            <h1 className="text-3xl md:text-6xl font-monoton">Hackathon</h1>
+          </TextAnimation>
+          <div className="h-[600px] w-full">
+            <Hackathon />
+          </div>
+          <div>
+            <p className="text-center text-lg md:text-2xl font-gugi text-red-200">
+              36 hours of innovative brainstorming with amazing prizes
+            </p>
+          </div>
+          <Link href="/register/hackathon">
+            <button className="btn btn-primary btn-outline">Register</button>
+          </Link>
+        </div>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
