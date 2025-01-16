@@ -12,6 +12,7 @@ import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import Link from "next/link";
 import BlurText from "@/components/ui/BlurText";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
+import {Boxes} from "@/components/ui/background-boxes";
 
 export default function Workshop() {
   const features = [
@@ -45,6 +46,7 @@ export default function Workshop() {
   ];
   return (
     <div className="relative z-20 py-10 lg:py-40 px-2 max-w-7xl mx-auto">
+      <Boxes />
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-balance text-2xl lg:text-5xl font-semibold leading-none tracking-tighter">
           Packed with
@@ -60,17 +62,9 @@ export default function Workshop() {
           className="text-2xl my-8"
         />
         <HyperText
-          className="text-3xl md:text-5xl mt-8"
-          text="Our Workshops:"
+          className="text-xl md:text-5xl mt-8"
+          text="Registrations starting soon!"
         />
-      </div>
-
-      <div className="relative ">
-        <div className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
-          {features.map((feature) => (
-            <Feature key={feature.title} feature={feature} />
-          ))}
-        </div>
       </div>
     </div>
   );
