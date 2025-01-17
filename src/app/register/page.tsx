@@ -167,6 +167,13 @@ export default function RegisterPage() {
                   <option value="5">5</option>
                 </select>
               </div>
+              <div className="form-control mt-6 space-y-2">
+                <label className="label">
+                  <span className="text-purple-200">
+                    Double check the details before submitting
+                  </span>
+                </label>
+              </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
                   Register

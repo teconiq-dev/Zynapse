@@ -4,8 +4,9 @@ import IndividualEvents from "./individual-events";
 import TeamEvents from "./team-events";
 import FlickeringGrid from "@/components/ui/flickering-grid";
 import { TextAnimation } from "@/components/TextAnimation";
-import { Hackathon } from "@/components/Hackathon";
+import { Room } from "@/components/Room";
 import Link from "next/link";
+import { Hackathon } from "@/components/hackathon";
 
 export default function CompetitionsPage() {
   return (
@@ -26,7 +27,7 @@ export default function CompetitionsPage() {
             </h1>
           </TextAnimation>
           <div className="h-screen w-full">
-            <Hackathon />
+            <Room />
           </div>
           <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-end gap-6">
             <TextAnimation mode="slideInTop">
@@ -44,6 +45,15 @@ export default function CompetitionsPage() {
         <VelocityScroll className="font-monoton first-letter:0.5em ">
           Zynapse Fest
         </VelocityScroll>
+        <div className="divider divider-primary">
+          <h2
+            id="individual"
+            className="text-3xl font-gugi text-red-200 animate-pulse"
+          >
+            Hackathon
+          </h2>
+        </div>
+        <Hackathon />
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2

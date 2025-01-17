@@ -100,6 +100,13 @@ export default function TechQuizRegistration() {
                     />
                   ))}
                   <div className="form-control mt-6">
+                    <label className="label">
+                      <span className="label-text">
+                        Make sure all details are correct before submitting
+                      </span>
+                    </label>
+                  </div>
+                  <div className="form-control mt-6">
                     <button type="submit" className="btn btn-primary">
                       Register
                     </button>

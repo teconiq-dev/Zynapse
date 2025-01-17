@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { UserDetails } from "@/components/context/userContext";
 import { getDetails, updateDetails } from "./backend/firebase";
+import { User } from "lucide-react";
 
 type EventCardProps = {
   id: string;
@@ -13,6 +14,7 @@ type EventCardProps = {
   url?: string | null;
   rules: { do: string[]; dont: string[] };
   team?: boolean;
+  count?: string | null;
 };
 export function EventCard({
   id,
@@ -22,6 +24,7 @@ export function EventCard({
   url = null,
   rules,
   team = false,
+  count = null,
 }: EventCardProps) {
   const {
     user,
@@ -58,9 +61,15 @@ export function EventCard({
           <CardBody className="relative group/card w-auto h-auto rounded-xl p-6 border shadow-xl shadow-secondary hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-base-300/60 backdrop-blur-xl border-white/[0.3]">
             <CardItem
               translateZ="50"
-              className="text-xl font-bold text-neutral-600 dark:text-white"
+              className="w-full text-xl font-bold text-neutral-600 dark:text-white flex justify-between"
             >
               {title}
+              {count && (
+                <span className="text-sm">
+                  <User className="w-4 h-4 inline mr-1 text-white" />
+                  {count}
+                </span>
+              )}
             </CardItem>
             <CardItem
               as="p"
@@ -72,9 +81,9 @@ export function EventCard({
             <CardItem translateZ="100" className="w-full mt-4">
               <Image
                 src={imageSrc}
-                height={url ? 576 : 416}
-                width={url ? 448 : 608}
-                className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                height={416}
+                width={608}
+                className={`${url ? "h-96" : "h-72"} w-full object-cover rounded-xl group-hover/card:shadow-xl`}
                 alt="thumbnail"
               />
             </CardItem>
@@ -192,7 +201,11 @@ export function EventCard({
   );
 }
 
-function EventRules({ rules }: { rules: { do: string[]; dont: string[] } }) {
+export function EventRules({
+  rules,
+}: {
+  rules: { do: string[]; dont: string[] };
+}) {
   return (
     <div className="mockup-code md:mockup-window p-2">
       <pre

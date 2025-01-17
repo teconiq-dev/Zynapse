@@ -82,36 +82,13 @@ export const individualEvents = [
 
 export const teamEvents = [
   {
-    id: 5,
-    title: "Hackathon",
-    description: "36 hours brain storming with exciting price",
-    imageSrc: "/Hackathon.jpeg",
-    team: "hackathon",
-    url: "/register/hackathon",
-    rules: {
-      do: [
-        "Each team consist of 2-4 members",
-        "Only the team lead needs to register but is required to add members details",
-        "The team lead will be the main point of contact between the team and organizers",
-        "Caution deposit of per head 100 will be taken which will be refunded after the event",
-        "Participants are required to bring their own laptops and other necessary equipment",
-        "Abstract and roadmap should be submitted with 2 hours",
-      ],
-      dont: [
-        "Judges will evaluate progress in every 4 hours",
-        "Wifi and accommodation with meals and refreshment will be provided",
-        "Results will be based on functionality and working of the submitted project",
-        "Follow all instructions and decisions provided by the organizers and judges",
-      ],
-    },
-  },
-  {
     id: 6,
     title: "Relay Coding",
     description: "Team up and code in a relay format.",
     imageSrc: "/relay_coding.jpeg",
     team: "relayCoding",
     url: "/register/relay-coding",
+    count: "3-4",
     rules: {
       do: [
         "Team will consist of maximum 3 members",
@@ -133,9 +110,35 @@ export const teamEvents = [
     imageSrc: "/Tech_quiz.jpeg",
     team: "techQuiz",
     url: "/register/tech-quiz",
+    count: "2",
     rules: {
       do: ["Do this", "Do that"],
       dont: ["Don't do this", "Don't do that"],
     },
   },
 ];
+
+export const hackathonDetails = {
+  id: 5,
+  title: "Hackathon",
+  description: "30 hours brain storming with exciting price",
+  imageSrc: "/Hackathon.jpeg",
+  team: "hackathon",
+  url: "/register/hackathon",
+  rules: {
+    do: [
+      "Each team consist of 2-4 members",
+      "Only the team lead needs to register but is required to add members details",
+      "The team lead will be the main point of contact between the team and organizers",
+      "Caution deposit of per head 100 will be taken which will be refunded after the event",
+      "Participants are required to bring their own laptops and other necessary equipment",
+      "Abstract and roadmap should be submitted with 2 hours",
+    ],
+    dont: [
+      "Judges will evaluate progress in every 4 hours",
+      "Wifi and accommodation with meals and refreshment will be provided",
+      "Results will be based on functionality and working of the submitted project",
+      "Follow all instructions and decisions provided by the organizers and judges",
+    ],
+  },
+};

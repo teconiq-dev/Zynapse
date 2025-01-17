@@ -4,7 +4,6 @@ import { getDetails, updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
-import Image from "next/image";
 import { Payment } from "@/components/payment";
 
 export default function HackathonRegistration() {

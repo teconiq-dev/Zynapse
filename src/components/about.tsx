@@ -7,7 +7,7 @@ const eventDetails = [
   {
     date: "February 1",
     title: "Hackathon",
-    description: "36 hour exciting tests",
+    description: "30 hour exciting hackathon",
     icon: <CodeXmlIcon className="w-8 h-8 text-white mx-auto inline" />,
   },
   {

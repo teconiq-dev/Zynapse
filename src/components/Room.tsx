@@ -5,7 +5,7 @@ import { Suspense, useRef } from "react";
 import { Vector3 } from "three";
 import { useDepthBuffer } from "@react-three/drei";
 
-export function Hackathon() {
+export function Room() {
   return (
     <Canvas
       dpr={[1, 2]}
