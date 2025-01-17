@@ -15,7 +15,7 @@ export function DarkRoom(props) {
           <group
             position={[0, 5, 0]}
             rotation={[-Math.PI / 3.6, 0, -0.8]}
-            scale={12}
+            scale={10}
           >
             <mesh
               castShadow

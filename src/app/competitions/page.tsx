@@ -19,25 +19,34 @@ export default function CompetitionsPage() {
         flickerChance={0.5}
       />
       <div className="flex items-center flex-col justify-center py-5 md:py-10 w-full h-full gap-20">
-        <div className="w-full h-fit bg-background flex flex-col gap-20 items-center justify-center py-32">
+        <div className="relative w-full h-fit min-h-screen bg-background flex flex-col gap-20 items-center justify-center pt-4">
           <TextAnimation>
-            <h1 className="text-3xl md:text-6xl font-monoton">Hackathon</h1>
+            <h1 className="text-3xl md:text-6xl font-monoton absolute top-32 left-1/2 transform -translate-x-1/2">
+              Competitions
+            </h1>
           </TextAnimation>
-          <div className="h-[600px] w-full">
+          <div className="h-screen w-full">
             <Hackathon />
           </div>
-          <div>
-            <p className="text-center text-lg md:text-2xl font-gugi text-red-200">
-              36 hours of innovative brainstorming with amazing prizes
-            </p>
+          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-end gap-6">
+            <TextAnimation mode="slideInTop">
+              <p className="text-center text-lg md:text-xl font-gugi text-red-200">
+                Join thrilling competitions and win amazing prizes!
+              </p>
+            </TextAnimation>
+            <Link href="/competitions/#individual">
+              <button className="btn btn-primary btn-sm btn-outline">
+                Register
+              </button>
+            </Link>
           </div>
-          <Link href="/register/hackathon">
-            <button className="btn btn-primary btn-outline">Register</button>
-          </Link>
         </div>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
-            <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
+            <h2
+              id="individual"
+              className="text-3xl font-gugi text-red-200 animate-pulse"
+            >
               Individual
             </h2>
           </div>

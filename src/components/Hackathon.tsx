@@ -96,7 +96,7 @@ function MovingSpot({ vec = new Vector3(), ...props }) {
       penumbra={1}
       distance={100}
       angle={9}
-      attenuation={19}
+      attenuation={24}
       anglePower={4}
       intensity={7}
       {...props}
