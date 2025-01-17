@@ -85,7 +85,7 @@ export const teamEvents = [
     id: 5,
     title: "Hackathon",
     description: "36 hours brain storming with exciting price",
-    imageSrc: "/Hackathon.jpg",
+    imageSrc: "/Hackathon.jpeg",
     team: "hackathon",
     url: "/register/hackathon",
     rules: {
