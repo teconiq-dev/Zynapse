@@ -37,7 +37,7 @@ function Scene() {
   const depthBuffer = useDepthBuffer({ frames: 1 });
   return (
     <>
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.2} />
       <RandomizedLight
         castShadow
         amount={2}

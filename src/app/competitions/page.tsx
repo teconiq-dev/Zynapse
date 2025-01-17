@@ -41,6 +41,9 @@ export default function CompetitionsPage() {
             </Link>
           </div>
         </div>
+        <VelocityScroll className="font-monoton first-letter:0.5em ">
+          Zynapse Fest
+        </VelocityScroll>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2
@@ -52,9 +55,6 @@ export default function CompetitionsPage() {
           </div>
           <IndividualEvents />
         </div>
-        <VelocityScroll className="font-monoton first-letter:0.5em ">
-          Zynapse Fest
-        </VelocityScroll>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
