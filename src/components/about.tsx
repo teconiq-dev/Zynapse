@@ -1,52 +1,16 @@
 import Image from "next/image";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { TextAnimation } from "./TextAnimation";
-import { BrainCircuitIcon, CodeXmlIcon, NotepadTextIcon } from "lucide-react";
-
-const eventDetails = [
-  {
-    date: "February 1",
-    title: "Hackathon",
-    description: "30 hour exciting hackathon",
-    icon: <CodeXmlIcon className="w-8 h-8 text-white mx-auto inline" />,
-  },
-  {
-    date: "February 6",
-    title: "Workshops",
-    description: "Upgrade your skills",
-    icon: <NotepadTextIcon className="w-8 h-8 text-white mx-auto inline" />,
-  },
-  {
-    date: "February 7",
-    title: "Competitions",
-    description: "Participate in exciting events",
-    icon: <BrainCircuitIcon className="w-8 h-8 text-white mx-auto inline" />,
-  },
-];
 export const About = () => {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-purple-950/10 to-slate-900 py-20">
-        {eventDetails.map((event, index) => (
-          <div className="stat max-w-2xl" key={index}>
-            <div className="stat-figure text-primary">{event.icon}</div>
-            <div className="stat-title font-bold font-exo2 text-secondary-foreground">
-              {event.date}
-            </div>
-            <div className="stat-value text-primary">{event.title}</div>
-            <div className="stat-desc">{event.description}</div>
-          </div>
-        ))}
-      </div>
-      <div className="w-screen bg-slate-900 pt-10" id="about">
-        <TextAnimation>
-          <h2 className="font-monoton text-3xl md:text-5xl text-center py-14">
-            ABOUT
-          </h2>
-        </TextAnimation>
-        <StickyScroll content={content} />
-      </div>
-    </>
+    <div className="w-screen bg-slate-900 pt-10" id="about">
+      <TextAnimation>
+        <h2 className="font-monoton text-3xl md:text-5xl text-center py-14">
+          ABOUT
+        </h2>
+      </TextAnimation>
+      <StickyScroll content={content} />
+    </div>
   );
 };
 
