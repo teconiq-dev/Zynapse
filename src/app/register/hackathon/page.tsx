@@ -109,12 +109,9 @@ export default function HackathonRegistration() {
             Hackathon
           </h1>
           {registrationDetails.hackathon.length > 0 ? (
-            <>
-              <Payment />
-              <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
-                Already Registered!
-              </h2>
-            </>
+            <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+              Already Registered!
+            </h2>
           ) : (
             <>
               <div className="divider divider-primary z-20">

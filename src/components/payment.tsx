@@ -4,7 +4,6 @@ import QRCode from "react-qr-code";
 
 export const Payment = ({ count = 2, event = "Hackathon" }) => {
   const paymentUrl = `upi://pay?pa=vijayakrishnan1018@okhdfcbank&pn=Zynapse2025&tn=${event}&am=${count * 100}&cu=INR`;
-  console.log("Payment URL: ", paymentUrl);
 
   const [showQR, setShowQR] = useState(true);
   return (
@@ -52,11 +51,11 @@ export const Payment = ({ count = 2, event = "Hackathon" }) => {
         </span>
       </label>
       <div className="flex flex-col justify-center items-center lg:hidden">
-        <Link href={paymentUrl}>
+        <a href={paymentUrl} target="_blank">
           <button type="button" className="btn btn-accent">
             Pay Now
           </button>
-        </Link>
+        </a>
       </div>
     </div>
   );
