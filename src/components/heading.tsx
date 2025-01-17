@@ -55,9 +55,11 @@ export function Heading() {
           <MorphingText className="mt-6" texts={texts} />
         </h1>
         <CountdownTimer />
-        <button className="btn btn-outline btn-primary btn-lg z-50 hover:animate-pulse">
-          <Link href="/competitions">Get started</Link>
-        </button>
+        <Link href="/competitions" className="z-50">
+          <button className="btn btn-outline btn-primary btn-lg hover:animate-pulse">
+            Get started
+          </button>
+        </Link>
       </div>
     </div>
   );

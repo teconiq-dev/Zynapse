@@ -1,10 +1,4 @@
-import {
-  Float,
-  OrbitControls,
-  RandomizedLight,
-  SpotLight,
-  Stars,
-} from "@react-three/drei";
+import { Float, RandomizedLight, SpotLight, Stars } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { DarkRoom } from "./3D/DarkRoom";
 import { Suspense, useRef } from "react";
@@ -27,7 +21,6 @@ export function Hackathon() {
           fade
           speed={1}
         />
-        <OrbitControls enableZoom={false} />
         <Scene />
       </Suspense>
     </Canvas>
