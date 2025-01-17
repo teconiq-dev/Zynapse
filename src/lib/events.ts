@@ -112,8 +112,8 @@ export const teamEvents = [
     url: "/register/tech-quiz",
     count: "2",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["The quiz will have multiple rounds", "Each round will have a different set of questions", "The quiz will be conducted in English"],
+      dont: ["Do not bring mobile or external devices during the quiz", "Do not use any unfair means to cheat", "Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
 ];
@@ -127,7 +127,7 @@ export const hackathonDetails = {
   url: "/register/hackathon",
   rules: {
     do: [
-      "Each team consist of 2-4 members",
+      "Each team consist of 3-4 members",
       "Only the team lead needs to register but is required to add members details",
       "The team lead will be the main point of contact between the team and organizers",
       "Caution deposit of per head 100 will be taken which will be refunded after the event",
@@ -135,7 +135,7 @@ export const hackathonDetails = {
       "Abstract and roadmap should be submitted with 2 hours",
     ],
     dont: [
-      "Judges will evaluate progress in every 4 hours",
+      "Mentors will evaluate progress and provide guidance",
       "Wifi and accommodation with meals and refreshment will be provided",
       "Results will be based on functionality and working of the submitted project",
       "Follow all instructions and decisions provided by the organizers and judges",
