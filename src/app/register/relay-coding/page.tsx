@@ -90,71 +90,91 @@ export default function RelayCodingRegistration() {
     setShowFourthMember(true);
   };
   return (
-    <div className="container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
+    <div className="z-20 container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
       {!user ? (
-        <>
-          <h2 className="text-2xl md:text-6xl font-exo2 my-20">
-            Please Sign in to register events
-          </h2>
-        </>
+        <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+          Please signin to register for the event
+        </h2>
       ) : (
         <>
-          <h1 className="text-2xl md:text-6xl font-monoton mb-14">
+          <h1 className="text-2xl md:text-6xl font-monoton mb-14 z-20">
             Relay Coding
           </h1>
-          <div className="divider divider-primary">Team Registration</div>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-8 max-w-4xl p-4 md:p-8 lg:p-14 shadow-md shadow-primary rounded-lg bg-gradient-to-r from-fuchsia-700/10 to-purple-600/20"
-          >
-            <div className="form-control mt-6">
-              <h2 className="text-xl">Team Leader</h2>
-              <span className="text-secondary-foreground">
-                {registrationDetails.fullName}
-              </span>
-            </div>
-            {teamData.map((memberData) => (
-              <TeamMemberRegistration
-                key={memberData.member}
-                member={memberData.member}
-                teamData={teamData}
-                handleChange={handleChange}
-              />
-            ))}
-            <div className="form-control mt-6">
-              {showFourthMember ? (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={handleDelete}
+          {registrationDetails.relayCoding.length > 0 ? (
+            <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+              Already Registered!
+            </h2>
+          ) : (
+            <>
+              <div className="divider divider-primary z-20">
+                Team Registration
+              </div>
+              <div className="relative z-10 bg-opacity-75 backdrop-blur-md">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-8 max-w-4xl p-4 md:p-8 lg:p-14 shadow-md shadow-primary rounded-lg bg-gradient-to-r from-fuchsia-700/10 to-purple-600/20"
                 >
-                  Delete Member
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={addMember}
-                >
-                  Add Member
-                </button>
-              )}
-              <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
-                  Register
-                </button>
+                  <div className="form-control mt-6">
+                    <h2 className="text-xl">Team Leader</h2>
+                    <span className="text-secondary-foreground">
+                      {registrationDetails.fullName}
+                    </span>
+                  </div>
+                  {teamData.map((memberData) => (
+                    <>
+                      <div className="divider divider-secondary"></div>
+                      <TeamMemberRegistration
+                        key={memberData.member}
+                        member={memberData.member}
+                        teamData={teamData}
+                        handleChange={handleChange}
+                      />
+                    </>
+                  ))}
+                  <div className="form-control mt-6">
+                    {showFourthMember ? (
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={handleDelete}
+                      >
+                        Delete Member
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={addMember}
+                      >
+                        Add Member
+                      </button>
+                    )}
+                    <div className="form-control mt-6">
+                      <label className="label">
+                        <span className="label-text">
+                          Make sure all details are correct before submitting
+                        </span>
+                      </label>
+                    </div>
+                    <div className="form-control mt-6">
+                      <button type="submit" className="btn btn-primary">
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                {submitted && (
+                  <div className="toast toast-end">
+                    <div className="alert alert-success">
+                      <span>Registered Successfully</span>
+                    </div>
+                    <div className="alert alert-info">
+                      <span>Now you can register for events</span>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          </form>
-          {submitted && (
-            <div className="toast toast-end">
-              <div className="alert alert-success">
-                <span>Registered Successfully</span>
-              </div>
-              <div className="alert alert-info">
-                <span>Now you can register for events</span>
-              </div>
-            </div>
+            </>
           )}
         </>
       )}

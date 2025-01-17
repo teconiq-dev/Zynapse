@@ -12,7 +12,7 @@ import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import Link from "next/link";
 import BlurText from "@/components/ui/BlurText";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
-import {Boxes} from "@/components/ui/background-boxes";
+import { Boxes } from "@/components/ui/background-boxes";
 
 export default function Workshop() {
   const features = [
@@ -145,8 +145,7 @@ const SkeletonOne = ({ id }) => {
                 ) : (
                   <>
                     <p className="py-4">
-                      Please fill in your personal details to register for this
-                      event.
+                      Please fill in your details to register for this event.
                     </p>
                     <div className="modal-action">
                       <Link href="/register">
