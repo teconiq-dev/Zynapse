@@ -6,7 +6,7 @@ const reveal = {
   visible: (index) => ({
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.7, delay: 0.3 * index, ease: "easeInOut" },
+    transition: { duration: 0.7, delay: 0.2 * index, ease: "easeInOut" },
   }),
 };
 const slideInTop = {
