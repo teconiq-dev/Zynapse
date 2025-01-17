@@ -17,7 +17,6 @@ export default function SigninButton() {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
-        console.log(token, user);
         setUser(user);
       })
       .catch((error) => {

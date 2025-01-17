@@ -6,7 +6,6 @@ import { UserDetails } from "@/components/context/userContext";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import { CircleAlert } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 export default function RegisterPage() {
   const { user, registrationDetails, setRegistrationDetails } = UserDetails();
@@ -47,61 +46,50 @@ export default function RegisterPage() {
 
   return (
     <div className="container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
-      <div className="absolute inset-0 opacity-50">
-        <Image
-          src="/register_bg.svg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          quality="100"
-        />
-      </div>
-      <div className="relative z-10 bg-opacity-75">
-        {!user ? (
-          <>
-            <h2 className="text-2xl md:text-6xl font-exo2 my-20">
-              Please Sign in to register events
-            </h2>
-          </>
-        ) : registrationDetails.fullName ? (
-          <div className="backdrop-blur-md bg-base-100/10 p-5 border border-primary rounded-md">
-            <h2 className="text-2xl md:text-6xl font-exo2 my-20">
-              Already Registered! Start registering for events.
-            </h2>
+      {!user ? (
+        <h2 className="z-10 text-2xl md:text-6xl font-exo2 my-20">
+          Please Sign in to register events
+        </h2>
+      ) : registrationDetails.fullName ? (
+        <div className="z-20 backdrop-blur-md bg-base-100/10 p-5 border border-primary rounded-md">
+          <h2 className="text-2xl md:text-6xl font-exo2 my-20">
+            Already Registered! Start participating in events.
+          </h2>
+        </div>
+      ) : (
+        <>
+          <h1 className="z-10 text-2xl md:text-6xl font-monoton mb-14">
+            Registration
+          </h1>
+          <AnimatedGradientText>
+            😌 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+            <span
+              className={cn(
+                `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+              )}
+            >
+              You can select events after registration.
+            </span>
+            <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
+
+          <AnimatedGradientText>
+            🙂 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+            <span
+              className={cn(
+                `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+              )}
+            >
+              For team-based events, members registration will be on events
+              page.
+            </span>
+            <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
+
+          <div className="z-10 divider divider-primary">
+            Participant Registration
           </div>
-        ) : (
-          <>
-            <h1 className="text-2xl md:text-6xl font-monoton mb-14">
-              Registration
-            </h1>
-            <AnimatedGradientText>
-              😌 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
-              <span
-                className={cn(
-                  `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-                )}
-              >
-                You can select events after registration.
-              </span>
-              <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-            </AnimatedGradientText>
-
-            <AnimatedGradientText>
-              🙂 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
-              <span
-                className={cn(
-                  `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-                )}
-              >
-                For team-based events, members registration will be on events
-                page.
-              </span>
-              <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-            </AnimatedGradientText>
-
-            <div className="divider divider-primary">
-              Participant Registration
-            </div>
+          <div className="relative z-10 bg-opacity-75 backdrop-blur-md">
             <form
               onSubmit={handleSubmit}
               className="space-y-4 max-w-4xl p-4 md:p-8 lg:p-14 shadow-md shadow-primary rounded-lg backdrop-blur-sm bg-gradient-to-r from-fuchsia-700/10 to-purple-600/20"
@@ -195,9 +183,9 @@ export default function RegisterPage() {
                 </div>
               </div>
             )}
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
