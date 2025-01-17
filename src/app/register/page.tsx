@@ -50,7 +50,7 @@ export default function RegisterPage() {
         <h2 className="z-10 text-2xl md:text-6xl font-exo2 my-20">
           Please Sign in to register events
         </h2>
-      ) : registrationDetails.fullName ? (
+      ) : registrationDetails?.fullName ? (
         <div className="z-20 backdrop-blur-md bg-base-100/10 p-5 border border-primary rounded-md">
           <h2 className="text-2xl md:text-6xl font-exo2 my-20">
             Already Registered! Start participating in events.
