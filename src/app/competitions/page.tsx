@@ -35,7 +35,7 @@ export default function CompetitionsPage() {
                 Join thrilling competitions and win amazing prizes!
               </p>
             </TextAnimation>
-            <Link href="/competitions/#individual">
+            <Link href="/competitions/#hackathon">
               <button className="btn btn-primary btn-sm btn-outline">
                 Register
               </button>
@@ -47,10 +47,10 @@ export default function CompetitionsPage() {
         </VelocityScroll>
         <div className="divider divider-primary">
           <h2
-            id="individual"
-            className="text-3xl font-gugi text-red-200 animate-pulse"
+            id="hackathon"
+            className="text-2xl md:text-3xl font-gugi text-red-200 animate-bounce"
           >
-            Hackathon
+            Hackathon - <span className="text-purple-400">Feb 1, 2</span>
           </h2>
         </div>
         <Hackathon />
@@ -58,17 +58,17 @@ export default function CompetitionsPage() {
           <div className="divider divider-primary">
             <h2
               id="individual"
-              className="text-3xl font-gugi text-red-200 animate-pulse"
+              className="text-2xl md:text-3xl font-gugi text-red-200 animate-bounce"
             >
-              Individual
+              Individual - <span className="text-purple-400">Feb 7</span>
             </h2>
           </div>
           <IndividualEvents />
         </div>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
-            <h2 className="text-3xl font-gugi text-red-200 animate-pulse">
-              Team
+            <h2 className="text-2xl md:text-3xl font-gugi text-red-200 animate-bounce">
+              Team - <span className="text-purple-400">Feb 7</span>
             </h2>
           </div>
           <TeamEvents />
