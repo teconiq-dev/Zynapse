@@ -21,10 +21,10 @@ export default function Footer() {
       <nav>
         <h6 className="footer-title">Social</h6>
         <div className="grid grid-flow-col gap-4">
-          <Link href="https://www.instagram.com/zynapsefest">
+          <Link href="https://www.instagram.com/zynapse_25?utm_source=qr&igsh=MWMwaXI2dzE2MHFkMw==">
             <IconBrandInstagramFilled />
           </Link>
-          <Link href="">
+          <Link href="https://www.youtube.com/@ZynapseTechFest">
             <IconBrandYoutubeFilled />
           </Link>
         </div>
