@@ -19,7 +19,7 @@ export const Contact = () => {
           <div className="space-y-8">
             <div>
               <Mail size={32} className="mx-auto mr-2 inline" />
-              <Link href="mailto:email.zynapse.in">
+              <Link href="mailto:info@zynapse.in">
                 <span className="badge badge-ghost">email.zynapse.in</span>
               </Link>
             </div>
