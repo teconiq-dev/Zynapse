@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const reveal = {
   hidden: { opacity: 0, scale: 0.5 },
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     scale: 1,
     transition: { duration: 0.7, delay: 0.1 * index, ease: "easeInOut" },
@@ -11,10 +11,10 @@ const reveal = {
 };
 const slideInTop = {
   hidden: { opacity: 0, y: -100 },
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 * index },
+    transition: { duration: 0.5, ease: "easeInOut", delay: 0.1 * index },
   }),
 };
 const slideInBottom = {

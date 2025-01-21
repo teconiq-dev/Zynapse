@@ -6,9 +6,13 @@ import { teamEvents } from "@/lib/events";
 export default function TeamEvents() {
   const { registrationDetails } = UserDetails();
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
       {teamEvents.map((event) => (
-        <AnimationContainer mode="reveal" key={event.id} index={event.id - 4}>
+        <AnimationContainer
+          mode="slideInTop"
+          key={event.id}
+          index={event.id - 4}
+        >
           <EventCard
             count={event.count}
             key={event.id}
@@ -18,7 +22,7 @@ export default function TeamEvents() {
             imageSrc={event.imageSrc}
             rules={event.rules}
             url={event.url}
-            team={registrationDetails?.[event.team].length > 0 ? true : false}
+            team={registrationDetails?.[event.team].length > 0}
           />
         </AnimationContainer>
       ))}
