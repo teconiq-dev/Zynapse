@@ -24,7 +24,7 @@ const monoton = Monoton({
 
 export const metadata: Metadata = {
   title: "Zynapse",
-  description: "Tech fest BMC",
+  description: "Annual Tech Fest of Department of Computer Science 2025",
   icons: { icon: "/metadata.png" },
 };
 
