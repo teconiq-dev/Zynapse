@@ -6,7 +6,7 @@ import FlickeringGrid from "@/components/ui/flickering-grid";
 import { TextAnimation } from "@/components/TextAnimation";
 import { Room } from "@/components/Room";
 import Link from "next/link";
-import { Hackathon } from "@/components/hackathon";
+import { HackathonDetails } from "@/components/hackathon";
 
 export default function CompetitionsPage() {
   return (
@@ -53,7 +53,7 @@ export default function CompetitionsPage() {
             Hackathon - <span className="text-purple-400">Feb 1, 2</span>
           </h2>
         </div>
-        <Hackathon />
+        <HackathonDetails />
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2

@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-200/60 text-base-content p-10 z-10">
+    <footer className="footer sm:footer-horizontal bg-base-200/60 text-base-content p-6 md:p-10 z-10">
       <aside>
-        <Image src="/logo.png" alt="zynapse" width={200} height={200} />
+        <Image src="/logo.png" alt="zynapse" width={80} height={80} />
         <p>
           Bharata Mata College
           <br />
@@ -41,6 +41,9 @@ export default function Footer() {
         </Link>
       </nav>
       <nav>
+        <Link className="link link-hover" href="/hackathon">
+          Hackathon
+        </Link>
         <Link className="link link-hover" href="/competitions">
           Competitions
         </Link>

@@ -44,11 +44,6 @@ export default function SigninButton() {
     <>
       {user ? (
         <>
-          <Link href="/profile" className="p-0 hidden lg:block">
-            <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
-              Profile
-            </button>
-          </Link>
           <div className="dropdown dropdown-bottom dropdown-end">
             <div
               tabIndex={0}

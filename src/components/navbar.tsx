@@ -1,17 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SigninButton from "./backend/signin";
 import ScrollProgress from "@/components/ui/scroll-progress";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
         <div className="navbar bg-base-300 w-full z-50 fixed top-0">
-          <ScrollProgress className="top-[65px] md:top-[75px]" />
+          <ScrollProgress className="top-[70px] md:top-[80px]" />
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -35,7 +37,7 @@ export const Navbar = () => {
           </div>
           <div className="mx-2 flex-1 justify-between px-2">
             <Link href="/">
-              <Image src="/logo.png" alt="logo" width={150} height={350} />
+              <Image src="/logo.png" alt="logo" width={40} height={40} />
             </Link>
             <div className="inline-block lg:hidden">
               <SigninButton />
@@ -45,21 +47,36 @@ export const Navbar = () => {
             <ul className="menu menu-horizontal space-x-2">
               <li>
                 <Link href="/" className="p-0">
-                  <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
+                  <button
+                    className={`btn btn-xs btn-link sm:btn-sm md:btn-md ${pathname === "/" && "btn-disabled"}`}
+                  >
                     Home
                   </button>
                 </Link>
               </li>
               <li>
+                <Link href="/hackathon" className="p-0">
+                  <button
+                    className={`btn btn-xs btn-link sm:btn-sm md:btn-md ${pathname === "/hackathon" && "btn-disabled"}`}
+                  >
+                    Hackathon
+                  </button>
+                </Link>
+              </li>
+              <li>
                 <Link href="/competitions" className="p-0">
-                  <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
+                  <button
+                    className={`btn btn-xs btn-link sm:btn-sm md:btn-md ${pathname === "/competitions" && "btn-disabled"}`}
+                  >
                     Competitions
                   </button>
                 </Link>
               </li>
               <li>
                 <Link href="/workshops" className="p-0">
-                  <button className="btn btn-xs btn-link sm:btn-sm md:btn-md">
+                  <button
+                    className={`btn btn-xs btn-link sm:btn-sm md:btn-md ${pathname === "/workshops" && "btn-disabled"}`}
+                  >
                     Workshops
                   </button>
                 </Link>
@@ -82,7 +99,7 @@ export const Navbar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="bg-base-200 min-h-full w-64 p-4 flex items-start justify-center">
+        <div className="bg-base-200 min-h-full w-56 p-4 flex items-start justify-center">
           <ul className="menu w-full space-y-2">
             {/* Sidebar content here */}
             <li>
@@ -96,6 +113,20 @@ export const Navbar = () => {
                   }
                 >
                   Home
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/hackathon">
+                <button
+                  className="btn btn-outline sm:btn-md lg:btn-lg w-40"
+                  onClick={() =>
+                    ((
+                      document.getElementById("my-drawer-3") as HTMLInputElement
+                    ).checked = false)
+                  }
+                >
+                  Hackathon
                 </button>
               </Link>
             </li>

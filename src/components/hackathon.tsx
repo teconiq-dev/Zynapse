@@ -7,7 +7,8 @@ import { UserDetails } from "@/components/context/userContext";
 import { hackathonDetails } from "@/lib/events";
 import { EventRules } from "./events-card";
 import { User } from "lucide-react";
-export const Hackathon = () => {
+
+export const HackathonDetails = () => {
   const { registrationDetails } = UserDetails();
 
   const registered = registrationDetails?.event.includes(
