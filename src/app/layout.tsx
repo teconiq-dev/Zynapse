@@ -25,7 +25,7 @@ const monoton = Monoton({
 export const metadata: Metadata = {
   title: "Zynapse",
   description: "Tech fest BMC",
-  icons: { icon: "/logo.png" },
+  icons: { icon: "/metadata.png" },
 };
 
 export default function RootLayout({

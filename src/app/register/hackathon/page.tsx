@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
 import { Payment } from "@/components/payment";
+import Link from "next/link";
 
 export default function HackathonRegistration() {
   const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const router = useRouter();
+  const dataFilled = registrationDetails?.fullName.length > 0;
 
   const [showFourthMember, setShowFourthMember] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -76,6 +78,7 @@ export default function HackathonRegistration() {
       console.error("Error in handleSubmit: ", error);
     }
   };
+
   const handleDelete = () => {
     setTeamData((prevData) => prevData.filter((data) => data.member !== 4));
     setShowFourthMember(false);
@@ -96,6 +99,7 @@ export default function HackathonRegistration() {
     ]);
     setShowFourthMember(true);
   };
+
   return (
     <div className="z-20 container mx-auto p-4 flex flex-col items-center justify-start w-full h-full">
       {!user ? (
@@ -107,9 +111,17 @@ export default function HackathonRegistration() {
           <h1 className="text-2xl md:text-6xl font-monoton mb-14 z-20">
             Hackathon
           </h1>
-          {registrationDetails.hackathon.length > 0 ? (
+          {registrationDetails?.hackathon?.length > 0 ? (
             <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
               Already Registered!
+            </h2>
+          ) : !dataFilled ? (
+            <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+              Please fill in your details{" "}
+              <Link href="/register" className="btn-link">
+                here
+              </Link>{" "}
+              before registration
             </h2>
           ) : (
             <>

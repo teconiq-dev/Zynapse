@@ -4,9 +4,11 @@ import { getDetails, updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
+import Link from "next/link";
 
 export default function TechQuizRegistration() {
   const { user, registrationDetails, setRegistrationDetails } = UserDetails();
+  const dataFilled = registrationDetails?.fullName.length > 0;
   const router = useRouter();
 
   const [submitted, setSubmitted] = useState(false);
@@ -73,6 +75,14 @@ export default function TechQuizRegistration() {
           {registrationDetails.techQuiz.length > 0 ? (
             <h2 className="text-2xl md:text-6xl font-exo2 my-20">
               Already Registered!
+            </h2>
+          ) : !dataFilled ? (
+            <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+              Please fill in your details{" "}
+              <Link href="/register" className="btn-link">
+                here
+              </Link>{" "}
+              before registration
             </h2>
           ) : (
             <>
