@@ -124,7 +124,7 @@ export const hackathonDetails = {
   description: "30 hours brain storming with exciting price",
   imageSrc: "/Hackathon.jpeg",
   team: "hackathon",
-  url: "/register/hackathon",
+  url: "/hackathon",
   rules: {
     do: [
       "Each team consist of 2-4 members",

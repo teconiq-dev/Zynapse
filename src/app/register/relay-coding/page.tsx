@@ -4,10 +4,12 @@ import { getDetails, updateDetails } from "@/components/backend/firebase";
 import { useRouter } from "next/navigation";
 import { TeamDetails, UserDetails } from "@/components/context/userContext";
 import { TeamMemberRegistration } from "@/components/team-member-registration";
+import Link from "next/link";
 
 export default function RelayCodingRegistration() {
   const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const router = useRouter();
+  const dataFilled = registrationDetails?.fullName.length > 0;
 
   const [showFourthMember, setShowFourthMember] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -100,9 +102,17 @@ export default function RelayCodingRegistration() {
           <h1 className="text-2xl md:text-6xl font-monoton mb-14 z-20">
             Relay Coding
           </h1>
-          {registrationDetails.relayCoding.length > 0 ? (
+          {registrationDetails?.relayCoding?.length > 0 ? (
             <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
               Already Registered!
+            </h2>
+          ) : !dataFilled ? (
+            <h2 className="text-2xl md:text-6xl font-exo2 my-20 z-20">
+              Please fill in your details{" "}
+              <Link href="/register" className="btn-link">
+                here
+              </Link>{" "}
+              before registration
             </h2>
           ) : (
             <>
@@ -117,7 +127,7 @@ export default function RelayCodingRegistration() {
                   <div className="form-control mt-6">
                     <h2 className="text-xl">Team Leader</h2>
                     <span className="text-secondary-foreground">
-                      {registrationDetails.fullName}
+                      {registrationDetails?.fullName}
                     </span>
                   </div>
                   {teamData.map((memberData) => (

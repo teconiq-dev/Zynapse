@@ -12,7 +12,7 @@ const eventDetails = [
     title: "Hackathon",
     description: "30 hour exciting hackathon",
     icon: <CodeXmlIcon className="w-8 h-8 text-[#DB7751] mx-auto inline" />,
-    url: "/register/hackathon",
+    url: "/hackathon",
   },
   {
     date: "February 6",
