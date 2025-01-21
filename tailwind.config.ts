@@ -80,6 +80,7 @@ const config: Config = {
         gradient: "gradient 8s linear infinite",
         "shiny-text": "shiny-text 8s infinite",
         fade: "fade linear forwards",
+        "skew-scroll": "skew-scroll 20s linear infinite",
       },
       keyframes: {
         "background-position-spin": {
@@ -109,6 +110,16 @@ const config: Config = {
         fade: {
           from: { scale: "0.6", opacity: "0.6" },
           to: { scale: "1", opacity: "1" },
+        },
+        "skew-scroll": {
+          "0%": {
+            transform: "rotateX(20deg) rotateZ(-20deg) skewX(20deg)",
+          },
+
+          "100%": {
+            transform:
+              "rotateX(20deg) rotateZ(-20deg) skewX(20deg) translateY(-100%)",
+          },
         },
       },
     },
