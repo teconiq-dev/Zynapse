@@ -20,7 +20,7 @@ export const Contact = () => {
             <div>
               <Mail size={32} className="mx-auto mr-2 inline" />
               <Link href="mailto:info@zynapse.in">
-                <span className="badge badge-ghost">email.zynapse.in</span>
+                <span className="badge badge-ghost">info@zynapse.in</span>
               </Link>
             </div>
             <div className="flex flex-wrap justify-start md:justify-evenly items-center gap-4">

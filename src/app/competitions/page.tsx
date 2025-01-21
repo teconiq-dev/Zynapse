@@ -45,15 +45,6 @@ export default function CompetitionsPage() {
         <VelocityScroll className="font-monoton first-letter:0.5em ">
           Zynapse Fest
         </VelocityScroll>
-        <div className="divider divider-primary">
-          <h2
-            id="hackathon"
-            className="text-2xl md:text-3xl font-gugi text-red-200 animate-bounce"
-          >
-            Hackathon - <span className="text-purple-400">Feb 1, 2</span>
-          </h2>
-        </div>
-        <HackathonDetails />
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
           <div className="divider divider-primary">
             <h2
