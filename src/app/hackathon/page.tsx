@@ -1,12 +1,21 @@
 import BlurText from "@/components/ui/BlurText";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import { TextAnimate } from "@/components/ui/text-animate";
 import TiltedScroll from "@/components/ui/tilted-scroll";
-import { CalendarIcon, MapPinIcon, TrophyIcon } from "lucide-react";
+import { hackathonDetails } from "@/lib/events";
+import {
+  CalendarIcon,
+  IndianRupeeIcon,
+  MapPinIcon,
+  TrophyIcon,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Hackathon() {
   return (
     <>
       <HeroSection />
+      <HackathonRules />
       <div className="p-5 flex flex-wrap items-center justify-between gap-16">
         <WhyJoin />
         <StepsToEnter />
@@ -42,7 +51,9 @@ function HeroSection() {
         <p className="text-lg mb-8 text-purple-400">30 hour Hackathon</p>
         <EventDetails />
         <Link href="/register/hackathon">
-          <button className="btn btn-accent">Register Now</button>
+          <button className="btn btn-accent animate-bounce">
+            Register Now
+          </button>
         </Link>
       </div>
     </div>
@@ -63,25 +74,56 @@ function EventDetails() {
     },
     {
       title: "Prize Pool",
-      value: "₹50,000",
-      icon: <TrophyIcon size={40} className="text-purple-300" />,
+      value: (
+        <span>
+          <NumberTicker
+            value={50000}
+            className="whitespace-pre-wrap font-medium tracking-tighter text-red-200"
+          />
+        </span>
+      ),
+      icon: <IndianRupeeIcon size={40} className="text-purple-300" />,
     },
   ];
   return (
     <div className="container mx-auto py-16 px-4">
       <div className="grid md:grid-cols-3 gap-8">
         {details.map((detail, index) => (
-          <div className="card glass w-64 md:w-96 bg-card/5" key={index}>
+          <div className="card glass w-72 md:w-96 bg-card/5" key={index}>
             <div className="card-body">
               <h4 className="text-lg text-purple-200 font-bold">
                 {detail.title}
               </h4>
               <h2 className="card-title">{detail.icon}</h2>
-              <p className="text-red-200">{detail.value}</p>
+              <p className="text-red-200 text-xl md:text-2xl">{detail.value}</p>
             </div>
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function HackathonRules() {
+  return (
+    <div
+      className="p-8 py-20 md:p-24 w-screen min-h-svh flex flex-col items-start justify-center gap-4"
+      style={{
+        backgroundImage: "url('/mesh-gradient.png')",
+        backgroundSize: "fill",
+        backgroundPosition: "center",
+      }}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-audioWide">
+        Hackathon Rules
+      </h2>
+      {hackathonDetails.rules.do.map((rule, index) => (
+        <li key={index} className="ml-4">
+          <TextAnimate delay={index} animation="slideUp" by="word">
+            {rule}
+          </TextAnimate>
+        </li>
+      ))}
     </div>
   );
 }

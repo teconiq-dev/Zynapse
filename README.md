@@ -24,3 +24,4 @@ To learn more about Next.js, take a look at the following resources:
 ## Credits
 
 - "Isometric Hacker Room" (https://skfb.ly/6WPMn) by Batuhan13 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+- "Hacker Laptop" (https://skfb.ly/6R9xT) by PewPew is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
