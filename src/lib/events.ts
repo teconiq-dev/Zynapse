@@ -63,10 +63,11 @@ export const individualEvents = [
   {
     id: 4,
     title: "PPT Presentation",
-    description: "Present your ideas and innovations.",
+    description: "Present your ideas and innovations. (School students only)",
     imageSrc: "/PPT_present.jpeg",
     rules: {
       do: [
+        "School students only",
         "Participants may select any topic related to Computer Science and Technology",
         "Suggested topics include but are not limited to: \n\t\tTechnology and Innovation \n\t\tScience and Society \n\t\tSocial issues and Ethics \n\t\tFuture-Oriented topics \n\t\tArtificial Intelligence and Beyond \n\t\tSustainability and Technology",
         "The presentation should be between 5-7 minutes and maximum of 15 slides",
@@ -127,6 +128,7 @@ export const hackathonDetails = {
   url: "/hackathon",
   rules: {
     do: [
+      "College students only",
       "Maximum 15 teams will be allowed",
       "Team must contain 3-4 members",
       "The first registrant becomes the Team Leader",

@@ -24,7 +24,7 @@ export function EventCard({
   url = null,
   rules,
   team = false,
-  count = null,
+  count = "1",
 }: EventCardProps) {
   const {
     user,
