@@ -113,8 +113,8 @@ export const teamEvents = [
     url: "/register/tech-quiz",
     count: "2",
     rules: {
-      do: ["Do this", "Do that"],
-      dont: ["Don't do this", "Don't do that"],
+      do: ["The quiz will have multiple rounds", "Each round will have a different set of questions", "The quiz will be conducted in English"],
+      dont: ["Do not bring mobile or external devices during the quiz", "Do not use any unfair means to cheat", "Follow all instructions and decisions provided by the organizers and judges"],
     },
   },
 ];
