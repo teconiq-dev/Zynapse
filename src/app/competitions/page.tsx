@@ -6,7 +6,7 @@ import FlickeringGrid from "@/components/ui/flickering-grid";
 import { TextAnimation } from "@/components/TextAnimation";
 import { Room } from "@/components/Room";
 import Link from "next/link";
-import { HackathonDetails } from "@/components/hackathon";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 export default function CompetitionsPage() {
   return (
@@ -64,6 +64,10 @@ export default function CompetitionsPage() {
           </div>
           <TeamEvents />
         </div>
+        <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+          And more <AuroraText className="mr-3">Spot events </AuroraText>
+          awaits you!
+        </h1>
       </div>
     </div>
   );
