@@ -6,6 +6,7 @@ export const eventsList = [
   "Relay Coding",
   "Tech Quiz",
   "PPT Presentation",
+  "Wikipedia Game",
 ];
 
 export const individualEvents = [
@@ -62,6 +63,23 @@ export const individualEvents = [
   },
   {
     id: 4,
+    title: "Wikipedia Game",
+    description:
+      "Navigate Wikipedia links to the target using only the hyperlinks.",
+    imageSrc: "/wikipedia.jpg",
+    rules: {
+      do: [
+        "Navigate from one Wikipedia page to another specific page using only the hyperlinks within the articles.",
+        "Start on a randomly chosen Wikipedia page.",
+      ],
+      dont: [
+        "Players can only click on internal links (no search bar!).",
+        "First person to reach the target page wins!",
+      ],
+    },
+  },
+  {
+    id: 5,
     title: "PPT Presentation",
     description: "Present your ideas and innovations. (School students only)",
     imageSrc: "/PPT_present.jpeg",
@@ -75,7 +93,6 @@ export const individualEvents = [
       dont: [
         "The presentation should be in English",
         "All content must be original. Plagiarism will result in immediate disqualification",
-        "Each team can have a maximum of 2 members",
       ],
     },
   },
@@ -83,7 +100,7 @@ export const individualEvents = [
 
 export const teamEvents = [
   {
-    id: 6,
+    id: 7,
     title: "Relay Coding",
     description: "Team up and code in a relay format.",
     imageSrc: "/relay_coding.jpeg",
@@ -105,7 +122,7 @@ export const teamEvents = [
     },
   },
   {
-    id: 7,
+    id: 8,
     title: "Tech Quiz",
     description: "Prove your tech knowledge in this quiz.",
     imageSrc: "/Tech_quiz.jpeg",
@@ -113,14 +130,22 @@ export const teamEvents = [
     url: "/register/tech-quiz",
     count: "2",
     rules: {
-      do: ["The quiz will have multiple rounds", "Each round will have a different set of questions", "The quiz will be conducted in English"],
-      dont: ["Do not bring mobile or external devices during the quiz", "Do not use any unfair means to cheat", "Follow all instructions and decisions provided by the organizers and judges"],
+      do: [
+        "The quiz will have multiple rounds",
+        "Each round will have a different set of questions",
+        "The quiz will be conducted in English",
+      ],
+      dont: [
+        "Do not bring mobile or external devices during the quiz",
+        "Do not use any unfair means to cheat",
+        "Follow all instructions and decisions provided by the organizers and judges",
+      ],
     },
   },
 ];
 
 export const hackathonDetails = {
-  id: 5,
+  id: 10,
   title: "Hackathon",
   description: "30 hours brain storming with exciting price",
   imageSrc: "/Hackathon.jpeg",
