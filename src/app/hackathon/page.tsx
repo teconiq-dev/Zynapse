@@ -1,14 +1,10 @@
+import { LaptopHolo } from "@/components/LaptopHalo";
 import BlurText from "@/components/ui/BlurText";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { TextAnimate } from "@/components/ui/text-animate";
 import TiltedScroll from "@/components/ui/tilted-scroll";
 import { hackathonDetails } from "@/lib/events";
-import {
-  CalendarIcon,
-  IndianRupeeIcon,
-  MapPinIcon,
-  TrophyIcon,
-} from "lucide-react";
+import { CalendarIcon, IndianRupeeIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Hackathon() {
@@ -107,23 +103,30 @@ function EventDetails() {
 function HackathonRules() {
   return (
     <div
-      className="p-8 py-20 md:p-24 w-screen min-h-svh flex flex-col items-start justify-center gap-4"
+      className="py-20 md:p-24 w-screen min-h-svh flex flex-col items-start justify-center gap-4"
       style={{
         backgroundImage: "url('/mesh-gradient.png')",
         backgroundSize: "fill",
         backgroundPosition: "center",
       }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-audioWide">
-        Hackathon Rules
-      </h2>
-      {hackathonDetails.rules.do.map((rule, index) => (
-        <li key={index} className="ml-4">
-          <TextAnimate delay={index} animation="slideUp" by="word">
-            {rule}
-          </TextAnimate>
-        </li>
-      ))}
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4">
+        <div className="p-4 flex flex-col items-start justify-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-audioWide">
+            Hackathon Rules
+          </h2>
+          {hackathonDetails.rules.do.map((rule, index) => (
+            <li key={index} className="ml-4">
+              <TextAnimate delay={index} animation="slideUp" by="word">
+                {rule}
+              </TextAnimate>
+            </li>
+          ))}
+        </div>
+        <div className="flex min-h-[500px] items-center justify-center">
+          <LaptopHolo />
+        </div>
+      </div>
     </div>
   );
 }
