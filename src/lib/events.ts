@@ -142,6 +142,25 @@ export const teamEvents = [
       ],
     },
   },
+  {
+    id: 9,
+    title: "BGMI",
+    description: "Battle it out in the battlegrounds of BGMI.",
+    imageSrc: "/bgmi.jpg",
+    team: "bgmi",
+    url: "/register/bgmi",
+    count: "4",
+    rules: {
+      do: [
+        "4 player squad",
+        "Must come with your smartphones and latest game version",
+      ],
+      dont: [
+        "If using any unfair means, you will be disqualified",
+        "If disconnected from technical issues, player must follow the instructions of the organizers",
+      ],
+    },
+  },
 ];
 
 export const hackathonDetails = {

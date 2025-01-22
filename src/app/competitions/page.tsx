@@ -7,10 +7,25 @@ import { TextAnimation } from "@/components/TextAnimation";
 import { Room } from "@/components/Room";
 import Link from "next/link";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { UserDetails } from "@/components/context/userContext";
+import { useEffect, useState } from "react";
 
 export default function CompetitionsPage() {
+  const { registrationDetails } = UserDetails();
+  const [showToast, setShowToast] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setShowToast(false), 6000);
+  }, []);
   return (
     <div className="flex h-full w-full mx-auto rounded-md overflow-hidden">
+      {registrationDetails?.fullName && showToast && (
+        <div className="toast toast-end z-20">
+          <div className="alert alert-info bg-purple-300/70">
+            <span>Start registering events!</span>
+          </div>
+        </div>
+      )}
       <FlickeringGrid
         className="-z-10 bg-background [mask-image:radial-gradient(720px_circle_at_center,white,transparent)] flex items-center justify-center fixed w-full h-full inset-0"
         squareSize={14}
@@ -64,7 +79,7 @@ export default function CompetitionsPage() {
           </div>
           <TeamEvents />
         </div>
-        <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+        <h1 className="text-4xl my-10 font-bold tracking-tighter md:text-5xl lg:text-7xl">
           And more <AuroraText className="mr-3">Spot events </AuroraText>
           awaits you!
         </h1>

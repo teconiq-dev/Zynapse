@@ -30,6 +30,7 @@ export type RegistrationDetails = UserRegistration & {
   hackathon: TeamDetails[];
   relayCoding: TeamDetails[];
   techQuiz: TeamDetails[];
+  bgmi: TeamDetails[];
   workshops: string[];
 };
 
@@ -49,6 +50,7 @@ export default function UserProvider({ children }) {
       hackathon: [],
       relayCoding: [],
       techQuiz: [],
+      bgmi: [],
       workshops: [],
     });
 
@@ -68,6 +70,7 @@ export default function UserProvider({ children }) {
             hackathon: details?.hackathon || [],
             relayCoding: details?.relayCoding || [],
             techQuiz: details?.techQuiz || [],
+            bgmi: details?.bgmi || [],
             workshops: details?.workshops || [],
           });
           setLoading(false);

@@ -38,7 +38,7 @@ export default function RegisterPage() {
       setSubmitted(true);
       const details = await getDetails(user.email!);
       setRegistrationDetails(details);
-      setTimeout(() => router.push("/competitions"), 3000);
+      setTimeout(() => router.push("/competitions"), 4000);
     } catch (error) {
       console.error("Error writing document: ", error);
     }
@@ -53,7 +53,7 @@ export default function RegisterPage() {
       ) : registrationDetails?.fullName ? (
         <div className="z-20 backdrop-blur-md bg-base-100/10 p-5 border border-primary rounded-md">
           <h2 className="text-2xl md:text-6xl font-exo2 my-20">
-            Already Registered! Start participating in events.
+            Registered! Start participating in events from respective pages.
           </h2>
         </div>
       ) : (
@@ -80,7 +80,7 @@ export default function RegisterPage() {
                 `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
               )}
             >
-              For team-based events, members registration will be on events
+              For team-based events, members registration will be on seperate
               page.
             </span>
             <CircleAlert className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
