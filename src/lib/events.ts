@@ -40,6 +40,7 @@ export const individualEvents = [
     imageSrc: "/debugging.jpeg",
     rules: {
       do: [
+        "The competition is based on C/C++ programming",
         "Pay close attention to the questions in the preliminary quiz.",
         "Writing materials for the quiz and systems for debugging will be provided",
         "Judges and organizers decision will be final",
@@ -73,7 +74,7 @@ export const individualEvents = [
     description:
       "Navigate Wikipedia links to the target using only the hyperlinks.",
     alt: "Wikipedia Game",
-    prize: {first: 1000, second: 500},
+    prize: {first: 1000, second: 0},
     imageSrc: "/wikipedia.jpg",
     rules: {
       do: [

@@ -1,27 +1,19 @@
-export const eventsList = ["Power BI", "UI/UX", "Blockchain", "Unity",];
-
-export const individualEvents = [{
-    id: 1, title: "Power BI", description: "Learn new skills with Power BI", imageSrc: "/PoweBiWorkshop.jpeg", rules: {
+export const workshopDetails = [{
+    id: 1,
+    title: "Ethical Hacking",
+    description: "Join us for an engaging and hands-on Ethical Hacking Workshop designed to equip you with foundational knowledge and practical skills in cybersecurity. This one-day intensive session is perfect for beginners and enthusiasts eager to explore the world of ethical hacking and cyber defense.",
+    imageSrc: "/cybersecurity.jpg",
+    rules: {
         do: [""], dont: [""],
     },
-}, {
-    id: 2,
-    title: "UI/UX",
-    description: "Fundamentals of UI/UX design to craft a seamless experience and build your dream product!",
-    imageSrc: "/UIUXWorkshop.jpeg",
-    rules: {
-        do: [""],
-    },
-}, {
-    id: 3,
-    title: "Blockchain",
-    description: "Introduction to Blockchain fundamentals",
-    imageSrc: "/BlockchainWorkshop.jpeg",
-    rules: {
-        do: ["Do this", "Do that"], dont: ["Don't do this", "Don't do that"],
-    },
-}, {
-    id: 4, title: "Unity", description: "Make your own games with Unity.", imageSrc: "/UnityWorkshop.jpeg", rules: {
-        do: [""], dont: [""],
-    },
-},];
+},
+//     {
+//     id: 2,
+//     title: "UI/UX",
+//     description: "Fundamentals of UI/UX design to craft a seamless experience and build your dream product!",
+//     imageSrc: "/UIUXWorkshop.jpeg",
+//     rules: {
+//         do: [""],
+//     },
+// },
+];

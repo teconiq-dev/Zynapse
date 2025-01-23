@@ -76,7 +76,7 @@ export default function SigninButton() {
           onClick={signInGoogle}
           className="btn btn-primary btn-sm md:btn-md"
         >
-          Signin
+          Sign in
         </button>
       )}
     </>

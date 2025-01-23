@@ -93,7 +93,7 @@ export function EventCard({
               <div className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
 
                 <p className="text-lg font-bold text-[#Ffd700]">
-                  💰Rs {prize.first + prize.second}</p>
+                  🏆Rs {prize.first + prize.second}</p>
               </div>
             </CardItem>
             <div className="flex justify-between items-center mt-10">

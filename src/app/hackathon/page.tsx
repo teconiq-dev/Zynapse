@@ -4,7 +4,7 @@ import { NumberTicker } from "@/components/ui/number-ticker";
 import { TextAnimate } from "@/components/ui/text-animate";
 import TiltedScroll from "@/components/ui/tilted-scroll";
 import { hackathonDetails } from "@/lib/events";
-import { CalendarIcon, IndianRupeeIcon, MapPinIcon } from "lucide-react";
+import { CalendarIcon, GitCommitVertical, IndianRupeeIcon, MapPinIcon} from "lucide-react";
 import Link from "next/link";
 
 export default function Hackathon() {
@@ -85,7 +85,7 @@ function EventDetails() {
     <div className="container mx-auto py-16 px-4">
       <div className="grid md:grid-cols-3 gap-8">
         {details.map((detail, index) => (
-          <div className="card glass w-72 md:w-96 bg-card/5" key={index}>
+          <div className="card glass w-72 md:w-80 lg:w-96 bg-card/5" key={index}>
             <div className="card-body">
               <h4 className="text-lg text-purple-200 font-bold">
                 {detail.title}
@@ -116,11 +116,12 @@ function HackathonRules() {
             Hackathon Rules
           </h2>
           {hackathonDetails.rules.do.map((rule, index) => (
-            <li key={index} className="ml-4">
-              <TextAnimate delay={index} animation="slideUp" by="word">
+            <span key={index} className="ml-4 mb-2">
+              <GitCommitVertical className="inline" />
+              <TextAnimate delay={index} animation="slideUp" by="word" className="inline">
                 {rule}
               </TextAnimate>
-            </li>
+            </span>
           ))}
         </div>
         <div className="flex min-h-[500px] items-center justify-center">
