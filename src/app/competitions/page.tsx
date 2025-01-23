@@ -20,11 +20,14 @@ export default function CompetitionsPage() {
   }, []);
   return (
     <div className="flex h-full w-full mx-auto rounded-md overflow-hidden">
-      {registrationDetails?.fullName && showToast && (
+      {showToast && (
         <div className="toast toast-end z-20">
-          <div className="alert alert-info bg-purple-300/70">
-            <span>Start registering events!</span>
-          </div>
+          {registrationDetails?.fullName ?
+            <div className="alert alert-info bg-purple-300/80">
+              <span>Start registering events!</span>
+            </div> : <div className="alert alert-info bg-purple-300/80">
+              <span>More spot events awaits you</span>
+            </div>}
         </div>
       )}
       <FlickeringGrid
