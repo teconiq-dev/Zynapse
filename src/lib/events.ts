@@ -14,6 +14,8 @@ export const individualEvents = [
     id: 1,
     title: "Web Development",
     description: "Showcase your web development prowess.",
+    alt: "WebWeave",
+    prize: {first: 3000, second: 2000},
     imageSrc: "/web-design.jpeg",
     rules: {
       do: [
@@ -33,6 +35,8 @@ export const individualEvents = [
     id: 2,
     title: "Debugging",
     description: "Fix bugs, compete, and enhance skills.",
+    alt: "CoDebug",
+    prize: {first: 3000, second: 2000},
     imageSrc: "/debugging.jpeg",
     rules: {
       do: [
@@ -51,6 +55,8 @@ export const individualEvents = [
     id: 3,
     title: "E-football",
     description: "Dive into action! Join the PES competition",
+    alt: "E-football",
+    prize: {first: 2000, second: 1000},
     imageSrc: "/Pes-tour.jpeg",
     rules: {
       do: [
@@ -66,6 +72,8 @@ export const individualEvents = [
     title: "Wikipedia Game",
     description:
       "Navigate Wikipedia links to the target using only the hyperlinks.",
+    alt: "Wikipedia Game",
+    prize: {first: 1000, second: 500},
     imageSrc: "/wikipedia.jpg",
     rules: {
       do: [
@@ -82,6 +90,8 @@ export const individualEvents = [
     id: 5,
     title: "PPT Presentation",
     description: "Present your ideas and innovations. (School students only)",
+    alt: "PPT Presentation",
+    prize: {first: 2000, second: 1000},
     imageSrc: "/PPT_present.jpeg",
     rules: {
       do: [
@@ -103,6 +113,8 @@ export const teamEvents = [
     id: 7,
     title: "Relay Coding",
     description: "Team up and code in a relay format.",
+    alt: "Relay Coding",
+    prize: {first: 5000, second: 3000},
     imageSrc: "/relay_coding.jpeg",
     team: "relayCoding",
     url: "/register/relay-coding",
@@ -125,6 +137,8 @@ export const teamEvents = [
     id: 8,
     title: "Tech Quiz",
     description: "Prove your tech knowledge in this quiz.",
+    alt: "GeekOut",
+    prize: {first: 2000, second: 1000},
     imageSrc: "/Tech_quiz.jpeg",
     team: "techQuiz",
     url: "/register/tech-quiz",
@@ -146,6 +160,8 @@ export const teamEvents = [
     id: 9,
     title: "BGMI",
     description: "Battle it out in the battlegrounds of BGMI.",
+    alt: "",
+    prize: {first: 2000, second: 1000},
     imageSrc: "/bgmi.jpg",
     team: "bgmi",
     url: "/register/bgmi",
@@ -158,9 +174,8 @@ export const teamEvents = [
         "Ensure Erangel, Sanhok, Miramar maps are downloaded for the competition",
       ],
       dont: [
-        "If over 24 teams, the last team is chosen by TDM elimination",
-        "If using any unfair means, you will be disqualified",
-        "If disconnected from technical issues, player must follow the instructions of the organizers",
+        "The first 20 slots are assigned on a first-come, first-served basis",
+        "If there are more teams, the remaining 5 slots are assigned by TDM elimination",
       ],
     },
   },
@@ -170,6 +185,8 @@ export const hackathonDetails = {
   id: 10,
   title: "Hackathon",
   description: "30 hours brain storming with exciting price",
+  alt: "Hack'n Tech",
+  prize: {first: 15000, second: 10000, third: 5000},
   imageSrc: "/Hackathon.jpeg",
   team: "hackathon",
   url: "/hackathon",

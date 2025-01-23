@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { UserDetails } from "@/components/context/userContext";
 import { getDetails, updateDetails } from "./backend/firebase";
-import { User } from "lucide-react";
+import {TrophyIcon, User} from "lucide-react";
 
 type EventCardProps = {
   id: string;
@@ -15,6 +15,8 @@ type EventCardProps = {
   rules: { do: string[]; dont: string[] };
   team?: boolean;
   count?: string | null;
+  alt?: string;
+  prize: { first: number; second: number };
 };
 export function EventCard({
   id,
@@ -25,6 +27,8 @@ export function EventCard({
   rules,
   team = false,
   count = "1",
+  alt,
+  prize,
 }: EventCardProps) {
   const {
     user,
@@ -78,7 +82,7 @@ export function EventCard({
             >
               {description}
             </CardItem>
-            <CardItem translateZ="100" className="w-full mt-4">
+            <CardItem translateZ="100" className="w-full mt-4 relative">
               <Image
                 src={imageSrc}
                 height={416}
@@ -86,6 +90,11 @@ export function EventCard({
                 className={`${url ? "h-96" : "h-72"} w-full object-cover rounded-xl group-hover/card:shadow-xl`}
                 alt="thumbnail"
               />
+              <div className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
+
+                <p className="text-lg font-bold text-[#Ffd700]">
+                  💰Rs {prize.first + prize.second}</p>
+              </div>
             </CardItem>
             <div className="flex justify-between items-center mt-10">
               <CardItem

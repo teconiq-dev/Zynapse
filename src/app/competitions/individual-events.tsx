@@ -12,6 +12,8 @@ export default function IndividualEvents() {
           description={event.description}
           imageSrc={event.imageSrc}
           rules={event.rules}
+          alt={event.alt}
+          prize={event.prize}
         />
       ))}
     </div>
