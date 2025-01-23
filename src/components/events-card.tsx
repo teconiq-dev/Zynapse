@@ -176,8 +176,7 @@ export function EventCard({
                         ) : (
                           <>
                             <p className="py-4">
-                              Please fill in your personal details to register
-                              for this event.
+                              Please fill in your personal details before registering for this event. You can come back and add this event later...
                             </p>
                             <div className="modal-action">
                               <Link href="/register">

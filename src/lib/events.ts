@@ -152,10 +152,13 @@ export const teamEvents = [
     count: "4",
     rules: {
       do: [
-        "4 player squad",
+        "4 player squad must",
+        "Players must use their own network",
         "Must come with your smartphones and latest game version",
+        "Ensure Erangel, Sanhok, Miramar maps are downloaded for the competition",
       ],
       dont: [
+        "If over 24 teams, the last team is chosen by TDM elimination",
         "If using any unfair means, you will be disqualified",
         "If disconnected from technical issues, player must follow the instructions of the organizers",
       ],
