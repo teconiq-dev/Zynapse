@@ -92,7 +92,8 @@ const config: Config = {
   			gradient: 'gradient 8s linear infinite',
   			'shiny-text': 'shiny-text 8s infinite',
   			fade: 'fade linear forwards',
-  			'skew-scroll': 'skew-scroll 20s linear infinite'
+  			'skew-scroll': 'skew-scroll 20s linear infinite',
+  			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite'
   		},
   		keyframes: {
   			'background-position-spin': {
@@ -205,6 +206,14 @@ const config: Config = {
   				'90%': {
   					bottom: '50%',
   					right: '25%'
+  				}
+  			},
+  			ripple: {
+  				'0%, 100%': {
+  					transform: 'translate(-50%, -50%) scale(1)'
+  				},
+  				'50%': {
+  					transform: 'translate(-50%, -50%) scale(0.9)'
   				}
   			}
   		}
