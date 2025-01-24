@@ -13,7 +13,7 @@ export const WorkshopCards = () => {
           <div
             className="min-h-screen flex w-full flex-col items-center justify-center p-4 md:p-10"
             style={{
-              backgroundImage: `url("${workshop.imageSrc}")`,
+              backgroundImage: `url("${workshop.bgimageSrc}")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               minHeight: "80vh",
