@@ -33,6 +33,7 @@ export default function RegisterPage() {
     try {
       await createDetails(user?.email, {
         ...formData,
+        date: new Date().toISOString(),
       });
       console.log("Document successfully written!");
       setSubmitted(true);
