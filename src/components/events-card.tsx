@@ -90,10 +90,16 @@ export function EventCard({
                 className={`${url ? "h-96" : "h-72"} w-full object-cover rounded-xl group-hover/card:shadow-xl`}
                 alt="thumbnail"
               />
-              <div className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
+              <div
+                className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
 
                 <p className="text-lg font-bold text-[#Ffd700]">
                   🏆Rs {prize.first + prize.second}</p>
+              </div>
+              <div
+                className="absolute bottom-0 right-0 rounded-tl-2xl border-l-2 border-t-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
+                <p className="text-lg font-bold text-purple-200 animate-pulse">
+                  Free Entry</p>
               </div>
             </CardItem>
             <div className="flex justify-between items-center mt-10">

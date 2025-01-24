@@ -38,7 +38,7 @@ export default function CompetitionsPage() {
         maxOpacity={0.7}
         flickerChance={0.5}
       />
-      <div className="flex items-center flex-col justify-center py-5 md:py-10 w-full h-full gap-20">
+      <div className="flex items-center flex-col justify-center py-5 md:py-10 w-full h-full">
         <div
           className="relative w-full h-fit min-h-screen bg-background flex flex-col gap-20 items-center justify-center pt-4">
           <TextAnimation>
@@ -64,7 +64,7 @@ export default function CompetitionsPage() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center pt-4 gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#0A0E0F] to-transparent w-screen pt-20">
           <h1 className="text-3xl font-bold tracking-tighter md:text-5xl lg:text-4xl">
             Register for <AuroraText className="mr-3">Free!</AuroraText>
           </h1>
@@ -74,7 +74,7 @@ export default function CompetitionsPage() {
           </h1>
         </div>
 
-        <VelocityScroll className="font-monoton first-letter:0.5em ">
+        <VelocityScroll className="font-monoton first-letter:0.5em my-14">
           Zynapse Fest
         </VelocityScroll>
         <div className="w-full space-y-8 px-2 md:px-10 lg:px-40">
