@@ -1,5 +1,5 @@
 "use client";
-import { Float, OrbitControls, SpotLight } from "@react-three/drei";
+import { Float, SpotLight } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Laptop } from "./3D/laptop";
@@ -16,7 +16,6 @@ export const LaptopHolo = () => {
           anglePower={7}
           position={[0.5, -1, 4]}
         />
-        <OrbitControls enableZoom={false} />
         <Float
           speed={2} // Animation speed, defaults to 1
           rotationIntensity={4} // XYZ rotation intensity, defaults to 1
