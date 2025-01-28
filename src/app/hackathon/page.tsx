@@ -17,17 +17,22 @@ import Link from "next/link";
 import { AnimatedList } from "@/components/ui/animated-list";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { Ripple } from "@/components/ui/ripple";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { sdgs } from "@/lib/sdgs";
 
 export default function Hackathon() {
   return (
     <>
       <HeroSection />
       <HackathonRules />
-      <div className="p-5 flex flex-wrap items-center justify-between gap-16">
+      <div className="flex flex-col gap-10 w-full items-center justify-center">
         <PrizeSchema />
-        {/*<ChallengeTracks />*/}
-        <WhyJoin />
-        <StepsToEnter />
+        <div className="divider divider-accent"></div>
+        <ChallengeTracks />
+        <div className="p-5 flex flex-wrap items-center justify-between gap-16">
+          <WhyJoin />
+          <StepsToEnter />
+        </div>
       </div>
     </>
   );
@@ -195,25 +200,23 @@ function StepsToEnter() {
 }
 
 function ChallengeTracks() {
-  const tracks = [
-    { name: "AI/ML", description: "Innovative AI solutions" },
-    { name: "Web3", description: "Blockchain and decentralized technologies" },
-    { name: "Sustainability", description: "Tech for environmental impact" },
-  ];
-
   return (
-    <div className="bg-gray-800 py-16">
+    <div className="py-16 shadow-md px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-audioWide font-bold text-center mb-12">
           Challenge Tracks
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {tracks.map((track, index) => (
-            <div key={index} className="bg-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">{track.name}</h3>
-              <p>{track.description}</p>
-            </div>
-          ))}
+        </h1>
+        <h4 className="text-xl text-center mb-8 text-purple-200">
+          Sustainable Development Goals
+        </h4>
+        <p className="text-center text-sm mb-8 text-red-200">
+          The Sustainable Development Goals (SDGs), also known as the Global
+          Goals, were adopted by the United Nations in 2015 as a universal call
+          to action to end poverty, protect the planet, and ensure that by 2030
+          all people enjoy peace and prosperity.
+        </p>
+        <div className="border-2 border-y-purple-300">
+          <AnimatedTestimonials testimonials={sdgs} />
         </div>
       </div>
     </div>
@@ -296,14 +299,14 @@ export function PrizeSchema({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative flex h-[440px] w-full flex-col overflow-hidden rounded-lg border bg-background p-6" +
+        "relative flex h-[540px] w-full flex-col overflow-hidden rounded-lg border bg-background p-8" +
           "md:shadow-xl",
         className,
       )}
     >
       <h1
         className={
-          "text-3xl md:text-4xl font-bold text-center mb-12 font-audioWide"
+          "text-3xl md:text-4xl font-bold text-center my-12 font-audioWide"
         }
       >
         Prize Schema

@@ -12,7 +12,7 @@ export const Navbar = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-300 w-full z-50 fixed top-0">
+        <div className="navbar bg-base-300 w-full z-[1000] fixed top-0">
           <ScrollProgress className="top-[70px] md:top-[80px]" />
           <div className="flex-none lg:hidden">
             <label
@@ -93,7 +93,7 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="drawer-side z-50">
+      <div className="drawer-side z-[1100]">
         <label
           htmlFor="my-drawer-3"
           aria-label="close sidebar"

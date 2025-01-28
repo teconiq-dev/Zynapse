@@ -15,7 +15,7 @@ export const individualEvents = [
     title: "Web Development",
     description: "Showcase your web development prowess.",
     alt: "WebWeave",
-    prize: {first: 3000, second: 2000},
+    prize: { first: 3000, second: 2000 },
     imageSrc: "/web-design.jpeg",
     rules: {
       do: [
@@ -36,7 +36,7 @@ export const individualEvents = [
     title: "Debugging",
     description: "Fix bugs, compete, and enhance skills.",
     alt: "CoDebug",
-    prize: {first: 3000, second: 2000},
+    prize: { first: 3000, second: 2000 },
     imageSrc: "/debugging.jpeg",
     rules: {
       do: [
@@ -57,7 +57,7 @@ export const individualEvents = [
     title: "E-football",
     description: "Dive into action! Join the PES competition",
     alt: "E-football",
-    prize: {first: 2000, second: 1000},
+    prize: { first: 2000, second: 1000 },
     imageSrc: "/Pes-tour.jpeg",
     rules: {
       do: [
@@ -74,7 +74,7 @@ export const individualEvents = [
     description:
       "Navigate Wikipedia links to the target using only the hyperlinks.",
     alt: "Wikipedia Game",
-    prize: {first: 1000, second: 0},
+    prize: { first: 1000, second: 0 },
     imageSrc: "/wikipedia.jpg",
     rules: {
       do: [
@@ -92,7 +92,7 @@ export const individualEvents = [
     title: "PPT Presentation",
     description: "Present your ideas and innovations. (School students only)",
     alt: "PPT Presentation",
-    prize: {first: 2000, second: 1000},
+    prize: { first: 2000, second: 1000 },
     imageSrc: "/PPT_present.jpeg",
     rules: {
       do: [
@@ -115,14 +115,14 @@ export const teamEvents = [
     title: "Relay Coding",
     description: "Team up and code in a relay format.",
     alt: "Relay Coding",
-    prize: {first: 5000, second: 3000},
+    prize: { first: 5000, second: 3000 },
     imageSrc: "/relay_coding.jpeg",
     team: "relayCoding",
     url: "/register/relay-coding",
     count: "3-4",
     rules: {
       do: [
-        "Team will consist of maximum 3 members",
+        "Team will consist of 3-4 members",
         "Only the team lead needs to register but is required to add members details",
         "Utilize the 5 minutes before the relay begins to discuss your strategy with your team",
         "Each team member should pick up where the previous member left off based solely on the code]",
@@ -139,7 +139,7 @@ export const teamEvents = [
     title: "Tech Quiz",
     description: "Prove your tech knowledge in this quiz.",
     alt: "GeekOut",
-    prize: {first: 2000, second: 1000},
+    prize: { first: 2000, second: 1000 },
     imageSrc: "/Tech_quiz.jpeg",
     team: "techQuiz",
     url: "/register/tech-quiz",
@@ -162,7 +162,7 @@ export const teamEvents = [
     title: "BGMI",
     description: "Battle it out in the battlegrounds of BGMI.",
     alt: "",
-    prize: {first: 2000, second: 1000},
+    prize: { first: 2000, second: 1000 },
     imageSrc: "/bgmi.jpg",
     team: "bgmi",
     url: "/register/bgmi",
@@ -187,15 +187,16 @@ export const hackathonDetails = {
   title: "Hackathon",
   description: "30 hours brain storming with exciting price",
   alt: "Hack'n Tech",
-  prize: {first: 15000, second: 10000, third: 5000},
+  prize: { first: 15000, second: 10000, third: 5000 },
   imageSrc: "/Hackathon.jpeg",
   team: "hackathon",
   url: "/hackathon",
   rules: {
     do: [
       "College students only",
-      "Maximum 15 teams will be allowed",
       "Team must contain 3-4 members",
+      "Maximum 15 teams will be allowed",
+      "If registration exceeds 15 teams, each team will be requested to submit idea and the best 15 teams will be selected",
       "The first registrant becomes the Team Leader",
       "Team Leader is responsible for registering the team members and naming the team",
       "Participants should bring the system and resources required for the hackathon",
@@ -204,7 +205,7 @@ export const hackathonDetails = {
       "Design and prototype an innovative solution for the problem statement given",
       "Team must submit an abstract and detailed roadmap outlining their approach to solving the problem statement provided",
       "The decision of the judges and organizers shall be treated as final and binding on all",
-      "The working model has priority to win",
+      "The working prototypes has priority to win",
       "Wifi and accommodation facilities will be provided",
     ],
     dont: [],
