@@ -5,6 +5,7 @@ import { BrainCircuitIcon, CodeXmlIcon, NotepadTextIcon } from "lucide-react";
 import Link from "next/link";
 import { TextAnimation } from "@/components/TextAnimation";
 import BlurText from "@/components/ui/BlurText";
+import { Sponsors } from "@/components/sponsors";
 
 const eventDetails = [
   {
@@ -72,6 +73,8 @@ export default function Home() {
           </div>
         </div>
         <About />
+        <Sponsors />
+        <div className="divider divider-accent"></div>
       </div>
       <Contact />
     </>
