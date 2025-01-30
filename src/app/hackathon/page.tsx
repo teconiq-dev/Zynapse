@@ -91,7 +91,7 @@ function EventDetails() {
     },
     {
       title: "Venue",
-      value: "BMC Auditorium",
+      value: "Seminar Hall",
       icon: <MapPinIcon size={40} className="text-purple-300" />,
     },
     {
