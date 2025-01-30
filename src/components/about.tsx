@@ -33,7 +33,7 @@ const content = [
   {
     title: "Bharata Mata College",
     description:
-      "Zynapse 2025 marks the beginning of an exciting new chapter at Bharata Mata College – our first-ever tech fest, designed to ignite passion, spark innovation, and inspire the next generation of tech pioneers.",
+      "Department of Computer Science - Integrated Msc Computer Science Artificial Intelligence and Machine Learning, Bharata Mata College – our first-ever tech fest, designed to ignite passion, spark innovation, and inspire the next generation of tech pioneers.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image src="/bmclogo.png" layout="fill" objectFit="contain" alt="BMC" />
@@ -43,7 +43,7 @@ const content = [
   {
     title: "Teconiq",
     description:
-      "Teconiq is the driving force behind Zynapse – a newly-formed computer science association with a vision to cultivate innovation, sharpen skills, and promote hands-on learning.",
+      "Teconiq is the driving force behind Zynapse – a computer science association with a vision to cultivate innovation, sharpen skills, and promote hands-on learning.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
         <Image
