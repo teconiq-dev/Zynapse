@@ -12,6 +12,7 @@ import {
   GitCommitVertical,
   IndianRupeeIcon,
   MapPinIcon,
+  PhoneIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { AnimatedList } from "@/components/ui/animated-list";
@@ -64,11 +65,18 @@ function HeroSection() {
         </div>
         <p className="text-lg mb-8 text-purple-400">30 hour Hackathon</p>
         <EventDetails />
-        <Link href="/register/hackathon">
-          <button className="btn btn-accent animate-bounce">
-            Register Now
-          </button>
-        </Link>
+
+        <span className="badge badge-error p-4 animate-pulse mb-8">
+          Registration Closed
+        </span>
+        <div className="flex flex-col gap-2 justify-center items-center">
+          For queries, contact
+          <span className="badge badge-neutral">Angelo</span>
+          <span className="badge badge-ghost">
+            <PhoneIcon size={24} className="mx-auto mr-2 inline" />
+            <Link href={`tel:9567778213`}>9567778213</Link>
+          </span>
+        </div>
       </div>
     </div>
   );
