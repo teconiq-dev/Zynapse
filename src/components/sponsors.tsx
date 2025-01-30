@@ -8,7 +8,7 @@ export const Sponsors = () => {
         <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-3xl md:text-5xl lg:text-7xl font-sans py-2 md:py-10 relative font-bold tracking-tight">
           Our Sponsors
         </h2>
-        <div className="flex flex-col justify-evenly items-center gap-5 px-2">
+        <div className="flex flex-col justify-evenly items-center gap-5 px-4">
           <Image
             src="/justright.png"
             alt="JustRight"

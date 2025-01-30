@@ -18,7 +18,6 @@
     "@tsparticles/slim": "^3.7.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cobe": "^0.6.3",
     "dotenv": "^16.4.7",
     "firebase": "^11.2.0",
     "framer-motion": "^11.18.2",

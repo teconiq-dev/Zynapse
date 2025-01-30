@@ -248,7 +248,7 @@ let notifications = [
   },
   {
     name: "First Prize",
-    description: "₹15,000",
+    description: "₹20,000",
     time: "",
 
     icon: "🥇",
