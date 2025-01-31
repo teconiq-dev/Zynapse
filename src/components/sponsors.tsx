@@ -34,14 +34,6 @@ export const Sponsors = () => {
             <Link href="https://www.sysin.in/">
               <Image src="/Sysin.png" alt="Sysin" width={400} height={400} />
             </Link>
-            <Link href="https://offensoacademy.com/">
-              <Image
-                src="/offenso.png"
-                alt="Offenso"
-                width={400}
-                height={400}
-              />
-            </Link>
           </div>
         </div>
       </BackgroundLines>
