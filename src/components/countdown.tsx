@@ -12,7 +12,7 @@ type timeLeft = {
   seconds: number;
 };
 export const CountdownTimer = () => {
-  const targetDate = new Date("2025-02-01T00:00:00");
+  const targetDate = new Date("2025-02-01T09:30:00");
   const [timeLeft, setTimeLeft] = useState<timeLeft | object>({});
 
   const calculateTimeLeft = () => {
