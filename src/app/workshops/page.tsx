@@ -1,5 +1,4 @@
 "use client";
-import HyperText from "@/components/ui/hyper-text";
 import BlurText from "@/components/ui/BlurText";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
 import { Boxes } from "@/components/ui/background-boxes";
@@ -32,10 +31,6 @@ export default function Workshop() {
           <span className="text-red-200">6 Feb</span>
         </h3>
         <WorkshopCards />
-        <HyperText
-          className="text-xl md:text-5xl mt-8"
-          text="More workshops coming soon"
-        />
       </div>
     </div>
   );

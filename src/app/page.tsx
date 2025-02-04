@@ -6,7 +6,7 @@ import Link from "next/link";
 import { TextAnimation } from "@/components/TextAnimation";
 import BlurText from "@/components/ui/BlurText";
 import { Sponsors } from "@/components/sponsors";
-
+// TODO: hls
 const eventDetails = [
   {
     date: "February 1, 2",
