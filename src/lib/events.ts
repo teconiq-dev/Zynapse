@@ -30,6 +30,7 @@ export const individualEvents = [
         "Follow all instructions and decisions provided by the organizers and judges",
       ],
     },
+    closed: false,
   },
   {
     id: 2,
@@ -51,6 +52,7 @@ export const individualEvents = [
         "No extra time would be allocated to anyone",
       ],
     },
+    closed: false,
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ export const individualEvents = [
       ],
       dont: [],
     },
+    closed: false,
   },
   {
     id: 4,
@@ -86,6 +89,7 @@ export const individualEvents = [
         "First person to reach the target page wins!",
       ],
     },
+    closed: false,
   },
   {
     id: 5,
@@ -106,6 +110,7 @@ export const individualEvents = [
         "All content must be original. Plagiarism will result in immediate disqualification",
       ],
     },
+    closed: true,
   },
 ];
 
@@ -133,6 +138,7 @@ export const teamEvents = [
         "Follow all instructions and decisions provided by the organizers and judges",
       ],
     },
+    closed: true,
   },
   {
     id: 8,
@@ -156,6 +162,7 @@ export const teamEvents = [
         "Follow all instructions and decisions provided by the organizers and judges",
       ],
     },
+    closed: false,
   },
   {
     id: 9,
@@ -179,6 +186,7 @@ export const teamEvents = [
         "If there are more teams, the remaining 5 slots are assigned by TDM elimination",
       ],
     },
+    closed: true,
   },
 ];
 

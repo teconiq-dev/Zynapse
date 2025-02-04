@@ -17,8 +17,8 @@ export default function TeamEvents() {
           rules={event.rules}
           url={event.url}
           team={registrationDetails?.[event.team].length > 0}
-          alt={event.alt}
           prize={event.prize}
+          closed={event.closed}
         />
       ))}
     </div>

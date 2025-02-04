@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { UserDetails } from "@/components/context/userContext";
 import { getDetails, updateDetails } from "./backend/firebase";
-import {TrophyIcon, User} from "lucide-react";
+import { User } from "lucide-react";
 
 type EventCardProps = {
   id: string;
@@ -15,8 +15,8 @@ type EventCardProps = {
   rules: { do: string[]; dont: string[] };
   team?: boolean;
   count?: string | null;
-  alt?: string;
   prize: { first: number; second: number };
+  closed?: boolean;
 };
 export function EventCard({
   id,
@@ -27,7 +27,7 @@ export function EventCard({
   rules,
   team = false,
   count = "1",
-  alt,
+  closed = false,
   prize,
 }: EventCardProps) {
   const {
@@ -90,16 +90,15 @@ export function EventCard({
                 className={`${url ? "h-96" : "h-72"} w-full object-cover rounded-xl group-hover/card:shadow-xl`}
                 alt="thumbnail"
               />
-              <div
-                className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
-
+              <div className="absolute top-0 left-0 rounded-br-2xl border-r-2 border-b-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
                 <p className="text-lg font-bold text-[#Ffd700]">
-                  🏆Rs {prize.first + prize.second}</p>
+                  🏆 Rs {prize.first + prize.second}
+                </p>
               </div>
-              <div
-                className="absolute bottom-0 right-0 rounded-tl-2xl border-l-2 border-t-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
+              <div className="absolute bottom-0 right-0 rounded-tl-2xl border-l-2 border-t-2 border-purple-600 flex items-center justify-center bg-base-100/30 p-2 backdrop-blur-lg">
                 <p className="text-lg font-bold text-purple-200 animate-pulse">
-                  Free Entry</p>
+                  Free Entry
+                </p>
               </div>
             </CardItem>
             <div className="flex justify-between items-center mt-10">
@@ -134,7 +133,11 @@ export function EventCard({
                 translateZ={20}
                 className="px-4 py-2 rounded-xl text-xs font-bold"
               >
-                {registered || team ? (
+                {closed ? (
+                  <button className="badge badge-info">
+                    Registration closed
+                  </button>
+                ) : registered || team ? (
                   <button className="badge badge-secondary">Registered</button>
                 ) : (
                   <>
@@ -191,7 +194,9 @@ export function EventCard({
                         ) : (
                           <>
                             <p className="py-4">
-                              Please fill in your personal details before registering for this event. You can come back and add this event later...
+                              Please fill in your personal details before
+                              registering for this event. You can come back and
+                              add this event later...
                             </p>
                             <div className="modal-action">
                               <Link href="/register">

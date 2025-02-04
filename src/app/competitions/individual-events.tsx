@@ -14,6 +14,7 @@ export default function IndividualEvents() {
           rules={event.rules}
           alt={event.alt}
           prize={event.prize}
+          closed={event.closed}
         />
       ))}
     </div>
