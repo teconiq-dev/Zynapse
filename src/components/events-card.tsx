@@ -134,7 +134,7 @@ export function EventCard({
                 className="px-4 py-2 rounded-xl text-xs font-bold"
               >
                 {closed ? (
-                  <button className="badge badge-info">
+                  <button className="badge badge-info text-xs">
                     Registration closed
                   </button>
                 ) : registered || team ? (

@@ -110,7 +110,7 @@ const RegisterWorkshopButton = ({ id, title, closed }) => {
           Registered
         </button>
       )  : closed ? (
-        <button className="badge badge-info p-4 rounded-xl">Registration closed</button>
+        <button className="badge badge-info p-4 rounded-xl text-xs">Registration closed</button>
       ) : (
         <>
           <InteractiveHoverButton
