@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
-    "@react-three/drei": "^9.121.3",
-    "@react-three/fiber": "^8.17.12",
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
     "@tabler/icons-react": "^3.29.0",
-    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.7.1",
+    "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
@@ -37,7 +37,7 @@
     "three-custom-shader-material": "^5.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.14",
+    "@types/node": "^20.17.17",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/three": "^0.170.0",

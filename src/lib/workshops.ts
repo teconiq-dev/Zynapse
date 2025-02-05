@@ -9,6 +9,7 @@ export const workshopDetails = [
     companyLogo: "/offenso.png",
     person: { name: "", designation: "" },
     time: "10:00 AM",
+    closed: true,
   },
   {
     id: 2,
@@ -20,5 +21,6 @@ export const workshopDetails = [
     companyLogo: "/zoople.png",
     time: "10:00 AM",
     person: { name: "Satya Subrahmanya", designation: "ML Engineer" },
+    closed: false,
   },
 ];

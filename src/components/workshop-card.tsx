@@ -75,7 +75,7 @@ export const WorkshopCards = () => {
                 width={300}
                 height={200}
               />
-              <RegisterWorkshopButton id={workshop.id} title={workshop.title} />
+              <RegisterWorkshopButton id={workshop.id} title={workshop.title} closed={workshop.closed} />
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ export const WorkshopCards = () => {
   );
 };
 
-const RegisterWorkshopButton = ({ id, title }) => {
+const RegisterWorkshopButton = ({ id, title, closed }) => {
   const { user, registrationDetails, setRegistrationDetails } = UserDetails();
   const registered = registrationDetails?.workshops?.includes(title);
   const dataFilled = registrationDetails?.fullName.length > 0;
@@ -109,6 +109,8 @@ const RegisterWorkshopButton = ({ id, title }) => {
         <button className="badge badge-accent p-4 rounded-xl">
           Registered
         </button>
+      )  : closed ? (
+        <button className="badge badge-info p-4 rounded-xl">Registration closed</button>
       ) : (
         <>
           <InteractiveHoverButton
