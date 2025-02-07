@@ -27,7 +27,7 @@ const eventDetails = [
   {
     date: "February 7",
     title: "Competitions",
-    description: "Participate in exciting events",
+    description: "Exciting events and expo",
     icon: (
       <BrainCircuitIcon className="w-8 h-8 text-purple-400 mx-auto inline" />
     ),

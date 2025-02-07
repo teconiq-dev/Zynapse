@@ -30,7 +30,7 @@ export const individualEvents = [
         "Follow all instructions and decisions provided by the organizers and judges",
       ],
     },
-    closed: false,
+    closed: true,
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ export const individualEvents = [
         "No extra time would be allocated to anyone",
       ],
     },
-    closed: false,
+    closed: true,
   },
   {
     id: 3,
@@ -69,7 +69,7 @@ export const individualEvents = [
       ],
       dont: [],
     },
-    closed: false,
+    closed: true,
   },
   {
     id: 4,
@@ -89,7 +89,7 @@ export const individualEvents = [
         "First person to reach the target page wins!",
       ],
     },
-    closed: false,
+    closed: true,
   },
   {
     id: 5,
@@ -162,7 +162,7 @@ export const teamEvents = [
         "Follow all instructions and decisions provided by the organizers and judges",
       ],
     },
-    closed: false,
+    closed: true,
   },
   {
     id: 9,

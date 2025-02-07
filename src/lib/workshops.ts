@@ -21,6 +21,6 @@ export const workshopDetails = [
     companyLogo: "/zoople.png",
     time: "10:00 AM",
     person: { name: "Satya Subrahmanya", designation: "ML Engineer" },
-    closed: false,
+    closed: true,
   },
 ];
