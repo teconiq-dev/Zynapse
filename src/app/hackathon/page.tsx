@@ -69,14 +69,6 @@ function HeroSection() {
         <span className="badge badge-error p-4 animate-pulse mb-8">
           Registration Closed
         </span>
-        <div className="flex flex-col gap-2 justify-center items-center">
-          For queries, contact
-          <span className="badge badge-neutral">Angelo</span>
-          <span className="badge badge-ghost">
-            <PhoneIcon size={24} className="mx-auto mr-2 inline" />
-            <Link href={`tel:9567778213`}>9567778213</Link>
-          </span>
-        </div>
       </div>
     </div>
   );
