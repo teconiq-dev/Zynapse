@@ -31,6 +31,9 @@ export const Sponsors = () => {
             <Link href="https://www.irohub.com/">
               <Image src="/irohub.png" alt="Irohub" width={400} height={400} />
             </Link>
+            <Link href="https://www.avodha.com/">
+              <Image src="/avodha.png" alt="avodha" width={400} height={400} />
+            </Link>
             <Link href="https://www.sysin.in/">
               <Image src="/Sysin.png" alt="Sysin" width={400} height={400} />
             </Link>
